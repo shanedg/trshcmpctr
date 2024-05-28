@@ -3,6 +3,7 @@ import express from 'express';
 import { handleApiError } from './handle-api-error';
 import { handleEndpointNotFound } from './handle-endpoint-not-found';
 import { handleGetGuildMembership } from './handle-get-guild-membership';
+import { handleLaunch } from './handle-launch';
 import { requireAuthentication } from './require-authentication';
 import { requireGuildMembership } from './require-guild-membership';
 
@@ -50,6 +51,9 @@ export class AuthenticatedAPIRouter {
 
     // Deliver guild membership data to the frontend
     authenticatedApiRouter.get('/authorized', handleGetGuildMembership);
+
+    // Accept requests to start up new servers
+    authenticatedApiRouter.post('/launch', handleLaunch.bind(null, this.configuration.fetch, this.configuration.guildId));
 
     authenticatedApiRouter.use(handleApiError);
 
