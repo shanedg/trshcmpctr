@@ -2,11 +2,14 @@
   "name": "@trshcmpctr/client",
   "version": "1.0.0",
   "description": "Frontend React app",
-  "files": ["dist"],
+  "files": ["dist", "dist-lib"],
   "type": "module",
   "main": "./dist/manifest.json",
   "module": "./dist/manifest.json",
-  "exports": "./dist/manifest.json",
+  "exports": {
+    ".": "./dist/manifest.json",
+    "./paths": "./dist-lib/manifest.json"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.cjs",
     "build:production": "webpack  --config webpack.config.cjs --env production",
@@ -14,11 +17,13 @@
     "clean": "rm -rf dist",
     "cy:open": "cypress open --config-file=cypress/cypress.config.ts --e2e --browser=chrome",
     "cy:run": "cypress run --config-file=cypress/cypress.config.ts",
+    "get-app-paths": "node --experimental-default-type=module get-app-paths.js",
     "lint": "eslint --report-unused-disable-directives --ext .js,.jsx,.ts,.tsx,.cjs --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
     "serve": "webpack serve --config webpack.config.cjs",
     "start": "webpack serve --config webpack.config.cjs --open",
-    "start:production": "webpack serve --config webpack.config.cjs -- --open --env production",
+    "start:production": "webpack serve --config webpack.config.cjs --open --env production",
+    "start:watch-webpack": "nodemon --exec 'webpack serve --config webpack.config.cjs --open' --watch 'webpack.config.cjs'",
     "test": "jest --reporters=@trshcmpctr/jest-stdout-reporter --silent",
     "test:debug": "NODE_OPTIONS=--inspect jest --runInBand --no-cache",
     "test:watch": "jest --watch",
@@ -58,6 +63,7 @@
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@types/jest": "~29.5.2",
     "@types/node": "~18.19.31",
+    "@types/prop-types": "~15.7.12",
     "@types/react-dom": "~18.3.0",
     "@types/react": "~18.3.3",
     "@typescript-eslint/eslint-plugin": "~8.2.0",
@@ -98,6 +104,7 @@
   "dependencies": {
     "axios": "~1.7.2",
     "core-js": "~3.38.0",
+    "prop-types": "~15.8.1",
     "react-dom": "~18.3.1",
     "react-router-dom": "~6.26.1",
     "react": "~18.3.1"

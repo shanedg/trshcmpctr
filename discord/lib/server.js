@@ -8,10 +8,12 @@ import pinoHttp from 'pino-http';
 import store from 'session-file-store';
 
 import manifest from '@trshcmpctr/client' assert { type: 'json' };
+// import pathsManifest from '@trshcmpctr/client/paths' assert { type: 'json' };
 
 import { AuthenticatedAPIRouter } from './authenticated-api/router.js';
 import { AuthenticatedHTMLRouter } from './authenticated-html-router.js';
 import config from './config.json' assert { type: 'json' };
+import { DB } from './db.js';
 import { LoginRouter } from './login-router.js';
 
 // Support overriding redirectUri from environment for cypress testing
@@ -78,13 +80,30 @@ app.use(loginRouter.middleware);
 const clientUrl = new URL(await import.meta.resolve('@trshcmpctr/client'));
 const clientDirectory = dirname(clientUrl.pathname);
 
+// TODO: is the subpath export worth the effort?
+// should it be a more general purpose "constants" subpath?
+// that would make sense to index into the manifest of!
+const clientPathUrl = new URL(await import.meta.resolve('@trshcmpctr/client/paths'));
+const clientPathDirectory = dirname(clientPathUrl.pathname);
+
+// FIXME: 'import()' expressions are not supported yet ???
+// This should not be a problem but adjusting the engines field
+// and overwriting the rule to set the node version explicitly
+// doesn't seem to be working :(
+// eslint-disable-next-line node/no-unsupported-features/es-syntax -- eslint(node/no-unsupported-features/es-syntax)
+const paths = await import(`${clientPathDirectory}/paths.js`);
+
 const authenticatedViewRouter = new AuthenticatedHTMLRouter({
   htmlDirectory: clientDirectory,
   htmlFilename: manifest['index.html'],
+  paths: paths.default,
 });
 app.use(authenticatedViewRouter.middleware);
 
+const db = new DB();
+
 const authenticatedApiRouter = new AuthenticatedAPIRouter({
+  db: db.db,
   fetch,
   guildId,
 });
