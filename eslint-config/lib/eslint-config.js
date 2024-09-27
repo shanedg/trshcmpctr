@@ -74,6 +74,9 @@ module.exports = {
       ],
       'newlines-between': 'always',
     }],
+    'node/no-unsupported-features/es-syntax': ['error', {
+      version: '^18.20.2'
+    }]
   },
 
   settings: {

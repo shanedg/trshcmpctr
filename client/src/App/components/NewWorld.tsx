@@ -18,14 +18,10 @@ export const NewWorld = () => {
       </nav>
       <article>
         <h2>new</h2>
-        <form>
-          <label htmlFor="version">version</label>
-          <select name="version">
-            <option>1.20.1</option>
-          </select>
-          <label htmlFor="name">name</label>
-          <input name="name" />
-          <button>create</button>
+        <form method="post" action="/api/v1/launch">
+          <label htmlFor="label">name</label>
+          <input type="text" name="name" defaultValue="" placeholder="name" />
+          <button type="submit">create</button>
         </form>
       </article>
     </>
