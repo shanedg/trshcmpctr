@@ -6,6 +6,8 @@ Notes specifically for repository maintainers
 
 * can't upgrade to/past [@microsoft/rush@5.132.0](https://github.com/microsoft/rushstack/blob/a9b6c472c31676e5ae4fcd594c311a6b6029e82e/apps/rush/CHANGELOG.md#51320)
 since changes to `decoupledLocalDependencies`
+* (@trshcmpctr/client) start command:
+[webpack-dev-middleware] HookWebpackError: HMR is not implemented for module chunk format yet
 
 ## TODOs
 
