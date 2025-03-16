@@ -22,11 +22,13 @@ if (!environmentArgument) {
  */
 const getElasticIpAllocationId = environment => {
   if (environment === 'staging') {
+    // FIXME: this elastic IP is removed
     // www-stage.trshcmcptr.com
     return 'eipalloc-0b8f0bb1660204bec';
   }
 
   if (environment === 'production') {
+    // FIXME: this elastic IP is removed
     // www.trshcmpctr.com
     return 'eipalloc-022c7934990a883c8';
   }
@@ -131,6 +133,7 @@ if (!isReady) {
   throw new Error(`next instance not running after polling ${attempts} times`);
 }
 
+// FIXME: Deploy will fail unless removed elastic IP addresses restored/replaced
 // try to assign environment elastic ip address to new instance
 try {
   await ec2AssociateIp(nextInstanceId, getElasticIpAllocationId(environmentArgument));

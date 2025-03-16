@@ -13,11 +13,11 @@ jobs:
     uses: ./.github/workflows/branch.yml
     secrets: inherit
 
-  main-deploy:
-    needs:
-    - main-branch
-    uses: ./.github/workflows/deploy.yml
-    with:
-      environment: production
-      url: https://www.trshcmpctr.com
-    secrets: inherit
+  # main-deploy:
+  #   needs:
+  #   - main-branch
+  #   uses: ./.github/workflows/deploy.yml
+  #   with:
+  #     environment: production
+  #     url: https://www.trshcmpctr.com
+  #   secrets: inherit
