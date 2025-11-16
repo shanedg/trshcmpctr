@@ -26,6 +26,9 @@ jobs:
     - name: Install
       if: steps.restore-cache.outputs.cache-hit != 'true'
       run: node common/scripts/install-run-rush.js install
+      env:
+        # Only install Cypress binary when needed in e2e-test.yml
+        CYPRESS_INSTALL_BINARY: 0
 
     - name: Save Cache
       id: save-cache
