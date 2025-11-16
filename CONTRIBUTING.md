@@ -99,9 +99,8 @@ git commit -m 'build(deps): rush update-major'
 Packages excluded via the [--reject] option:
 
 * `@types/node` is excluded because the major version of this package
-corresponds with the expected major version of Node and this repository
-will continue to use Node 18 until Node 20 becomes the active Long Term
-Support (LTS) version
+corresponds with the expected major version of Node and should only change
+when Node is upgraded in this repository
 * `eslint` is excluded because some plugins are not compatible with v9
 * `eslint-plugin-ava` is excluded until we can upgrade to eslint v9
 * `eslint-plugin-cypress` is excluded until we can upgrade to eslint v9
