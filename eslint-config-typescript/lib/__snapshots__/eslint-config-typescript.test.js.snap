@@ -224,6 +224,9 @@ exports[`eslint-config-typescript calculated config snapshots rules 1`] = `
   "no-var": [
     "error",
   ],
+  "no-with": [
+    "off",
+  ],
   "prefer-const": [
     "error",
   ],
