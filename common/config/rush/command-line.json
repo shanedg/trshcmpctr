@@ -269,6 +269,20 @@
    * For example, you might define a "--production" parameter for the "rush build" command.
    */
   "parameters": [
+    {
+      "associatedCommands": ["lint"],
+      "description": "Support bulk fixing eslint problems across projects",
+      "longName": "--fix",
+      "parameterKind": "flag",
+      "shortName": "-f"
+    },
+    {
+      "associatedCommands": ["test"],
+      "description": "Support bulk updating test snapshots across projects",
+      "longName": "--update-snapshot",
+      "parameterKind": "flag",
+      "shortName": "-u"
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom parameter.
