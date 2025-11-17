@@ -17,7 +17,7 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
-        key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json') }}
+        key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
         # cached dependencies aren't used until following jobs
         lookup-only: true
