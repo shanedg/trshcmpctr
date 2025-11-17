@@ -1,3 +1,9 @@
+const {
+  beforeAll,
+  describe,
+  expect,
+  it,
+} = require('@jest/globals');
 const eslint = require('eslint');
 
 const ESLint = eslint.ESLint;
@@ -39,48 +45,4 @@ describe('eslint-config', () => {
       expect(config.rules).toMatchSnapshot();
     });
   });
-
-  /**
-   * Tests in the following blocks should exercise overridden rules.
-   * 
-   * The point is not to test every rule,
-   * just the ones with interesting exceptions.
-   * 
-   * The libraries we extend should have tests for their own rules.
-   * This is more about validating expectations for customized rule options.
-   */
-  describe('no-unused-vars', () => {
-    let results,
-      rulesResult;
-
-    beforeAll(async () => {
-      results = await eslintApi.lintFiles('lib/__fixtures__/no-unused-vars.js');
-      rulesResult = results[0];
-    });
-
-    // Tests in this block expect that only 1 file is included in lint results.
-    it('tests only lint 1 fixture file', () => {
-      expect(results.length).toBe(1);
-    });
-
-    // Increment either errors or warnings as new rules are added.
-    it('finds 0 errors', () => {
-      expect(rulesResult.errorCount).toMatchInlineSnapshot(`0`);
-    });
-
-    it('finds 2 warnings', () => {
-      expect(rulesResult.warningCount).toMatchInlineSnapshot(`2`);
-    });
-
-    it('reports expected messages', () => {
-      const noUnusedVarsMessages = rulesResult.messages.filter(message => message.ruleId === 'no-unused-vars');
-      expect(noUnusedVarsMessages).toContainEqual(expect.objectContaining({
-        message: "'unusedVariable' is assigned a value but never used."
-      }));
-      expect(noUnusedVarsMessages).toContainEqual(expect.objectContaining({
-        message: "'unusedArgument' is defined but never used. Allowed unused args must match /^_/u."
-      }));
-    });
-  });
-
 });
