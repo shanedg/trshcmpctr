@@ -330,9 +330,6 @@ importers:
       '@jest/globals':
         specifier: ~29.7.0
         version: 29.7.0
-      '@trshcmpctr/jest-stdout-reporter':
-        specifier: workspace:*
-        version: link:../jest-stdout-reporter
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
