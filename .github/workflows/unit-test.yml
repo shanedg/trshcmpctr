@@ -14,7 +14,6 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: |
-          ~/.cache/Cypress
           common/temp
           */.rush/temp
           */node_modules
