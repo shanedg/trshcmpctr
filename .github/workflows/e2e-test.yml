@@ -14,13 +14,12 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: |
-          ~/.cache/Cypress
           common/temp
           */.rush/temp
           */node_modules
           */dist
           client/lib
-        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json') }}
+        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
 
     - name: Configure Discord Secrets
