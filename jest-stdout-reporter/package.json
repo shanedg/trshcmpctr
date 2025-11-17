@@ -24,7 +24,7 @@
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc"
   },
   "dependencies": {
-    "@jest/reporters": "~29.7.0"
+    "@jest/reporters": "~30.2.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
