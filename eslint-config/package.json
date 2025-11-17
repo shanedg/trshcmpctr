@@ -20,13 +20,12 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "",
-    "lint": "eslint --report-unused-disable-directives --max-warnings=0 --ignore-pattern __fixtures__ .",
+    "lint": "eslint --report-unused-disable-directives --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
-    "test": "jest --no-cache --reporters=@trshcmpctr/jest-stdout-reporter --silent"
+    "test": "jest --no-cache --silent"
   },
   "devDependencies": {
-    "@trshcmpctr/eslint-config-jest": "workspace:*",
-    "@trshcmpctr/jest-stdout-reporter": "workspace:*",
+    "@jest/globals": "~29.7.0",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@typescript-eslint/parser": "~8.46.4",
     "eslint-plugin-eslint-comments": "~3.2.0",

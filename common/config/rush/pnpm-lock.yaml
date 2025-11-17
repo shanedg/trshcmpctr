@@ -327,12 +327,9 @@ importers:
 
   ../../eslint-config:
     devDependencies:
-      '@trshcmpctr/eslint-config-jest':
-        specifier: workspace:*
-        version: link:../eslint-config-jest
-      '@trshcmpctr/jest-stdout-reporter':
-        specifier: workspace:*
-        version: link:../jest-stdout-reporter
+      '@jest/globals':
+        specifier: ~29.7.0
+        version: 29.7.0
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
