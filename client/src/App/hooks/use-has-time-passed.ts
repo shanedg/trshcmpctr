@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
  */
 export const useHasTimePassed = (duration = 500) => {
   const [hasTimePassed, setHasTimePassed] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => setHasTimePassed(true), duration);

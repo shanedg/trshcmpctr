@@ -66,23 +66,23 @@
         Run after `update-minor`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@17.1.11 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/node,eslint,eslint-plugin-ava,eslint-plugin-cypress' \
+        --reject '@types/jest,@types/node,babel-loader,cypress,eslint,eslint-plugin-ava,eslint-plugin-cypress,eslint-webpack-plugin,jest,jest-environment-jsdom' \
         && \
-        node common/scripts/install-run.js npm-check-updates@17.1.11 \
+        node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
         --packageFile scaffold/lib/templates/package.json.hbs \
         --upgrade \
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/node,eslint,eslint-plugin-ava,eslint-plugin-cypress'"
+        --reject '@types/jest,@types/node,babel-loader,cypress,eslint,eslint-plugin-ava,eslint-plugin-cypress,eslint-webpack-plugin,jest,jest-environment-jsdom'"
     },
     {
       "name": "update-minor",
@@ -90,7 +90,7 @@
         Run after `rush update --full`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@17.1.11 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
@@ -98,7 +98,7 @@
         --dep 'prod','dev','optional','packageManager','peer' \
         --target minor \
         && \
-        node common/scripts/install-run.js npm-check-updates@17.1.11 \
+        node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
         --packageFile scaffold/lib/templates/package.json.hbs \
         --upgrade \
@@ -269,6 +269,20 @@
    * For example, you might define a "--production" parameter for the "rush build" command.
    */
   "parameters": [
+    {
+      "associatedCommands": ["lint"],
+      "description": "Support bulk fixing eslint problems across projects",
+      "longName": "--fix",
+      "parameterKind": "flag",
+      "shortName": "-f"
+    },
+    {
+      "associatedCommands": ["test"],
+      "description": "Support bulk updating test snapshots across projects",
+      "longName": "--update-snapshot",
+      "parameterKind": "flag",
+      "shortName": "-u"
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom parameter.

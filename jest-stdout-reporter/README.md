@@ -13,7 +13,7 @@ Operations succeeded with warnings.
 # (exit code: 1)
 ```
 
-Original solution (not mine) found [here](https://github.com/microsoft/fluentui/blob/28ceaaa83cd92a0389c466f0b15b283e3d9b08e4/scripts/jest/jest-reporter.js).
+Original solution (not mine) found in this [Microsoft/fluentui script](https://github.com/microsoft/fluentui/blob/28ceaaa83cd92a0389c466f0b15b283e3d9b08e4/scripts/jest/jest-reporter.js).
 Another option available in [jest-standard-reporter](https://github.com/chrisgalvan/jest-standard-reporter).
 Other interesting reporters: [jest-community/awesome-jest#reporters](https://github.com/jest-community/awesome-jest/blob/main/README.md#reporters)
 

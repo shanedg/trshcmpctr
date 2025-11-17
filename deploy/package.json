@@ -27,18 +27,18 @@
     "upload": "node lib/aws-s3-upload-artifacts.js"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "~7.25.1",
-    "@babel/plugin-syntax-import-assertions": "~7.26.0",
+    "@babel/eslint-parser": "~7.28.5",
+    "@babel/plugin-syntax-import-assertions": "~7.27.1",
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint-plugin-eslint-comments": "~3.2.0",
-    "eslint-plugin-import": "~2.31.0",
+    "eslint-plugin-import": "~2.32.0",
     "eslint-plugin-node": "~11.1.0",
     "eslint": "~8.57.0",
-    "markdownlint-cli2": "~0.15.0"
+    "markdownlint-cli2": "~0.19.0"
   },
   "dependencies": {
-    "@aws-sdk/client-ec2": "~3.701.0",
-    "@aws-sdk/client-s3": "~3.701.0"
+    "@aws-sdk/client-ec2": "~3.932.0",
+    "@aws-sdk/client-s3": "~3.932.0"
   }
 }

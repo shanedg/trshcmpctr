@@ -33,5 +33,8 @@ jobs:
         DISCORD_REDIRECT_URI: ${{ secrets.DISCORD_REDIRECT_URI }}
         DISCORD_SESSION_SECRET: ${{ secrets.DISCORD_SESSION_SECRET }}
 
+    - name: Install Cypress Binary
+      run: node common/scripts/install-run.js cypress@13.17.0 cypress install
+
     - name: E2E Tests
       run: node common/scripts/install-run-rush.js test:cypress --verbose

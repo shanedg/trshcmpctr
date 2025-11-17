@@ -90,6 +90,7 @@ exports[`eslint-config calculated config snapshots rules 1`] = `
       ],
       "named": false,
       "newlines-between": "always",
+      "sortTypesGroup": false,
       "warnOnUnassignedImports": false,
     },
   ],

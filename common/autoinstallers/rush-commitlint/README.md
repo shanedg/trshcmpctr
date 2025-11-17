@@ -14,8 +14,8 @@ enforced rules.
 From this directory, run the following:
 
 ```sh
-npx npm-check-updates@17.1.11 --upgrade --target minor
-npx npm-check-updates@17.1.11 --upgrade --target latest --reject '@types/node'
+npx npm-check-updates@19.1.2 --upgrade --target minor
+npx npm-check-updates@19.1.2 --upgrade --target latest --reject '@types/node'
 ```
 
 > Keep the version of [npm-check-updates] used here in sync with
@@ -26,9 +26,8 @@ The second then upgrades all dependencies except for `@types/node` to
 the latest (major) version.
 
 > `@types/node` is excluded because the major version of this package
-corresponds with the expected major version of Node and this repository
-will continue to use Node 18 until Node 20 becomes the active Long Term
-Support (LTS) version.
+corresponds with the expected major version of Node and and should only change
+when Node is upgraded in this repository.
 
 Then, from anywhere in the repository, run:
 
