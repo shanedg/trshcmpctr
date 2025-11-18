@@ -20,39 +20,20 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "",
-    "lint": "eslint --report-unused-disable-directives --max-warnings=0 .",
+    "lint": "eslint --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
-    "test": "jest --no-cache --silent"
+    "test": ""
   },
-  "jest": {
-    "reporters": ["@trshcmpctr/jest-stdout-reporter"],
-    "resolver": "<rootDir>/jestResolver.js"
+  "dependencies": {
+    "eslint-plugin-import": "~2.32.0",
+    "eslint": "~9.39.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "~8.49.0"
   },
   "devDependencies": {
-    "@trshcmpctr/eslint-config-jest": "workspace:*",
     "@trshcmpctr/eslint-config": "workspace:*",
-    "@trshcmpctr/jest-stdout-reporter": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "~8.46.4",
-    "@typescript-eslint/parser": "~8.46.4",
-    "enhanced-resolve": "~5.18.3",
-    "eslint-import-resolver-typescript": "~4.4.4",
-    "eslint-plugin-eslint-comments": "~3.2.0",
-    "eslint-plugin-import": "~2.32.0",
-    "eslint-plugin-jest": "~29.1.0",
-    "eslint-plugin-node": "~11.1.0",
-    "eslint": "~8.57.0",
-    "jest": "~29.7.0",
-    "markdownlint-cli2": "~0.19.0",
-    "typescript": "~5.9.3"
-  },
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "~8.46.4",
-    "@typescript-eslint/parser": "~8.46.4",
-    "eslint-import-resolver-typescript": "~4.4.4",
-    "eslint-plugin-import": "~2.32.0",
-    "eslint-plugin-jest": "~29.1.0",
-    "eslint": "~8.57.0",
-    "typescript": "~5.9.3"
+    "eslint-plugin-n": "~17.23.1",
+    "markdownlint-cli2": "~0.19.0"
   }
 }
