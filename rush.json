@@ -375,7 +375,6 @@
       "packageName": "@trshcmpctr/eslint-config",
       "projectFolder": "eslint-config",
       "decoupledLocalDependencies": [
-        "@trshcmpctr/eslint-config-jest",
         "@trshcmpctr/jest-stdout-reporter"
       ]
     },
