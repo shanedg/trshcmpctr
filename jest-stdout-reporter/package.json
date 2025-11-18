@@ -20,8 +20,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "",
-    "lint": "eslint --report-unused-disable-directives --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc"
+    "lint": "eslint --max-warnings=0 .",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "test": ""
   },
   "dependencies": {
     "@jest/reporters": "~30.2.0"
@@ -29,10 +30,8 @@
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "eslint-plugin-eslint-comments": "~3.2.0",
-    "eslint-plugin-import": "~2.32.0",
-    "eslint-plugin-node": "~11.1.0",
-    "eslint": "~8.57.0",
+    "eslint-plugin-n": "~17.23.1",
+    "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.19.0"
   }
 }
