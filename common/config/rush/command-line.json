@@ -32,6 +32,13 @@
       "enableParallelism": true
     },
     {
+      "name": "lint:staged",
+      "summary": "Used by the pre-commit Git hook. Calls lint-staged to lint staged changes.",
+      "commandKind": "global",
+      "autoinstallerName": "rush-lint-staged",
+      "shellCommand": "lint-staged --config=common/autoinstallers/rush-lint-staged/.lintstagedrc.json --continue-on-error"
+    },
+    {
       "name": "scaffold",
       "summary": "Generate a new project from a template",
       "commandKind": "global",
@@ -74,7 +81,7 @@
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/jest,@types/node,babel-loader,cypress,eslint,eslint-plugin-ava,eslint-plugin-cypress,eslint-webpack-plugin,jest,jest-environment-jsdom' \
+        --reject '@types/jest,@types/node,babel-loader,cypress,eslint-webpack-plugin,jest,jest-environment-jsdom' \
         && \
         node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
@@ -83,7 +90,7 @@
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/jest,@types/node,babel-loader,cypress,eslint,eslint-plugin-ava,eslint-plugin-cypress,eslint-webpack-plugin,jest,jest-environment-jsdom'"
+        --reject '@types/jest,@types/node,babel-loader,cypress,eslint-webpack-plugin,jest,jest-environment-jsdom'"
     },
     {
       "name": "update-minor",

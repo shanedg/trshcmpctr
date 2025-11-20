@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Call the "rush lint:staged" custom command to lint staged changes
+# before they are committed.
+# Command is defined in common/config/rush/command-line.json
+# and uses the "rush-lint-staged" autoinstaller.
+node common/scripts/install-run-rush.js lint:staged || exit $?

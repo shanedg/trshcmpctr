@@ -4,6 +4,7 @@
     // Make rule consistent with defaults for the VSCode Extension.
     "line-length": false
   },
+  // Needs to be ignored with --no-globs if passing file paths directly.
   "globs": [
     "**/*.md"
   ],

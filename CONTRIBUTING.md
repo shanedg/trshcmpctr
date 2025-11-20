@@ -44,7 +44,14 @@ rush scaffold
 
 ## Keeping Project Dependencies Up to Date
 
-> WARN: Autoinstallers are managed separately, see [rush-commitlint].
+### Autoinstallers
+
+Autoinstallers are managed separately from repo projects, see:
+
+* [rush-commitlint]: lint commit messages before committing
+* [rush-lint-staged]: lint staged files before committing
+
+### Projects
 
 Periodically bump project dependencies for new features and fixes,
 e.g. before starting or after completing new feature development.
@@ -53,7 +60,7 @@ version changes are responsible for any problems.
 Lint code, run tests, and validate affected project behavior at each
 stage:
 
-### 1. Patch Updates
+#### 1. Patch Updates
 
 Use the out of the box rush update feature to bump all packages to the
 latest version available that satisfies current range specifiers.
@@ -67,7 +74,7 @@ git add common/rush/pnpm-lock.yaml common/rush/repo-state.json
 git commit -m 'build(deps): rush update --full'
 ```
 
-### 2. Minor Updates
+#### 2. Minor Updates
 
 Use a custom rush command[^1] (see [command-line.json]) that calls
 [npm-check-updates] to bump all packages to the latest minor version.
@@ -79,7 +86,7 @@ git add -A
 git commit -m 'build(deps): rush update-minor'
 ```
 
-### 3. Major Upgrades
+#### 3. Major Upgrades
 
 Use a custom rush command[^1] (see [command-line.json]) that calls
 [npm-check-updates] to bump all packages to the latest major version.
@@ -123,7 +130,7 @@ Blockers for Eslint v9:
 * `@typescript-eslint/utils`
   * should be resolved by <https://github.com/typescript-eslint/typescript-eslint/pull/9002>
 
-## Updating pnpm
+### Updating pnpm
 
 Periodically update the version of [pnpm] used in this repo with the
 `pnpmVersion` field in [rush.json].
@@ -138,7 +145,7 @@ git add rush.json common/config/rush/pnpm-lock.yaml
 git commit -m 'build(deps): update pnpm from x to y'
 ```
 
-## Updating Rush
+### Updating Rush
 
 Periodically update the version of Rush used in this repo with the
 `rushVersion` field in [rush.json].
@@ -168,5 +175,6 @@ git commit -m 'build(deps): update rush from x to y'
 [pnpm]: https://www.npmjs.com/package/pnpm
 [Rush changelog]: https://github.com/microsoft/rushstack/blob/main/apps/rush/CHANGELOG.md
 [rush-commitlint]: ./common/autoinstallers/rush-commitlint/README.md
+[rush-lint-staged]: ./common/autoinstallers/rush-lint-staged/README.md
 [rush.json]: ./rush.json
 [tildes]: https://github.com/npm/node-semver?tab=readme-ov-file#tilde-ranges-123-12-1
