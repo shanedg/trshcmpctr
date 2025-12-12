@@ -16,7 +16,7 @@
       "summary": "Used by the commit-msg Git hook. This command invokes @commitlint/cli to lint commit messages.",
       "commandKind": "global",
       "autoinstallerName": "rush-commitlint",
-      "shellCommand": "commitlint --extends=@commitlint/config-conventional --cwd=common/autoinstallers/rush-commitlint --edit=$1"
+      "shellCommand": "commitlint --cwd=common/autoinstallers/rush-commitlint --config commitlint.config.js --edit=$1"
     },
     {
       "name": "lint",

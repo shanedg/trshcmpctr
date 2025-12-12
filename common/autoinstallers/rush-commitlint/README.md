@@ -39,7 +39,7 @@ Commit the changes:
 
 ```sh
 git add package.json pnpm-lock.yaml
-git commit -m 'build(deps): update rush-commitlint autoinstaller'
+git commit -m 'build(rush-commitlint): update autoinstaller'
 ```
 
 [@commitlint/cli]: https://www.npmjs.com/package/@commitlint/cli
