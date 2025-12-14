@@ -20,7 +20,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "",
-    "lint:md": "markdownlint-cli2 --config .markdownlint-cli2.jsonc"
+    "lint:md": "markdownlint-cli2 --config .markdownlint-cli2.jsonc",
+    "test": ""
   },
   "devDependencies": {
     "markdownlint-cli2": "~0.19.0"

@@ -48,9 +48,7 @@
       "name": "test",
       "summary": "Test all projects",
       "commandKind": "bulk",
-      "enableParallelism": true,
-      "ignoreMissingScript": true,
-      "allowWarningsInSuccessfulBuild": true
+      "enableParallelism": true
     },
     {
       "name": "test:cypress",
