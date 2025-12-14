@@ -8,8 +8,6 @@ Notes specifically for repository maintainers
 * upload cypress screenshots, videos, and/or
 rush *.log artifacts to github build artifacts for debugging
 * auth fails on first couple renders, refresh resolves
-* upgrade to eslint v9
-  * upgrade eslint-plugin-ava to latest major
 * docs: updating/upgrading node
 * lint js/md on precommit?
 * esm-ify more packages
@@ -105,29 +103,8 @@ Packages excluded via the [--reject] option:
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
 * `cypress` excluded because version bumps also require updates outside package.json
-* `eslint` is excluded because some plugins are not compatible with v9
-* `eslint-plugin-ava` is excluded until we can upgrade to eslint v9
-* `eslint-plugin-cypress` is excluded until we can upgrade to eslint v9
-* `eslint-webpack-plugin` excluded because not ready to upgrade to eslint v9
 * `jest` excluded because breaking changes
 * `jest-environment-jsdom` excluded because not ready to upgrade jest
-
-Blockers for Eslint v9:
-
-* `eslint-plugin-import` <https://github.com/import-js/eslint-plugin-import/issues/2948>
-  * still no: <https://github.com/import-js/eslint-plugin-import/blob/18787d3e6966028983af81a878d1a505893932d4/package.json#L109>
-  * interesting idea that this plugin should be replaced by a purpose-built tool;
-  eslint is not really intended to support the api that this plugin uses
-* `eslint-plugin-jest`
-  * should be resolved by <https://github.com/jest-community/eslint-plugin-jest/pull/1547>
-* `eslint-plugin-jsx-a11y`
-  * should be resolved by <https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/pull/1009>
-* `eslint-plugin-react-hooks`
-  * should be resolved by <https://github.com/facebook/react/pull/28773>
-* `eslint-plugin-testing-library`
-  * no resolution yet, only some discussion in issues
-* `@typescript-eslint/utils`
-  * should be resolved by <https://github.com/typescript-eslint/typescript-eslint/pull/9002>
 
 ### Updating pnpm
 
