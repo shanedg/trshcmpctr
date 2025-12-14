@@ -8,12 +8,12 @@ import { JSONFilePreset } from 'lowdb/node';
 import pinoHttp from 'pino-http';
 import store from 'session-file-store';
 
-import manifest from '@trshcmpctr/client' assert { type: 'json' };
+import manifest from '@trshcmpctr/client' with { type: 'json' };
 import { paths } from '@trshcmpctr/client/paths';
 
 import { AuthenticatedAPIRouter } from './authenticated-api/router.js';
 import { AuthenticatedHTMLRouter } from './authenticated-html-router.js';
-import config from './config.json' assert { type: 'json' };
+import config from './config.json' with { type: 'json' };
 import { LoginRouter } from './login-router.js';
 
 // Support overriding redirectUri from environment for cypress testing

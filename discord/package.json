@@ -8,7 +8,7 @@
     "!lib/**/*.ava-test.*"
   ],
   "engines": {
-    "node": "^20.19.5"
+    "node": ">=20.19.5"
   },
   "type": "module",
   "contributors": [
@@ -29,12 +29,12 @@
     "build": "",
     "cy:open": "cypress open --config-file=cypress/cypress.config.js --e2e --browser=chrome",
     "cy:run": "cypress run --config-file=cypress/cypress.config.js",
-    "debug": "DISCORD_LOG_LEVEL=debug node --experimental-fetch --experimental-import-meta-resolve --trace-warnings --inspect-brk lib/server.js",
-    "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --experimental-fetch --experimental-import-meta-resolve --inspect lib/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
-    "lint": "eslint --report-unused-disable-directives --max-warnings=0 .",
+    "debug": "DISCORD_LOG_LEVEL=debug node --trace-warnings --inspect-brk lib/server.js",
+    "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --inspect lib/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
+    "lint": "eslint --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
-    "start": "NODE_ENV=production node --experimental-fetch --experimental-import-meta-resolve lib/server.js",
-    "start:test": "NODE_ENV=production node --experimental-fetch --experimental-import-meta-resolve lib/server.js http://localhost:53134/auth",
+    "start": "NODE_ENV=production node lib/server.js",
+    "start:test": "NODE_ENV=production node lib/server.js http://localhost:53134/auth",
     "test": "ava",
     "test:cypress": "start-server-and-test start:test http://localhost:53134 cy:run",
     "test:debug": "ava debug --break"
@@ -45,21 +45,18 @@
   },
   "devDependencies": {
     "@babel/core": "~7.28.5",
-    "@babel/eslint-parser": "~7.28.5",
-    "@babel/plugin-syntax-import-assertions": "~7.27.1",
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@types/express": "~5.0.0",
-    "@typescript-eslint/parser": "~8.46.4",
     "ava": "~6.4.1",
     "cypress": "13.17.0",
-    "eslint-plugin-ava": "~14.0.0",
-    "eslint-plugin-cypress": "~3.6.0",
+    "eslint-plugin-ava": "~15.1.0",
+    "eslint-plugin-cypress": "~5.2.0",
     "eslint-plugin-eslint-comments": "~3.2.0",
-    "eslint-plugin-import": "~2.32.0",
     "eslint-plugin-jest": "~29.1.0",
-    "eslint-plugin-node": "~11.1.0",
-    "eslint": "~8.57.0",
+    "eslint-plugin-n": "~17.23.1",
+    "eslint": "~9.39.1",
+    "globals": "~16.5.0",
     "markdownlint-cli2": "~0.19.0",
     "nodemon": "~3.1.0",
     "pino-pretty": "~13.1.2",
