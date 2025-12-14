@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 
 import { LoadingContent } from './LoadingContent';
 import { useHasTimePassed } from '../hooks/use-has-time-passed';

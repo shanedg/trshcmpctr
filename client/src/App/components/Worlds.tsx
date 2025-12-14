@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { Link, Outlet } from 'react-router';
 
 import { LogoutLink } from './LogoutLink';

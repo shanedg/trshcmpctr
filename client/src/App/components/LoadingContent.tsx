@@ -1,6 +1,6 @@
-import React, { type PropsWithChildren } from 'react';
-
 import { useHasTimePassed } from '../hooks/use-has-time-passed';
+
+import type { PropsWithChildren } from 'react';
 
 /**
  * Default loading message

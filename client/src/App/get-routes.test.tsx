@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { transformRoutesForBrowserRouter } from './get-routes';
 
 describe('transformRoutes', () => {

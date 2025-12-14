@@ -1,5 +1,4 @@
 import { type APIGuildMember } from 'discord-api-types/v10';
-import React from 'react';
 import { Link } from 'react-router';
 
 import { ErrorCard } from './ErrorCard';

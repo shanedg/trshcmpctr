@@ -17,6 +17,7 @@ module.exports = defineConfig([
   {
     extends: [
       eslintReact.configs.flat.recommended,
+      eslintReact.configs.flat['jsx-runtime'],
       eslintReactHooks.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
     ],
