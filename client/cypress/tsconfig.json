@@ -16,5 +16,11 @@
       "node",
       "cypress"
     ]
-  }
+  },
+
+  "include": [
+    "./cypress.config.ts",
+    "e2e",
+    "support"
+  ]
 }

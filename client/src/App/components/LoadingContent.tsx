@@ -25,9 +25,7 @@ export const LoadingContent = ({ children, duration = 600 }: LoadingContentProps
   const showLoading = useHasTimePassed(duration);
   
   if (showLoading) {
-    return children ?
-      children :
-      <GenericLoadingMessage />;
+    return children ?? <GenericLoadingMessage />;
   }
 
   return <></>;

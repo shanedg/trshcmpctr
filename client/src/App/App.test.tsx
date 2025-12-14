@@ -11,7 +11,10 @@ describe('App', () => {
   it('renders a heading', async () => {
     render(<App />);
     await waitFor(
-      () => expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('trshcmpctr')
+      () => {
+        expect(screen.getByRole('heading', { level: 1 }))
+          .toHaveTextContent('trshcmpctr');
+      }
     );
   });
 });

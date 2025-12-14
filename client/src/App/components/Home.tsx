@@ -12,7 +12,7 @@ import { useLatestRequest } from '../hooks/use-latest-request';
 const getWelcomeMessage = (guildUser: APIGuildMember) => {
   const welcome = 'welcome to the trash compactor';
 
-  if (guildUser?.user?.username) {
+  if (guildUser.user.username) {
     return `${welcome}, ${guildUser.user.username}`;
   }
 

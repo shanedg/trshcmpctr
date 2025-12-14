@@ -22,7 +22,7 @@ describe('useHasTimePassed', () => {
     const { result } = renderHook(useHasTimePassed);
     expect(result.current).toBe(false);
 
-    act(() => jest.runAllTimers());
+    act(() => { jest.runAllTimers(); });
     expect(result.current).toBe(true);
   });
 
@@ -30,7 +30,7 @@ describe('useHasTimePassed', () => {
     const { result } = renderHook(() => useHasTimePassed(5000));
     expect(result.current).toBe(false);
 
-    act(() => jest.runAllTimers());
+    act(() => { jest.runAllTimers(); });
     expect(result.current).toBe(true);
   });
 
@@ -38,13 +38,13 @@ describe('useHasTimePassed', () => {
     const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout');
 
     const { result, unmount } = renderHook(useHasTimePassed);
-    act(() => jest.advanceTimersByTime(shortDelay));
+    act(() => { jest.advanceTimersByTime(shortDelay); });
 
     expect(result.current).toBe(false);
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(0);
 
     unmount();
-    act(() => jest.runAllTimers());
+    act(() => { jest.runAllTimers(); });
 
     expect(result.current).toBe(false);
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
@@ -63,18 +63,26 @@ describe('useHasTimePassed', () => {
     const setTimeoutSpy = jest.spyOn(global, 'setTimeout');
 
     const { rerender, result } = renderHook(useHasTimePassed);
-    act(() => hasElapsed ?
-      jest.runAllTimers() :
-      jest.advanceTimersByTime(shortDelay));
+    act(() => {
+      if (hasElapsed) {
+        jest.runAllTimers();
+      } else {
+        jest.advanceTimersByTime(shortDelay);
+      }
+    });
 
     expect(result.current).toBe(hasElapsed);
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(0);
     expect(setTimeoutSpy).toHaveBeenCalledTimes(1);
 
     rerender();
-    act(() => hasElapsed ?
-      jest.runAllTimers() :
-      jest.advanceTimersByTime(shortDelay));
+    act(() => {
+      if (hasElapsed) {
+        jest.runAllTimers();
+      } else {
+        jest.advanceTimersByTime(shortDelay);
+      }
+    });
 
     expect(result.current).toBe(hasElapsed);
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(0);
