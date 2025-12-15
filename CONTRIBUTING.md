@@ -93,7 +93,7 @@ Use a custom rush command[^1] (see [command-line.json]) that calls
 rush update-major
 rush update
 git add -A
-git commit -m 'build(deps): rush update-major'
+git commit -m 'build: rush update-major'
 ```
 
 Packages excluded via the [--reject] option:

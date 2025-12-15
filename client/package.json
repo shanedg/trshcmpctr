@@ -69,7 +69,7 @@
     "@types/react-dom": "~19.2.3",
     "@types/react": "~19.2.5",
     "babel-jest": "~30.2.0",
-    "babel-loader": "~9.2.1",
+    "babel-loader": "~10.0.0",
     "babel-plugin-syntax-dynamic-import": "~6.18.0",
     "css-loader": "~7.1.1",
     "cypress": "13.17.0",
