@@ -104,7 +104,6 @@ Packages excluded via the [--reject] option:
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
-* `babel-loader` excluded because breaking changes
 * `cypress` excluded because version bumps also require updates outside package.json
 * `eslint` is excluded because some plugins are not compatible with v9
 * `eslint-plugin-ava` is excluded until we can upgrade to eslint v9
