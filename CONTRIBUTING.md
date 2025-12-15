@@ -81,7 +81,7 @@ Use a custom rush command[^1] (see [command-line.json]) that calls
 rush update-minor
 rush update
 git add -A
-git commit -m 'build(deps): rush update-minor'
+git commit -m 'build: rush update-minor'
 ```
 
 #### 3. Major Upgrades
