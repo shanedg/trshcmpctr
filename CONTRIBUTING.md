@@ -69,7 +69,7 @@ updates.
 ```sh
 rush update --full
 git add common/rush/pnpm-lock.yaml common/rush/repo-state.json
-git commit -m 'build(deps): rush update --full'
+git commit -m 'build: rush update --full'
 ```
 
 #### 2. Minor Updates
@@ -81,7 +81,7 @@ Use a custom rush command[^1] (see [command-line.json]) that calls
 rush update-minor
 rush update
 git add -A
-git commit -m 'build(deps): rush update-minor'
+git commit -m 'build: rush update-minor'
 ```
 
 #### 3. Major Upgrades
@@ -93,7 +93,7 @@ Use a custom rush command[^1] (see [command-line.json]) that calls
 rush update-major
 rush update
 git add -A
-git commit -m 'build(deps): rush update-major'
+git commit -m 'build: rush update-major'
 ```
 
 Packages excluded via the [--reject] option:
