@@ -14,12 +14,6 @@ rules around line length can be frustrating to satisfy for little benefit.
 }
 ```
 
-## Installation
-
-```sh
-npm install --dev markdownlint-cli2 @trshcmpctr/markdownlint-config
-```
-
 ## Usage
 
 The purpose of this config is just to avoid repeating the above in a
