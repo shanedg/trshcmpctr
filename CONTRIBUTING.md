@@ -69,7 +69,7 @@ updates.
 ```sh
 rush update --full
 git add common/rush/pnpm-lock.yaml common/rush/repo-state.json
-git commit -m 'build(deps): rush update --full'
+git commit -m 'build: rush update --full'
 ```
 
 #### 2. Minor Updates
