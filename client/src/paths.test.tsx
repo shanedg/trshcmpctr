@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getPaths } from './paths';
 
 describe('getPaths', () => {

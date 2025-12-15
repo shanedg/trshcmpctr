@@ -4,7 +4,7 @@ import {
   S3Client,
 } from '@aws-sdk/client-s3';
 
-import config from './config.json' assert { type: 'json' };
+import config from './config.json' with { type: 'json' };
 
 const {
   accessKeyId,

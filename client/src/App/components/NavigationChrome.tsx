@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 
 import { getBreadcrumbs } from './get-breadcrumbs';
@@ -12,8 +11,8 @@ export function NavigationChrome() {
       {breadcrumbs.length ? (
         <nav>
           {breadcrumbs.map((path, index) => (
-            <span key={`${index}-${path}`}>
-              <Link to={path} key={`${index}-${path}`}>{path}</Link>
+            <span key={`${String(index)}-${path}`}>
+              <Link to={path} key={`${String(index)}-${path}`}>{path}</Link>
               {index < breadcrumbs.length - 1 && (
                 <span> - </span>
               )}

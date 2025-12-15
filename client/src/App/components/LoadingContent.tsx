@@ -1,6 +1,6 @@
-import React, { type PropsWithChildren } from 'react';
-
 import { useHasTimePassed } from '../hooks/use-has-time-passed';
+
+import type { PropsWithChildren } from 'react';
 
 /**
  * Default loading message
@@ -25,9 +25,7 @@ export const LoadingContent = ({ children, duration = 600 }: LoadingContentProps
   const showLoading = useHasTimePassed(duration);
   
   if (showLoading) {
-    return children ?
-      children :
-      <GenericLoadingMessage />;
+    return children ?? <GenericLoadingMessage />;
   }
 
   return <></>;

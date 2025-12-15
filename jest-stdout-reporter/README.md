@@ -17,15 +17,6 @@ Original solution (not mine) found in this [Microsoft/fluentui script](https://g
 Another option available in [jest-standard-reporter](https://github.com/chrisgalvan/jest-standard-reporter).
 Other interesting reporters: [jest-community/awesome-jest#reporters](https://github.com/jest-community/awesome-jest/blob/main/README.md#reporters)
 
-## Installation
-
-```sh
-npm install @trshcmpctr/jest-stdout-reporter --save-dev
-
-# Or in a Rush package:
-# rush add -p @trshcmpctr/jest-stdout-reporter --dev
-```
-
 ## Usage
 
 ```sh

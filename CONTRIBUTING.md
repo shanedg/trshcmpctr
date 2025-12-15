@@ -8,8 +8,6 @@ Notes specifically for repository maintainers
 * upload cypress screenshots, videos, and/or
 rush *.log artifacts to github build artifacts for debugging
 * auth fails on first couple renders, refresh resolves
-* upgrade to eslint v9
-  * upgrade eslint-plugin-ava to latest major
 * docs: updating/upgrading node
 * lint js/md on precommit?
 * esm-ify more packages
@@ -44,7 +42,14 @@ rush scaffold
 
 ## Keeping Project Dependencies Up to Date
 
-> WARN: Autoinstallers are managed separately, see [rush-commitlint].
+### Autoinstallers
+
+Autoinstallers are managed separately from repo projects, see:
+
+* [rush-commitlint]: lint commit messages before committing
+* [rush-lint-staged]: lint staged files before committing
+
+### Projects
 
 Periodically bump project dependencies for new features and fixes,
 e.g. before starting or after completing new feature development.
@@ -53,7 +58,7 @@ version changes are responsible for any problems.
 Lint code, run tests, and validate affected project behavior at each
 stage:
 
-### 1. Patch Updates
+#### 1. Patch Updates
 
 Use the out of the box rush update feature to bump all packages to the
 latest version available that satisfies current range specifiers.
@@ -67,7 +72,7 @@ git add common/rush/pnpm-lock.yaml common/rush/repo-state.json
 git commit -m 'build(deps): rush update --full'
 ```
 
-### 2. Minor Updates
+#### 2. Minor Updates
 
 Use a custom rush command[^1] (see [command-line.json]) that calls
 [npm-check-updates] to bump all packages to the latest minor version.
@@ -79,7 +84,7 @@ git add -A
 git commit -m 'build(deps): rush update-minor'
 ```
 
-### 3. Major Upgrades
+#### 3. Major Upgrades
 
 Use a custom rush command[^1] (see [command-line.json]) that calls
 [npm-check-updates] to bump all packages to the latest major version.
@@ -97,33 +102,11 @@ Packages excluded via the [--reject] option:
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
-* `babel-loader` excluded because breaking changes
 * `cypress` excluded because version bumps also require updates outside package.json
-* `eslint` is excluded because some plugins are not compatible with v9
-* `eslint-plugin-ava` is excluded until we can upgrade to eslint v9
-* `eslint-plugin-cypress` is excluded until we can upgrade to eslint v9
-* `eslint-webpack-plugin` excluded because not ready to upgrade to eslint v9
 * `jest` excluded because breaking changes
 * `jest-environment-jsdom` excluded because not ready to upgrade jest
 
-Blockers for Eslint v9:
-
-* `eslint-plugin-import` <https://github.com/import-js/eslint-plugin-import/issues/2948>
-  * still no: <https://github.com/import-js/eslint-plugin-import/blob/18787d3e6966028983af81a878d1a505893932d4/package.json#L109>
-  * interesting idea that this plugin should be replaced by a purpose-built tool;
-  eslint is not really intended to support the api that this plugin uses
-* `eslint-plugin-jest`
-  * should be resolved by <https://github.com/jest-community/eslint-plugin-jest/pull/1547>
-* `eslint-plugin-jsx-a11y`
-  * should be resolved by <https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/pull/1009>
-* `eslint-plugin-react-hooks`
-  * should be resolved by <https://github.com/facebook/react/pull/28773>
-* `eslint-plugin-testing-library`
-  * no resolution yet, only some discussion in issues
-* `@typescript-eslint/utils`
-  * should be resolved by <https://github.com/typescript-eslint/typescript-eslint/pull/9002>
-
-## Updating pnpm
+### Updating pnpm
 
 Periodically update the version of [pnpm] used in this repo with the
 `pnpmVersion` field in [rush.json].
@@ -138,7 +121,7 @@ git add rush.json common/config/rush/pnpm-lock.yaml
 git commit -m 'build(deps): update pnpm from x to y'
 ```
 
-## Updating Rush
+### Updating Rush
 
 Periodically update the version of Rush used in this repo with the
 `rushVersion` field in [rush.json].
@@ -168,5 +151,6 @@ git commit -m 'build(deps): update rush from x to y'
 [pnpm]: https://www.npmjs.com/package/pnpm
 [Rush changelog]: https://github.com/microsoft/rushstack/blob/main/apps/rush/CHANGELOG.md
 [rush-commitlint]: ./common/autoinstallers/rush-commitlint/README.md
+[rush-lint-staged]: ./common/autoinstallers/rush-lint-staged/README.md
 [rush.json]: ./rush.json
 [tildes]: https://github.com/npm/node-semver?tab=readme-ov-file#tilde-ranges-123-12-1

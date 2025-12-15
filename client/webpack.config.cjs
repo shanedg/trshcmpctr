@@ -1,6 +1,5 @@
 const { resolve } = require('node:path');
 
-const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
@@ -51,17 +50,6 @@ module.exports = (env = {}, argv = {}) => {
         },
       ],
     },
-
-    plugins: [
-      new ESLintPlugin({
-        emitError: isProduction,
-        emitWarning: !isProduction,
-        extensions: ['.ts', '.tsx'],
-        failOnError: isProduction,
-        lintDirtyModulesOnly: !!argv.watch,
-        reportUnusedDisableDirectives: !isProduction ? 'warn' : null,
-      }),
-    ],
   }, {
     devServer: {
       setupMiddlewares: (middlewares, devServer) => {
@@ -173,16 +161,6 @@ module.exports = (env = {}, argv = {}) => {
     },
 
     plugins: [
-      new ESLintPlugin({
-        cache: true,
-        cacheLocation: 'node_modules/.cache/eslint-cache/',
-        emitError: isProduction,
-        emitWarning: !isProduction,
-        extensions: ['.ts', '.tsx'],
-        failOnError: isProduction,
-        lintDirtyModulesOnly: !!argv.watch,
-        reportUnusedDisableDirectives: !isProduction ? 'warn' : null,
-      }),
       new WebpackManifestPlugin(),
       new HtmlWebpackPlugin({
         template: resolve(__dirname, './src/index.html'),

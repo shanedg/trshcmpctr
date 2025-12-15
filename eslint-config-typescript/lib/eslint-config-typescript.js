@@ -1,40 +1,39 @@
+const { defineConfig } = require('eslint/config');
+const imports = require('eslint-plugin-import');
+const tseslint = require('typescript-eslint');
+
 /**
  * ESLint config for TypeScript in JavaScript projects.
  */
-module.exports = {
-  extends: [
-    // To see what rules are in the recommended set: https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
-    'plugin:@typescript-eslint/recommended',
-    // There is a performance cost for rules applied by recommended-requiring-type-checking.
-    // The folks behind `@typescript-eslint` suggest it's worth it: https://typescript-eslint.io/docs/linting/type-linting/#how-is-performance
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    // For TypeScript compatibility with eslint-plugin-import
-    // Extending this plugin also sets parserOptions.sourceType = 'module'.
-    'plugin:import/typescript',
-  ],
-
-  parser: '@typescript-eslint/parser',
-
-  settings: {
-    // eslint-import-resolver-typescript
-    'import/resolver': {
-      typescript: {
-        project: 'tsconfig.json',
-      }
-    }
-  },
-
-  plugins: ['@typescript-eslint/eslint-plugin'],
-
-  rules: {
-    // Warn on unused variables unless underscore-prefixed arguments.
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-
-    // Turn off rules that TypeScript already enforces as part of type checking.
-    // See https://typescript-eslint.io/docs/linting/troubleshooting/#eslint-plugin-import.
-    'import/default': ['off'],
-    'import/named': ['off'],
-    'import/namespace': ['off'],
-    'import/no-named-as-default-member': ['off'],
+module.exports = defineConfig([
+  {
+    extends: [
+      imports.flatConfigs.typescript,
+      // There is a performance cost for rules applied by recommended-requiring-type-checking.
+      // The folks behind `typescript-eslint` suggest it's worth it: https://typescript-eslint.io/getting-started/typed-linting/#performance
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
+    ],
+    files: [
+      '**/*.ts',
+      '**/*.tsx',
+    ],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    rules: {
+      // Only allow @ts-expect-error directive and require a description
+      '@typescript-eslint/ban-ts-comment': ['error', {
+        minimumDescriptionLength: 5,
+        'ts-check': false,
+        'ts-expect-error': 'allow-with-description',
+        'ts-ignore': false,
+        'ts-nocheck': false,
+      }],
+      // Warn on unused variables unless underscore-prefixed arguments.
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
   }
-};
+]);

@@ -26,7 +26,7 @@ describe('useRequest', () => {
 
     const useSuccessfulRequest = useLatestRequest<string>('/api/v1/success');
     const { result } = renderHook(useSuccessfulRequest);
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(false);
     expect(result.current.data).toBe('data!');
@@ -40,7 +40,7 @@ describe('useRequest', () => {
       baseURL: 'https://www.trshcmpctr.com',
     });
     renderHook(useCustomizableRequest);
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(axios.request).toHaveBeenCalledTimes(1);
     expect(axios.request).toHaveBeenNthCalledWith(1, expect.objectContaining({
@@ -55,7 +55,7 @@ describe('useRequest', () => {
 
     const useFailedRequest = useLatestRequest<string>('/api/v1/failed');
     const { result } = renderHook(useFailedRequest);
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(false);
     expect(result.current.data).toBeNull();
@@ -73,7 +73,7 @@ describe('useRequest', () => {
 
     const useCanceledRequest = useLatestRequest<string>('/api/v1/canceled');
     const { result } = renderHook(useCanceledRequest);
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     // The host component isn't done loading when a stale request is canceled
     expect(result.current.isLoading).toBe(true);
@@ -95,13 +95,13 @@ describe('useRequest', () => {
 
     const usePendingRequest = useLatestRequest<string>('/api/v1/pending');
     const { result } = renderHook(usePendingRequest);
-    await act(async () => await jest.advanceTimersByTimeAsync(mockedRequestTimeout - 1));
+    await act(async () => { await jest.advanceTimersByTimeAsync(mockedRequestTimeout - 1); });
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.data).toBeNull();
     expect(result.current.error).toBeNull();
 
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(false);
     expect(result.current.data).toBe('data!');
@@ -116,7 +116,7 @@ describe('useRequest', () => {
 
     const usePendingRequest = useLatestRequest<string>('/api/v1/pending');
     const { result, unmount } = renderHook(usePendingRequest);
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.data).toBeNull();
@@ -124,7 +124,7 @@ describe('useRequest', () => {
     expect(abortSpy).toHaveBeenCalledTimes(0);
 
     unmount();
-    await act(async () => await jest.runAllTimersAsync());
+    await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.data).toBeNull();

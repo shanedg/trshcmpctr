@@ -1,14 +1,14 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { Link, Outlet } from 'react-router';
 
 import { LogoutLink } from './LogoutLink';
 import { useLatestRequest } from '../hooks/use-latest-request';
 
-export type World = {
+export interface World {
   id: string,
   name: string,
   status: string,
-};
+}
 
 type Worlds = World[];
 
@@ -43,11 +43,11 @@ export const Worlds = () => {
             </tr>
           </thead>
           <tbody>
-            {worlds && worlds.map(({ id, name, status }) => {
+            {worlds?.map(({ id, name, status }) => {
               return (
                 <tr key={`${id}-${name}`}>
                   <td>{id}</td>
-                  <td><Link to={`${id}`}>{name}</Link></td>
+                  <td><Link to={id}>{name}</Link></td>
                   <td>{status}</td>
                 </tr>
               );

@@ -11,10 +11,10 @@ export const useHasTimePassed = (duration = 500) => {
   const timeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
-    timeoutRef.current = setTimeout(() => setHasTimePassed(true), duration);
+    timeoutRef.current = setTimeout(() => { setHasTimePassed(true); }, duration);
 
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
+    return () => { clearTimeout(timeoutRef.current); };
+  }, [duration]);
 
   return hasTimePassed;
 };

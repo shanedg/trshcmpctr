@@ -2,27 +2,22 @@
 
 ESLint config for Jest tests in JavaScript projects.
 
-## Installation
-
-```sh
-npm install eslint-plugin-jest @trshcmpctr/eslint-config-jest --save-dev
-```
-
 ## Usage
 
 This config assumes a base like `@trshcmpctr/eslint-config` is already applied.
-Use overrides to apply config settings to test files only.
 
 ```js
-// .eslintrc.js
-module.exports = {
-  extends: ['@trshcmpctr/eslint-config'],
-  overrides: [
-    {
-      files: ['*.test.js'],
-      extends: ['@trshcmpctr/eslint-config-jest']
-    }
-  ],
-  root: true
-};
+// eslint.config.cjs
+const { defineConfig } = require('eslint/config');
+
+const eslintConfig = require('@trshcmpctr/eslint-config');
+const jestConfig = require('@trshcmpctr/eslint-config-jest');
+
+module.exports = defineConfig([
+  eslintConfig,
+  {
+    extends: [jestConfig],
+    files: ['**/*.test.js'],
+  },
+]);
 ```
