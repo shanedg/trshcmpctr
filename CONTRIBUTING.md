@@ -98,13 +98,10 @@ git commit -m 'build: rush update-major'
 
 Packages excluded via the [--reject] option:
 
-* `@types/jest` excluded because not ready to upgrade jest
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
 * `cypress` excluded because version bumps also require updates outside package.json
-* `jest` excluded because breaking changes
-* `jest-environment-jsdom` excluded because not ready to upgrade jest
 
 ### Updating pnpm
 

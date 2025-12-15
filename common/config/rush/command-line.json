@@ -79,7 +79,7 @@
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/jest,@types/node,cypress,jest,jest-environment-jsdom' \
+        --reject '@types/node,cypress' \
         && \
         node common/scripts/install-run.js npm-check-updates@19.1.2 \
         npm-check-updates \
@@ -88,7 +88,7 @@
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
-        --reject '@types/jest,@types/node,cypress,jest,jest-environment-jsdom'"
+        --reject '@types/node,cypress'"
     },
     {
       "name": "update-minor",
