@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { requireAuthentication } from './require-authentication.js';
 
@@ -10,7 +10,7 @@ import { requireAuthentication } from './require-authentication.js';
  */
 const getRequest = (session = {}) => ({
   log: {
-    debug: sinon.spy(),
+    debug: spy(),
   },
   session: {
     ...session,
@@ -18,8 +18,8 @@ const getRequest = (session = {}) => ({
 });
 
 test('sends 401 if not authenticated', async t => {
-  const nextSpy = sinon.spy();
-  const response = { sendStatus: sinon.spy() };
+  const nextSpy = spy();
+  const response = { sendStatus: spy() };
 
   await requireAuthentication(getRequest(), response, nextSpy);
 
@@ -30,7 +30,7 @@ test('sends 401 if not authenticated', async t => {
 });
 
 test('calls next middleware if authenticated', async t => {
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
   const authenticatedRequest = getRequest({
     oauth: { access_token: 'some-access-token' }
   });

@@ -1,11 +1,11 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { authFromCode } from './auth-from-code.js';
 
 test.before(async t => {
   // Mock fetch resolves
-  t.context.fetch = sinon.spy(url => Promise.resolve({ json: () => 'response from ' + url }));
+  t.context.fetch = spy(url => Promise.resolve({ json: () => 'response from ' + url }));
   await authFromCode(t.context.fetch, {
     code: 'mycode',
     clientId: 'myclientid',

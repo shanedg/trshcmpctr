@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleLaunchNew } from './handle-launch-new.js';
 
@@ -10,15 +10,15 @@ import { handleLaunchNew } from './handle-launch-new.js';
 const getMockResponse = () => {
   return {
     // All mocked methods should return `this` to emulate chaining
-    redirect: sinon.spy(function(_url) { return this; }),
-    status: sinon.spy(function(_statusCode) { return this; }),
+    redirect: spy(function(_url) { return this; }),
+    status: spy(function(_statusCode) { return this; }),
   };
 };
 
 test('redirects to a new world id', async t => {
   const response = getMockResponse();
   const db = { update: _cb => new Promise(resolve => resolve()) };
-  await handleLaunchNew(db, { body: { name: 'some name' }}, response, sinon.spy());
+  await handleLaunchNew(db, { body: { name: 'some name' }}, response, spy());
   const redirectCalls = response.redirect.getCalls();
   const statusCalls = response.status.getCalls();
   t.plan(6);
@@ -32,11 +32,11 @@ test('redirects to a new world id', async t => {
 
 test('inserts a new world in the database', async t => {
   const worlds = [];
-  const update = sinon.spy(cb => new Promise(resolve => {
+  const update = spy(cb => new Promise(resolve => {
     cb({ worlds });
     resolve();
   }));
-  await handleLaunchNew({ update }, { body: { name: 'some name' }}, getMockResponse(), sinon.spy());
+  await handleLaunchNew({ update }, { body: { name: 'some name' }}, getMockResponse(), spy());
   const updateCalls = update.getCalls();
   t.plan(2);
   t.is(updateCalls.length, 1);
@@ -47,7 +47,7 @@ test('inserts a new world in the database', async t => {
 });
 
 test('calls next error handler if unable to update db', async t => {
-  const next = sinon.spy();
+  const next = spy();
   const response = getMockResponse();
   const update = _cb => { throw new Error('problem updating db!'); };
   await handleLaunchNew({ update }, { body: { name: 'asdf' }}, response, next);

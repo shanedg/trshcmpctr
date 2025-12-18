@@ -1,10 +1,10 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import  { handleGetWorlds } from './handle-get-worlds.js';
 
 test('sends en empty list if db contains no entry for worlds', t => {
-  const send = sinon.spy();
+  const send = spy();
   handleGetWorlds({ data: { worlds: null }}, null, { send });
   const sendCalls = send.getCalls();
   t.plan(2);
@@ -13,7 +13,7 @@ test('sends en empty list if db contains no entry for worlds', t => {
 });
 
 test('sends the list of worlds', t => {
-  const send = sinon.spy();
+  const send = spy();
   handleGetWorlds({ data: { worlds: [1, 2, 3] }}, null, { send });
   const sendCalls = send.getCalls();
   t.plan(2);

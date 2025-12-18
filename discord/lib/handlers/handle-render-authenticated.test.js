@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleRenderAuthenticated } from './handle-render-authenticated.js';
 
@@ -10,8 +10,8 @@ import { handleRenderAuthenticated } from './handle-render-authenticated.js';
  */
 const getRequest = (session = {}) => ({
   log: {
-    debug: sinon.spy(),
-    error: sinon.spy(),
+    debug: spy(),
+    error: spy(),
   },
   session: {
     ...session,
@@ -19,7 +19,7 @@ const getRequest = (session = {}) => ({
 });
 
 test('renders the authenticated view', async t => {
-  const render = sinon.spy(() => Promise.resolve());
+  const render = spy(() => Promise.resolve());
   const authenticatedRequest = getRequest({
     oauth: {
       access_token: 'some-access-token',
@@ -33,7 +33,7 @@ test('renders the authenticated view', async t => {
     'index.html',
     authenticatedRequest,
     { render: render },
-    sinon.spy()
+    spy()
   );
 
   const renderCalls = render.getCalls();
@@ -43,7 +43,7 @@ test('renders the authenticated view', async t => {
 });
 
 test('calls next middleware if missing authentication', async t => {
-  const next = sinon.spy();
+  const next = spy();
   const requestMissingAuthentication = getRequest({
     state: 'some-encoded-state'
   });

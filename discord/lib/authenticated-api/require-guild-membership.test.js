@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { requireGuildMembership } from './require-guild-membership.js';
 
@@ -10,8 +10,8 @@ import { requireGuildMembership } from './require-guild-membership.js';
  */
 const getRequest = (session = {}) => ({
   log: {
-    debug: sinon.spy(),
-    error: sinon.spy(),
+    debug: spy(),
+    error: spy(),
   },
   session: {
     oauth: { /* needs to be truthy to be authenticated */ },
@@ -20,9 +20,9 @@ const getRequest = (session = {}) => ({
 });
 
 test('allows an authorized session to continue', async t => {
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
-  await requireGuildMembership(sinon.spy(), 'some-guild-id', getRequest({ authorized: true }), {}, nextSpy);
+  await requireGuildMembership(spy(), 'some-guild-id', getRequest({ authorized: true }), {}, nextSpy);
 
   const nextCalls = nextSpy.getCalls();
   t.plan(2);
@@ -31,9 +31,9 @@ test('allows an authorized session to continue', async t => {
 });
 
 test('sends status 403 for an unauthorized session', async t => {
-  const response = { sendStatus: sinon.spy() };
+  const response = { sendStatus: spy() };
 
-  await requireGuildMembership(sinon.spy(), 'some-guild-id', getRequest({ authorized: false }), response, sinon.spy());
+  await requireGuildMembership(spy(), 'some-guild-id', getRequest({ authorized: false }), response, spy());
 
   const sendStatusCalls = response.sendStatus.getCalls();
   t.plan(3);
@@ -44,7 +44,7 @@ test('sends status 403 for an unauthorized session', async t => {
 
 test('fetches authorized guild membership data for a new session', async t => {
   const request = getRequest();
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
   await requireGuildMembership(
     () => Promise.resolve({
@@ -66,7 +66,7 @@ test('fetches authorized guild membership data for a new session', async t => {
 
 test('fetches unauthorized guild membership data for a new session', async t => {
   const request = getRequest();
-  const response = { sendStatus: sinon.spy() };
+  const response = { sendStatus: spy() };
 
   await requireGuildMembership(
     () => Promise.resolve({
@@ -75,7 +75,7 @@ test('fetches unauthorized guild membership data for a new session', async t => 
     'some-guild-id',
     request,
     response,
-    sinon.spy()
+    spy()
   );
 
   const sendStatusCalls = response.sendStatus.getCalls();
@@ -88,7 +88,7 @@ test('fetches unauthorized guild membership data for a new session', async t => 
 });
 
 test('calls next error handler if unable to fetch guild membership data for a new session', async t => {
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
   await requireGuildMembership(() => Promise.reject('some-fetch-error'), 'some-guild-id', getRequest(), {}, nextSpy);
 

@@ -1,12 +1,12 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleGetGuildMembership } from './handle-get-guild-membership.js';
 
 test('sends guild membership data', t => {
-  const request = { send: sinon.spy() };
+  const request = { send: spy() };
   const response = {
-    log: { debug: sinon.spy() },
+    log: { debug: spy() },
     session: {
       guildMembershipData: { user: 'data' },
     },

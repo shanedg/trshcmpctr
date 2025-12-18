@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleAuthorizationCodeGrant } from './handle-authorization-code-grant.js';
 
@@ -29,8 +29,8 @@ const authorizationConfig = {
  */
 const getRequest = (query = {}, session = {}) => ({
   log: {
-    debug: sinon.spy(),
-    error: sinon.spy(),
+    debug: spy(),
+    error: spy(),
   },
   query: {
     code: 'abc456',
@@ -38,8 +38,8 @@ const getRequest = (query = {}, session = {}) => ({
     ...query
   },
   session: {
-    regenerate: sinon.spy(callback => callback()),
-    save: sinon.spy(callback => callback()),
+    regenerate: spy(callback => callback()),
+    save: spy(callback => callback()),
     ...session
   },
 });
@@ -54,7 +54,7 @@ test('adds oauth result and expiry time to session if auth succeeds', async t =>
     authorizationConfig,
     request,
     {},
-    sinon.spy()
+    spy()
   );
   t.plan(2);
   t.deepEqual(request.session.oauth, {
@@ -66,9 +66,9 @@ test('adds oauth result and expiry time to session if auth succeeds', async t =>
 });
 
 test('expects a code query param and calls error middleware if none present', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
-    sinon.spy(),
+    spy(),
     {},
     getRequest({ code: undefined, state: undefined }),
     {},
@@ -81,8 +81,8 @@ test('expects a code query param and calls error middleware if none present', as
 });
 
 test('expects a state query param and calls error middleware if none present', async t => {
-  const next = sinon.spy();
-  await handleAuthorizationCodeGrant(sinon.spy(), {}, getRequest({ state: undefined }), {}, next);
+  const next = spy();
+  await handleAuthorizationCodeGrant(spy(), {}, getRequest({ state: undefined }), {}, next);
   const nextCalls = next.getCalls();
   t.plan(2);
   t.is(nextCalls.length, 1);
@@ -90,9 +90,9 @@ test('expects a state query param and calls error middleware if none present', a
 });
 
 test('calls error middleware if possible clickjacking attempt detected', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
-    sinon.spy(),
+    spy(),
     authorizationConfig,
     getRequest(
       { state: encodeURIComponent('a-different-nonce') },
@@ -109,7 +109,7 @@ session state: some-nonce does not match oauth query: a-different-nonce`));
 });
 
 test('calls error middleware with caught fetch errors', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
     () => { throw new Error('some-error-in-fetch'); },
     {},
@@ -128,7 +128,7 @@ test('calls error middleware with caught fetch errors', async t => {
 });
 
 test('calls error middleware with caught fetch rejections', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
     () => Promise.reject('async-auth-request-error'),
     {},
@@ -147,14 +147,14 @@ test('calls error middleware with caught fetch rejections', async t => {
 });
 
 test('calls error middleware if unable to create new session', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
     successfulFetch,
     authorizationConfig,
     getRequest(
       {},
       {
-        regenerate: sinon.spy(callback => callback(new Error('unable-to-regenerate'))),
+        regenerate: spy(callback => callback(new Error('unable-to-regenerate'))),
         state: 'some-nonce',
       }
     ),
@@ -169,14 +169,14 @@ test('calls error middleware if unable to create new session', async t => {
 });
 
 test('calls error middleware if unable to save session', async t => {
-  const next = sinon.spy();
+  const next = spy();
   await handleAuthorizationCodeGrant(
     successfulFetch,
     authorizationConfig,
     getRequest(
       {},
       {
-        save: sinon.spy(callback => callback(new Error('unable-to-save'))),
+        save: spy(callback => callback(new Error('unable-to-save'))),
         state: 'some-nonce',
       }
     ),
