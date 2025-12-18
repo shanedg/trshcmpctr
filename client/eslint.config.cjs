@@ -42,6 +42,10 @@ module.exports = defineConfig([
       globals: globals.browser,
     },
     name: 'All browser files',
+    rules: {
+      // Redundant with TS checks
+      'import/no-unresolved': 'off',
+    },
   },
   {
     files: [
