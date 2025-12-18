@@ -10,7 +10,7 @@ This config assumes a base like `@trshcmpctr/eslint-config` is already applied.
 // eslint.config.cjs
 const { defineConfig } = require('eslint/config');
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+const eslintConfig = require('@trshcmpctr/eslint-config').default;
 const reactConfig = require('@trshcmpctr/eslint-config-react');
 
 module.exports = defineConfig([

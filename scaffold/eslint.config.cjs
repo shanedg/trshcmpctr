@@ -1,7 +1,7 @@
 const { defineConfig } = require('eslint/config');
 const node = require('eslint-plugin-n');
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+const eslintConfig = require('@trshcmpctr/eslint-config').default;
 
 module.exports = defineConfig([
   eslintConfig,

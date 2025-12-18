@@ -4,7 +4,7 @@ const node = require('eslint-plugin-n');
 const testingLibraryPlugin = require('eslint-plugin-testing-library');
 const globals = require('globals');
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+const eslintConfig = require('@trshcmpctr/eslint-config').default;
 const jestConfig = require('@trshcmpctr/eslint-config-jest');
 const reactConfig = require('@trshcmpctr/eslint-config-react');
 const tsConfig = require('@trshcmpctr/eslint-config-typescript');
@@ -37,6 +37,7 @@ module.exports = defineConfig([
       'src/**/*.tsx',
     ],
     languageOptions: {
+      // Browser code is transpiled by babel so it's ok to use the latest features
       ecmaVersion: 'latest',
       globals: globals.browser,
     },

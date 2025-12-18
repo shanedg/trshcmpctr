@@ -8,13 +8,26 @@ linting untranspiled, untransformed JavaScript files like those in your project 
 
 ## Usage
 
+### CommonJS
+
 ```js
-// eslint.config.cjs
 const { defineConfig } = require('eslint/config');
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+const eslintConfig = require('@trshcmpctr/eslint-config').default;
 
 module.exports = defineConfig([
+  eslintConfig,
+]);
+```
+
+### ESM
+
+```js
+import { defineConfig } from 'eslint/config';
+
+import eslintConfig from '@trshcmpctr/eslint-config';
+
+export default defineConfig([
   eslintConfig,
 ]);
 ```

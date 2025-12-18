@@ -13,7 +13,7 @@ The folks behind `typescript-eslint` suggest it's worth it: <https://typescript-
 // eslint.config.cjs
 const { defineConfig } = require('eslint/config');
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+const eslintConfig = require('@trshcmpctr/eslint-config').default;
 const tsEslintConfig = require('@trshcmpctr/eslint-config-typescript');
 
 module.exports = defineConfig([
