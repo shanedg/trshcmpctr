@@ -1,0 +1,32 @@
+import { defineConfig } from 'eslint/config';
+import node from 'eslint-plugin-n';
+
+import eslintConfig from '@trshcmpctr/eslint-config';
+
+const { configs: nodeConfigs } = node;
+
+/**
+ * eslint-plugin-import default resolver does not support subpath exports but
+ * import/no-unresolved can still report whether ignored modules are _located_,
+ * even when they can't be parsed for exports
+ */
+const patternsToIgnoreResolution = [
+  'eslint/config',
+];
+
+export default defineConfig([
+  nodeConfigs['flat/recommended-module'],
+  {
+    extends: [eslintConfig],
+    name: 'Recommended All',
+    rules: {
+      // Default node resolution requires extensions for relative imports
+      'import/extensions': ['error', 'ignorePackages'],
+      'import/no-unresolved': ['error', {
+        ignore: [
+          ...patternsToIgnoreResolution,
+        ],
+      }],
+    },
+  },
+]);

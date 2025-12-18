@@ -1,32 +1,35 @@
 {
   "name": "@{{scope}}/{{name}}",
   "version": "1.0.0",
+  "private": true,
   "description": "{{name}}",
-  "main": "lib/index.js",
-  "files": ["lib"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "engines": {
+    "node": ">=20.19.5"
+  },
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/{{path}}#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "{{path}}"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/{{path}}#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "type": "module",
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc"
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "test": ""
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
+    "eslint-plugin-n": "~17.23.1",
     "markdownlint-cli2": "~0.20.0"
   }
 }
