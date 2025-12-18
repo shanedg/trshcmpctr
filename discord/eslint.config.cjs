@@ -1,5 +1,3 @@
-const { resolve } = require('node:path');
-
 const { defineConfig } = require('eslint/config');
 const avaConfig = require('eslint-plugin-ava');
 const cypressConfig = require('eslint-plugin-cypress');
@@ -7,6 +5,18 @@ const node = require('eslint-plugin-n');
 const globals = require('globals');
 
 const eslintConfig = require('@trshcmpctr/eslint-config').default;
+
+/**
+ * eslint-plugin-import default resolver does not support subpath exports but
+ * import/no-unresolved can still report whether ignored modules are _located_,
+ * even when they can't be parsed for exports
+ */
+const patternsToIgnoreResolution = [
+  '@trshcmpctr/client/paths',
+  'ava',
+  'eslint/config',
+  'lowdb/node',
+];
 
 module.exports = defineConfig([
   eslintConfig,
@@ -30,6 +40,11 @@ module.exports = defineConfig([
     },
     name: 'Node src',
     rules: {
+      'import/no-unresolved': ['error', {
+        ignore: [
+          ...patternsToIgnoreResolution,
+        ],
+      }],
       'n/no-unsupported-features/node-builtins': ['error', {
         ignores: [
           // Support experimental fetch until stable in Node >=21:
@@ -37,20 +52,7 @@ module.exports = defineConfig([
           'fetch',
         ],
       }],
-    },
-    settings: {
-      'import/resolver': {
-        // Default resolver for eslint-plugin-import doesn't support package.json#exports
-        // https://github.com/import-js/eslint-plugin-import/issues/1810
-        // but we need that support for at least ava (https://www.npmjs.com/package/ava).
-        // We can use a custom resolver built on the resolve.exports package:
-        // https://github.com/lukeed/resolve.exports
-        // This solution is lifted with modifications from this gist:
-        // https://gist.github.com/danielweck/cd63af8e9a8b3492abacc312af9f28fd
-        // We can remove this if eslint-plugin-import resolves the above issue.
-        // See https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#resolvers.
-        [resolve('./eslint-plugin-import-resolver.cjs')]: {},
-      },
+      
     },
   },
   {

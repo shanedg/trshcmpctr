@@ -1,30 +1,27 @@
 {
   "name": "@trshcmpctr/discord",
   "version": "1.0.0",
+  "private": true,
   "description": "discord",
-  "files": [
-    "lib",
-    "!lib/**/*.test.*",
-    "!lib/**/*.ava-test.*"
-  ],
-  "engines": {
-    "node": ">=20.19.5"
-  },
-  "type": "module",
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/discord#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "discord"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/discord#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "contributors": [
+    {
+      "name": "Shane Garrity",
+      "email": "shanedgarrity@gmail.com"
+    }
+  ],
+  "type": "module",
+  "files": [
+    "lib",
+    "!lib/**/*.test.*",
+    "!lib/**/*.ava-test.*"
+  ],
   "scripts": {
     "build": "",
     "cy:open": "cypress open --config-file=cypress/cypress.config.js --e2e --browser=chrome",
@@ -41,7 +38,18 @@
   },
   "ava": {
     "cache": false,
-    "files": ["**/*.test.*"]
+    "files": [
+      "**/*.test.*"
+    ]
+  },
+  "dependencies": {
+    "@trshcmpctr/client": "workspace:*",
+    "express": "~5.2.1",
+    "express-session": "~1.18.0",
+    "hbs": "~4.2.0",
+    "lowdb": "~7.0.1",
+    "pino-http": "~11.0.0",
+    "session-file-store": "~1.5.0"
   },
   "devDependencies": {
     "@babel/core": "~7.28.5",
@@ -50,28 +58,21 @@
     "@types/express": "~5.0.0",
     "ava": "~6.4.1",
     "cypress": "13.17.0",
+    "eslint": "~9.39.1",
     "eslint-plugin-ava": "~15.1.0",
     "eslint-plugin-cypress": "~5.2.0",
     "eslint-plugin-eslint-comments": "~3.2.0",
     "eslint-plugin-jest": "~29.5.0",
     "eslint-plugin-n": "~17.23.1",
-    "eslint": "~9.39.1",
     "globals": "~16.5.0",
     "markdownlint-cli2": "~0.20.0",
     "nodemon": "~3.1.0",
     "pino-pretty": "~13.1.2",
-    "resolve.exports": "~2.0.2",
     "sinon": "~21.0.0",
     "start-server-and-test": "~2.1.2",
     "typescript": "~5.9.3"
   },
-  "dependencies": {
-    "@trshcmpctr/client": "workspace:*",
-    "express-session": "~1.18.0",
-    "express": "~5.2.1",
-    "hbs": "~4.2.0",
-    "lowdb": "~7.0.1",
-    "pino-http": "~11.0.0",
-    "session-file-store": "~1.5.0"
+  "engines": {
+    "node": ">=20.19.5"
   }
 }
