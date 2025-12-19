@@ -10,12 +10,6 @@
     "directory": "discord"
   },
   "license": "UNLICENSED",
-  "contributors": [
-    {
-      "name": "Shane Garrity",
-      "email": "shanedgarrity@gmail.com"
-    }
-  ],
   "type": "module",
   "files": [
     "lib",
