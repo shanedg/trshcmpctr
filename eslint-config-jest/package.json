@@ -1,23 +1,21 @@
 {
   "name": "@trshcmpctr/eslint-config-jest",
   "version": "1.0.0",
+  "private": true,
   "description": "ESLint config for Jest tests in JavaScript projects.",
-  "main": "lib/eslint-config-jest.js",
-  "files": ["lib/eslint-config-jest.js"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-jest#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "eslint-config-jest"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-jest#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/eslint-config-jest.js",
+  "main": "./lib/eslint-config-jest.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
@@ -25,10 +23,10 @@
     "test": ""
   },
   "dependencies": {
+    "@trshcmpctr/eslint-config": "workspace:*",
     "eslint": "~9.39.1",
     "eslint-plugin-jest": "~29.5.0",
-    "globals": "~16.5.0",
-    "@trshcmpctr/eslint-config": "workspace:*"
+    "globals": "~16.5.0"
   },
   "devDependencies": {
     "@trshcmpctr/markdownlint-config": "workspace:*",

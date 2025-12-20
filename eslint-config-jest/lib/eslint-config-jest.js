@@ -1,18 +1,16 @@
-const { defineConfig } = require('eslint/config');
-const eslintJest = require('eslint-plugin-jest');
-const globals = require('globals');
+import { defineConfig } from 'eslint/config';
+import eslintJest from 'eslint-plugin-jest';
+import globals from 'globals';
 
 /**
  * ESLint config for Jest tests in JavaScript projects.
  */
-module.exports = defineConfig([
+export default defineConfig([
   {
     extends: [eslintJest.configs['flat/recommended']],
     files: [
-      '**/*.test.cjs',
       '**/*.test.js',
       '**/*.test.jsx',
-      '**/*.test.mjs',
       '**/*.test.ts',
       '**/*.test.tsx',
     ],
@@ -30,7 +28,6 @@ module.exports = defineConfig([
         ...globals.node,
         ...globals.jest,
       },
-      sourceType: 'module',
     },
   },
 ]);

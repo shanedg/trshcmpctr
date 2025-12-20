@@ -5,7 +5,7 @@ const testingLibraryPlugin = require('eslint-plugin-testing-library');
 const globals = require('globals');
 
 const eslintConfig = require('@trshcmpctr/eslint-config').default;
-const jestConfig = require('@trshcmpctr/eslint-config-jest');
+const jestConfig = require('@trshcmpctr/eslint-config-jest').default;
 const reactConfig = require('@trshcmpctr/eslint-config-react');
 const tsConfig = require('@trshcmpctr/eslint-config-typescript');
 
