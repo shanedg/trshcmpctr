@@ -6,7 +6,7 @@ const globals = require('globals');
 
 const eslintConfig = require('@trshcmpctr/eslint-config').default;
 const jestConfig = require('@trshcmpctr/eslint-config-jest').default;
-const reactConfig = require('@trshcmpctr/eslint-config-react');
+const reactConfig = require('@trshcmpctr/eslint-config-react').default;
 const tsConfig = require('@trshcmpctr/eslint-config-typescript');
 
 module.exports = defineConfig([
