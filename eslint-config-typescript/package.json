@@ -1,23 +1,21 @@
 {
   "name": "@trshcmpctr/eslint-config-typescript",
   "version": "1.0.0",
+  "private": true,
   "description": "ESLint config for TypeScript in JavaScript projects.",
-  "main": "lib/eslint-config-typescript.js",
-  "files": ["lib/eslint-config-typescript.js"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-typescript#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "eslint-config-typescript"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-typescript#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/eslint-config-typescript.js",
+  "main": "./lib/eslint-config-typescript.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
@@ -25,8 +23,8 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-import": "~2.32.0",
     "eslint": "~9.39.1",
+    "eslint-plugin-import": "~2.32.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "~8.49.0"
   },
@@ -34,6 +32,7 @@
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint-plugin-n": "~17.23.1",
+    "globals": "~16.5.0",
     "markdownlint-cli2": "~0.20.0"
   }
 }
