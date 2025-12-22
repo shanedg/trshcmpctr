@@ -45,7 +45,7 @@ export default (env = {}, argv = {}) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            configFile: resolve('babel.config.lib.cjs'),
+            configFile: resolve('babel.config.lib.js'),
           },
         },
       ],
@@ -112,7 +112,7 @@ export default (env = {}, argv = {}) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            configFile: resolve('babel.config.cjs'),
+            configFile: resolve('babel.config.js'),
           },
         },
         {

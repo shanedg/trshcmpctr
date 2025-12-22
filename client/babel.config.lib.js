@@ -1,11 +1,11 @@
 /**
  * This babel config supports building lib entry points
  * Needs to understand JSX and Typescript
- * Differences from babel.config.cjs:
+ * Differences from babel.config.js:
  * Does not need dynamic imports
  * Does not need preset-env + corejs
  */
-module.exports = {
+export default {
   only: [
     './src',
   ],
