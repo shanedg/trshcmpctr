@@ -1,12 +1,12 @@
-const { resolve } = require('node:path');
+import { resolve } from 'node:path';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 /**
  * Helper for setting the build mode
- * @param {boolean} productionFlag 
+ * @param {boolean} productionFlag
  * @returns {'production' | 'development'} Build mode
  */
 const getMode = productionFlag => productionFlag ? 'production' : 'development';
@@ -15,18 +15,18 @@ const getMode = productionFlag => productionFlag ? 'production' : 'development';
 // https://webpack.js.org/configuration/configuration-types/#exporting-a-function
 // https://webpack.js.org/api/cli/#environment-options
 // https://webpack.js.org/guides/environment-variables/
-module.exports = (env = {}, argv = {}) => {
+export default (env = {}, argv = {}) => {
   const mode = getMode(env.production);
   const isProduction = mode === 'production';
 
   return [{
     entry: {
-      paths: resolve(__dirname, './src/paths.ts'),
+      paths: './src/paths.ts',
     },
     output: {
       clean: true,
       filename: '[name].js',
-      path: resolve(__dirname, './lib'),
+      path: resolve('./lib'),
       library: {
         type: 'module',
       },
@@ -45,7 +45,7 @@ module.exports = (env = {}, argv = {}) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            configFile: resolve(__dirname, 'babel.config.lib.cjs'),
+            configFile: resolve('babel.config.lib.cjs'),
           },
         },
       ],
@@ -101,7 +101,7 @@ module.exports = (env = {}, argv = {}) => {
 
     devtool: isProduction ? 'source-map' : 'eval-source-map',
 
-    entry: resolve(__dirname, './src/index.ts'),
+    entry: './src/index.ts',
 
     mode,
 
@@ -110,10 +110,9 @@ module.exports = (env = {}, argv = {}) => {
         {
           test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
-          // TODO: consider replacing babel with swc
           loader: 'babel-loader',
           options: {
-            configFile: resolve(__dirname, 'babel.config.cjs'),
+            configFile: resolve('babel.config.cjs'),
           },
         },
         {
@@ -150,7 +149,7 @@ module.exports = (env = {}, argv = {}) => {
     output: {
       clean: true,
       filename: '[name].[chunkhash].js',
-      path: resolve(__dirname, './dist'),
+      path: resolve('./dist'),
       // Construct bundle paths relative to root:
       // https://webpack.js.org/configuration/output/#outputpublicpath
       // See note about `output.publicPath` in Webpack 5 migration guide:
@@ -163,9 +162,9 @@ module.exports = (env = {}, argv = {}) => {
     plugins: [
       new WebpackManifestPlugin(),
       new HtmlWebpackPlugin({
-        template: resolve(__dirname, './src/index.html'),
+        template: './src/index.html',
         title: 'trshcmpctr',
-        favicon: resolve(__dirname, './src/favicon.ico'),
+        favicon: './src/favicon.ico',
       }),
     ],
 

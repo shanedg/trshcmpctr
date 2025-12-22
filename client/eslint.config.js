@@ -18,8 +18,16 @@ const patternsToIgnoreResolve = [
   'eslint/config',
 ];
 
+/**
+ * import/namespace can't parse module subpath exports
+ */
+const patternsToIgnoreImport = [
+  'webpack-manifest-plugin',
+];
+
 const esmConfigFiles = [
   './eslint.config.js',
+  './webpack.config.js',
   'cypress/**',
 ];
 
@@ -55,6 +63,11 @@ export default defineConfig([
     rules: {
       // Redundant with import/no-unresolved and not as robust
       'n/no-missing-import': 'off',
+    },
+    settings: {
+      'import/ignore': [
+        ...patternsToIgnoreImport,
+      ],
     },
   },
   {
