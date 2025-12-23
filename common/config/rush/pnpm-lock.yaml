@@ -323,12 +323,12 @@ importers:
         specifier: ~16.5.0
         version: 16.5.0
     devDependencies:
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
-      eslint-plugin-n:
-        specifier: ~17.23.1
-        version: 17.23.1(eslint@9.39.2)(typescript@5.9.3)
       markdownlint-cli2:
         specifier: ~0.20.0
         version: 0.20.0
