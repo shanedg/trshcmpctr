@@ -182,15 +182,15 @@ importers:
       '@trshcmpctr/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
       eslint:
         specifier: ~9.39.1
         version: 9.39.2
-      eslint-plugin-n:
-        specifier: ~17.23.1
-        version: 17.23.1(eslint@9.39.2)(typescript@5.9.3)
       markdownlint-cli2:
         specifier: ~0.20.0
         version: 0.20.0
