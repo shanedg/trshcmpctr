@@ -9,6 +9,15 @@ const { configs: nodeConfigs } = node;
 export default defineConfig([
   {
     extends: [
+      /**
+       * Some configuration is duplicated from @trshcmpctr/eslint-config-node.
+       * This config cannot use @trshcmpctr/eslint-config-node
+       * because this package is a dev dependency in eslint-config-node
+       * and both depending on each other would create a cyclic dependency.
+       * Cyclic dependencies are supported in Rush with the "decoupledLocalDependencies"
+       * property in rush.json but this depends on installing the latest
+       * published release from npm and publishing is not enabled in this repository.
+       */
       nodeConfigs['flat/recommended-module'],
       // It lints itself :)
       eslintConfig,
