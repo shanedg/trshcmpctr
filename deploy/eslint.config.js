@@ -9,8 +9,15 @@ export default defineConfig([
       eslintConfigNode,
       eslintConfig,
     ],
+    languageOptions: {
+      /**
+       * Eslint will only parse import attributes starting in 2025.
+       * <https://nodejs.org/api/esm.html#import-attributes>
+       */
+      ecmaVersion: 2025,
+    },
     rules: {
-      // Default node resolution requires extensions for relative imports
+      // Node default resolution requires extensions for relative imports
       'import/extensions': ['error', 'ignorePackages'],
       'import/no-unresolved': ['error', {
         /**

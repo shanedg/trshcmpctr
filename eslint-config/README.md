@@ -9,12 +9,11 @@ linting untranspiled, untransformed JavaScript files like those in your project 
 ## Usage
 
 ```js
-// eslint.config.cjs
-const { defineConfig } = require('eslint/config');
+import { defineConfig } from 'eslint/config';
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
+import eslintConfig from '@trshcmpctr/eslint-config';
 
-module.exports = defineConfig([
+export default defineConfig([
   eslintConfig,
 ]);
 ```

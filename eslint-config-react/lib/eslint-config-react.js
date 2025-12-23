@@ -1,12 +1,12 @@
-const { defineConfig } = require('eslint/config');
-const eslintJsxA11y = require('eslint-plugin-jsx-a11y');
-const eslintReact = require('eslint-plugin-react');
-const eslintReactHooks = require('eslint-plugin-react-hooks');
+import { defineConfig } from 'eslint/config';
+import eslintJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintReact from 'eslint-plugin-react';
+import eslintReactHooks from 'eslint-plugin-react-hooks';
 
 /**
  * ESLint config for React in JavaScript projects.
  */
-module.exports = defineConfig([
+export default defineConfig([
   {
     extends: [
       eslintReactHooks.configs.flat.recommended,

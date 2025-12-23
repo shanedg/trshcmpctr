@@ -1,10 +1,10 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleRedirect } from './handle-redirect.js';
 
 test('calls response.redirect with the url', t => {
-  const redirectSpy = sinon.spy();
+  const redirectSpy = spy();
 
   handleRedirect('/destination', {}, { redirect: redirectSpy });
 

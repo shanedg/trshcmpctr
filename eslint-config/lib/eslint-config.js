@@ -1,13 +1,13 @@
-const js = require('@eslint/js');
-const comments = require('@eslint-community/eslint-plugin-eslint-comments/configs');
-const { defineConfig } = require('eslint/config');
-const imports = require('eslint-plugin-import');
+import js from '@eslint/js';
+import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
+import { defineConfig } from 'eslint/config';
+import imports from 'eslint-plugin-import';
 
 /**
  * Base ESLint config for JavaScript projects
  * Rules should make sense in any environment
  */
-module.exports = defineConfig([
+export default defineConfig([
   // To see what rules are in the recommended set: https://eslint.org/docs/rules/
   js.configs.recommended,
   // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/
@@ -26,6 +26,10 @@ module.exports = defineConfig([
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
+          /**
+           * Enable global strict mode:
+           * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode>
+           */
           impliedStrict: true,
         },
       },

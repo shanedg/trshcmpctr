@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleError } from './handle-error.js';
 
@@ -9,25 +9,25 @@ import { handleError } from './handle-error.js';
  */
 const getRequest = () => ({
   log: {
-    debug: sinon.spy(),
-    error: sinon.spy(),
+    debug: spy(),
+    error: spy(),
   },
 });
 
 test.before(t => {
-  const sendSpy = sinon.spy();
+  const sendSpy = spy();
   t.context.response = {
-    render: sinon.spy((_template, _locals, callback) => {
+    render: spy((_template, _locals, callback) => {
       callback(null, '<some-fake-html>');
     }),
     send: sendSpy,
-    status: sinon.spy(() => ({
+    status: spy(() => ({
       // return with send for chaining
       send: sendSpy
     })),
   };
   t.context.request = getRequest();
-  handleError(new Error('caught-error'), t.context.request, t.context.response, sinon.spy());
+  handleError(new Error('caught-error'), t.context.request, t.context.response, spy());
 });
 
 test('logs the original error', t => {
@@ -56,18 +56,18 @@ test('renders the error template', t => {
 });
 
 test('defers to default error handler for any error encountered rendering the template', t => {
-  const sendSpy = sinon.spy();
+  const sendSpy = spy();
   const response = {
-    render: sinon.spy((_template, _locals, callback) => {
+    render: spy((_template, _locals, callback) => {
       callback(new Error('render-error'), null);
     }),
     send: sendSpy,
-    status: sinon.spy(() => ({
+    status: spy(() => ({
       // return with send for chaining
       send: sendSpy
     })),
   };
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
   handleError(new Error('caught-error'), getRequest(), response, nextSpy);
 
@@ -81,11 +81,11 @@ test('defers to default error handler for any error encountered rendering the te
 test('defers to default error handler if headers have already been sent by the time an error is caught', t => {
   const responseWithHeadersSent = {
     headersSent: true,
-    render: sinon.spy(),
-    send: sinon.spy(),
-    status: sinon.spy(),
+    render: spy(),
+    send: spy(),
+    status: spy(),
   };
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
   handleError(new Error('error-caught-after-headers-sent'), getRequest(), responseWithHeadersSent, nextSpy);
 

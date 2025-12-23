@@ -1,18 +1,18 @@
 {
-  "name": "@trshcmpctr/jest-stdout-reporter",
+  "name": "@trshcmpctr/eslint-config-node",
   "version": "1.0.0",
   "private": true,
-  "description": "Wraps the default reporter to prevent Jest from logging normal output to stderr.",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/jest-stdout-reporter#readme",
+  "description": "eslint-config-node",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-node#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "jest-stdout-reporter"
+    "directory": "eslint-config-node"
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/jest-stdout-reporter.js",
-  "main": "./lib/jest-stdout-reporter.js",
+  "exports": "./lib/eslint-config-node.js",
+  "main": "./lib/eslint-config-node.js",
   "files": [
     "lib"
   ],
@@ -23,13 +23,16 @@
     "test": ""
   },
   "dependencies": {
-    "@jest/reporters": "~30.2.0"
+    "eslint-plugin-n": "~17.23.1",
+    "globals": "~16.5.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
-    "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.20.0"
+  },
+  "engines": {
+    "node": ">=20.19.5"
   }
 }

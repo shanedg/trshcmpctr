@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   rootDir: './',
   transform: {
     // Only files in src/ are built & transpiled by Babel, so only these should be transformed.

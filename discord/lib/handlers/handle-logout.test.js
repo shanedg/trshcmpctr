@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleLogout } from './handle-logout.js';
 
@@ -11,7 +11,7 @@ const fakeSessionData = {
 };
 
 test('calls next middleware if no session', t => {
-  const next = sinon.spy();
+  const next = spy();
   handleLogout({}, {}, next);
   const nextCalls = next.getCalls();
   t.plan(2);
@@ -20,7 +20,7 @@ test('calls next middleware if no session', t => {
 });
 
 test('calls next middleware if not logged in', t => {
-  const next = sinon.spy();
+  const next = spy();
   handleLogout({
     session: {},
   }, {}, next);
@@ -31,11 +31,11 @@ test('calls next middleware if not logged in', t => {
 });
 
 test('calls error handling middleware if unable to save cleared session', t => {
-  const next = sinon.spy();
+  const next = spy();
   handleLogout({
     session: {
       ...fakeSessionData,
-      save: sinon.spy(callback => callback(new Error('unable-to-save'))),
+      save: spy(callback => callback(new Error('unable-to-save'))),
     },
   }, {}, next);
   const nextCalls = next.getCalls();
@@ -46,12 +46,12 @@ test('calls error handling middleware if unable to save cleared session', t => {
 });
 
 test('calls error handling middleware if unable to regenerate new session', t => {
-  const next = sinon.spy();
+  const next = spy();
   handleLogout({
     session: {
       ...fakeSessionData,
-      save: sinon.spy(callback => callback()),
-      regenerate: sinon.spy(callback => callback(new Error('unable-to-regenerate'))),
+      save: spy(callback => callback()),
+      regenerate: spy(callback => callback(new Error('unable-to-regenerate'))),
     },
   }, {}, next);
   const nextCalls = next.getCalls();
@@ -64,15 +64,15 @@ test('calls error handling middleware if unable to regenerate new session', t =>
 test('clears data from session object', t => {
   const fakeSession = {
     ...fakeSessionData,
-    save: sinon.spy(callback => callback()),
-    regenerate: sinon.spy(callback => callback()),
+    save: spy(callback => callback()),
+    regenerate: spy(callback => callback()),
   };
   t.plan(8);
   t.is(fakeSession.authorized, true);
   t.truthy(fakeSession.oauth);
   t.is(fakeSession.oauthExpires, '');
   t.truthy(fakeSession.guildMembershipData);
-  handleLogout({ session: fakeSession }, {}, sinon.spy());
+  handleLogout({ session: fakeSession }, {}, spy());
   t.is(fakeSession.authorized, null);
   t.is(fakeSession.oauth, null);
   t.is(fakeSession.oauthExpires, null);
@@ -80,12 +80,12 @@ test('clears data from session object', t => {
 });
 
 test('calls next middleware after logging out', t => {
-  const next = sinon.spy();
+  const next = spy();
   handleLogout({
     session: {
       ...fakeSessionData,
-      save: sinon.spy(callback => callback()),
-      regenerate: sinon.spy(callback => callback()),
+      save: spy(callback => callback()),
+      regenerate: spy(callback => callback()),
     },
   }, {}, next);
   const nextCalls = next.getCalls();

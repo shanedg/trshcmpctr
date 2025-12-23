@@ -10,16 +10,15 @@ There is a performance cost for some of the rules this config applies.
 The folks behind `typescript-eslint` suggest it's worth it: <https://typescript-eslint.io/getting-started/typed-linting/#performance>
 
 ```js
-// eslint.config.cjs
-const { defineConfig } = require('eslint/config');
+import { defineConfig } from 'eslint/config';
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
-const tsEslintConfig = require('@trshcmpctr/eslint-config-typescript');
+import eslintConfig from '@trshcmpctr/eslint-config';
+import typescriptConfig from '@trshcmpctr/eslint-config-typescript';
 
-module.exports = defineConfig([
+export default defineConfig([
   eslintConfig,
   {
-    extends: [tsEslintConfig],
+    extends: [typescriptConfig],
     files: ['**/*.ts'],
   },
 ]);

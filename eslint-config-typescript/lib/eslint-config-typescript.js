@@ -1,11 +1,11 @@
-const { defineConfig } = require('eslint/config');
-const imports = require('eslint-plugin-import');
-const tseslint = require('typescript-eslint');
+import { defineConfig } from 'eslint/config';
+import imports from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
 /**
  * ESLint config for TypeScript in JavaScript projects.
  */
-module.exports = defineConfig([
+export default defineConfig([
   {
     extends: [
       imports.flatConfigs.typescript,
@@ -23,6 +23,7 @@ module.exports = defineConfig([
         projectService: true,
       },
     },
+    name: 'Recommended Typescript',
     rules: {
       // Only allow @ts-expect-error directive and require a description
       '@typescript-eslint/ban-ts-comment': ['error', {

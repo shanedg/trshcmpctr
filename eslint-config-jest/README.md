@@ -7,13 +7,12 @@ ESLint config for Jest tests in JavaScript projects.
 This config assumes a base like `@trshcmpctr/eslint-config` is already applied.
 
 ```js
-// eslint.config.cjs
-const { defineConfig } = require('eslint/config');
+import { defineConfig } from 'eslint/config';
 
-const eslintConfig = require('@trshcmpctr/eslint-config');
-const jestConfig = require('@trshcmpctr/eslint-config-jest');
+import eslintConfig from '@trshcmpctr/eslint-config';
+import jestConfig from '@trshcmpctr/eslint-config-jest';
 
-module.exports = defineConfig([
+export default defineConfig([
   eslintConfig,
   {
     extends: [jestConfig],

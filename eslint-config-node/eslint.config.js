@@ -1,11 +1,13 @@
 import { defineConfig } from 'eslint/config';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
-import eslintConfigNode from '@trshcmpctr/eslint-config-node';
+
+import eslintConfigNode from './lib/eslint-config-node.js';
 
 export default defineConfig([
   {
     extends: [
+      // It lints itself :)
       eslintConfigNode,
       eslintConfig,
     ],

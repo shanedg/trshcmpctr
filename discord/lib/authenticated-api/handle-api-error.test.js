@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleApiError } from './handle-api-error.js';
 
@@ -9,15 +9,15 @@ import { handleApiError } from './handle-api-error.js';
  */
 const getRequest = () => ({
   log: {
-    debug: sinon.spy(),
-    error: sinon.spy(),
+    debug: spy(),
+    error: spy(),
   },
 });
 
 test('sends 500', t => {
-  const response = { sendStatus: sinon.spy() };
+  const response = { sendStatus: spy() };
 
-  handleApiError(new Error('caught-api-error'), getRequest(), response, sinon.spy());
+  handleApiError(new Error('caught-api-error'), getRequest(), response, spy());
 
   const sendCalls = response.sendStatus.getCalls();
   t.plan(2);
@@ -26,7 +26,7 @@ test('sends 500', t => {
 });
 
 test('defers to default error handler if headers have been sent by the time an error is caught', t => {
-  const nextSpy = sinon.spy();
+  const nextSpy = spy();
 
   handleApiError(new Error('error-caught-after-headers-sent'), getRequest(), { headersSent: true }, nextSpy);
 

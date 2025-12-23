@@ -1,23 +1,21 @@
 {
   "name": "@trshcmpctr/eslint-config",
   "version": "1.0.0",
+  "private": true,
   "description": "Base ESLint config for JavaScript projects.",
-  "main": "lib/eslint-config.js",
-  "files": ["lib/eslint-config.js"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "eslint-config"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/eslint-config.js",
+  "main": "./lib/eslint-config.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
@@ -26,16 +24,17 @@
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "~4.5.0",
-    "@eslint/compat": "~2.0.0",
-    "@eslint/eslintrc": "~3.3.1",
     "@eslint/js": "~9.39.1",
-    "eslint-plugin-import": "~2.32.0",
     "eslint": "~9.39.1",
-    "globals": "~16.5.0"
+    "eslint-plugin-import": "~2.32.0"
   },
   "devDependencies": {
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint-plugin-n": "~17.23.1",
+    "globals": "~16.5.0",
     "markdownlint-cli2": "~0.20.0"
+  },
+  "engines": {
+    "node": ">=20.19.5"
   }
 }

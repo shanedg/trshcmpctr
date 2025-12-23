@@ -1,23 +1,21 @@
 {
   "name": "@trshcmpctr/markdownlint-config",
   "version": "1.0.0",
+  "private": true,
   "description": "Shareable config for markdownlint (markdownlint-cli2).",
-  "main": ".markdownlint-cli2.jsonc",
-  "files": [".markdownlint-cli2.jsonc"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/markdownlint-config#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "markdownlint-config"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/markdownlint-config#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./.markdownlint-cli2.jsonc",
+  "main": "./.markdownlint-cli2.jsonc",
+  "files": [
+    "./.markdownlint-cli2.jsonc"
+  ],
   "scripts": {
     "build": "",
     "lint:md": "markdownlint-cli2 --config .markdownlint-cli2.jsonc",

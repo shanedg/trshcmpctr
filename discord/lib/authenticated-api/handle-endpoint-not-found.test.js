@@ -1,14 +1,14 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleEndpointNotFound } from './handle-endpoint-not-found.js';
 
 test('sends 404', t => {
   const request = {
     session: {},
-    log: { debug: sinon.spy() },
+    log: { debug: spy() },
   };
-  const response = { sendStatus: sinon.spy() };
+  const response = { sendStatus: spy() };
 
   handleEndpointNotFound(request, response);
 

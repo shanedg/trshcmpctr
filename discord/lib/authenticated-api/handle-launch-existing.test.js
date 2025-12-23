@@ -1,5 +1,5 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleLaunchExisting } from './handle-launch-existing.js';
 
@@ -10,15 +10,15 @@ import { handleLaunchExisting } from './handle-launch-existing.js';
 const getMockResponse = () => {
   return {
     // All mocked methods should return `this` to emulate chaining
-    redirect: sinon.spy(function(_url) { return this; }),
-    status: sinon.spy(function(_statusCode) { return this; }),
+    redirect: spy(function(_url) { return this; }),
+    status: spy(function(_statusCode) { return this; }),
   };
 };
 
 test('calls next error handler if no id param', async t => {
-  const next = sinon.spy();
+  const next = spy();
   const response = getMockResponse();
-  await handleLaunchExisting({ update: sinon.spy() }, { params: {} }, response, next);
+  await handleLaunchExisting({ update: spy() }, { params: {} }, response, next);
   const nextCalls = next.getCalls();
   const statusCalls = response.status.getCalls();
   const redirectCalls = response.redirect.getCalls();
@@ -31,7 +31,7 @@ test('calls next error handler if no id param', async t => {
 });
 
 test('calls next error handler if unable to query db', async t => {
-  const next = sinon.spy();
+  const next = spy();
   const response = getMockResponse();
   const update = _cb => { throw new Error('problem updating db!'); };
   await handleLaunchExisting({ update }, { params: { id: 'some-id' } }, response, next);
@@ -54,11 +54,11 @@ test('redirects to existing world if found', async t => {
       status: 'stopped',
     },
   ];
-  const update = sinon.spy(cb => new Promise(resolve => {
+  const update = spy(cb => new Promise(resolve => {
     cb({ worlds });
     resolve();
   }));
-  await handleLaunchExisting({ update }, { params: { id: 'some-id' } }, response, sinon.spy());
+  await handleLaunchExisting({ update }, { params: { id: 'some-id' } }, response, spy());
   const statusCalls = response.status.getCalls();
   const redirectCalls = response.redirect.getCalls();
   t.plan(6);
@@ -72,11 +72,11 @@ test('redirects to existing world if found', async t => {
 
 test('redirects to worlds if existing id not found', async t => {
   const response = getMockResponse();
-  const update = sinon.spy(cb => new Promise(resolve => {
+  const update = spy(cb => new Promise(resolve => {
     cb({ worlds: [] });
     resolve();
   }));
-  await handleLaunchExisting({ update }, { params: { id: 'some-id' } }, response, sinon.spy());
+  await handleLaunchExisting({ update }, { params: { id: 'some-id' } }, response, spy());
   const statusCalls = response.status.getCalls();
   const redirectCalls = response.redirect.getCalls();
   t.plan(6);

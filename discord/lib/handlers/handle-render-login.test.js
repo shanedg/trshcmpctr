@@ -1,16 +1,16 @@
 import test from 'ava';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 import { handleRenderLogin } from './handle-render-login.js';
 
 test.before(t => {
   t.context.request = {
-    log: { error: sinon.spy(), debug: sinon.spy() },
+    log: { error: spy(), debug: spy() },
     session: {},
     query: {},
   };
-  t.context.response = { render: sinon.spy(), send: sinon.spy() };
-  t.context.next = sinon.spy();
+  t.context.response = { render: spy(), send: spy() };
+  t.context.next = spy();
   handleRenderLogin('my-client-id', 'http://localhost:8080', t.context.request, t.context.response, t.context.next);
 });
 
@@ -43,8 +43,8 @@ test('adds state to the request session', t => {
 });
 
 test('calls next middleware if already logged in', t => {
-  const nextSpy = sinon.spy();
-  const response = { render: sinon.spy() };
+  const nextSpy = spy();
+  const response = { render: spy() };
   const ninetySecondsFromNow = (Date.now() / 1000) + 90;
   const loggedInRequest = {
     session: {

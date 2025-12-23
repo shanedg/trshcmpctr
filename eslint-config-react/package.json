@@ -1,23 +1,21 @@
 {
   "name": "@trshcmpctr/eslint-config-react",
   "version": "1.0.0",
+  "private": true,
   "description": "ESLint config for React in JavaScript projects.",
-  "main": "lib/eslint-config-react.js",
-  "files": ["lib/eslint-config-react.js"],
-  "contributors": [
-    {
-      "email": "shanedgarrity@gmail.com",
-      "name": "Shane Garrity"
-    }
-  ],
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-react#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
     "directory": "eslint-config-react"
   },
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-react#readme",
-  "private": true,
   "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/eslint-config-react.js",
+  "main": "./lib/eslint-config-react.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
@@ -25,16 +23,16 @@
     "test": ""
   },
   "dependencies": {
+    "eslint": "~9.39.1",
     "eslint-plugin-jsx-a11y": "~6.10.2",
-    "eslint-plugin-react-hooks": "~7.0.1",
     "eslint-plugin-react": "~7.37.2",
-    "eslint": "~9.39.1"
+    "eslint-plugin-react-hooks": "~7.0.1"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/jest-stdout-reporter": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "eslint-plugin-n": "~17.23.1",
     "markdownlint-cli2": "~0.20.0"
   }
 }

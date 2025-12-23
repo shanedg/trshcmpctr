@@ -356,6 +356,10 @@
    */
   "projects": [
     {
+      "packageName": "@trshcmpctr/eslint-config-node",
+      "projectFolder": "eslint-config-node"
+    },
+    {
       "packageName": "@trshcmpctr/deploy",
       "projectFolder": "deploy"
     },

@@ -1,7 +1,4 @@
-// This file has to remain CommonJs until babel-jest supports .mjs
-// https://stackoverflow.com/a/63216984
-// https://github.com/facebook/jest/issues/9430
-module.exports = {
+export default {
   env: {
     test: {
       plugins: [

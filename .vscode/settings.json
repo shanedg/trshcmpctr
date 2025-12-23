@@ -4,11 +4,17 @@
     "deploy",
     "discord",
     "eslint-config-jest",
+    "eslint-config-node",
     "eslint-config-react",
     "eslint-config-typescript",
     "eslint-config",
     "jest-stdout-reporter",
     "markdownlint-config",
     "scaffold"
-  ]
+  ],
+  "files.associations": {
+    "rush.json": "jsonc",
+    "command-line.json": "jsonc",
+    "common-versions.json": "jsonc"
+  }
 }
