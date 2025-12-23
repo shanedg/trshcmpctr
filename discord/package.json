@@ -48,6 +48,7 @@
   "devDependencies": {
     "@babel/core": "~7.28.5",
     "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@types/express": "~5.0.0",
     "ava": "~6.4.1",

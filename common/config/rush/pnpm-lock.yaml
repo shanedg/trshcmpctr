@@ -225,6 +225,9 @@ importers:
       '@trshcmpctr/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
