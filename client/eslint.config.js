@@ -67,6 +67,7 @@ export default defineConfig([
        * import/namespace can't parse module subpath exports
        */
       'import/ignore': [
+        'eslint-plugin-testing-library',
         'webpack-manifest-plugin',
       ],
     },
