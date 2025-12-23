@@ -1,0 +1,38 @@
+{
+  "name": "@trshcmpctr/eslint-config-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "eslint-config-node",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-node#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "eslint-config-node"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/eslint-config-node.js",
+  "main": "./lib/eslint-config-node.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "test": ""
+  },
+  "dependencies": {
+    "eslint-plugin-n": "~17.23.1",
+    "globals": "~16.5.0"
+  },
+  "devDependencies": {
+    "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/markdownlint-config": "workspace:*",
+    "eslint": "~9.39.1",
+    "markdownlint-cli2": "~0.20.0"
+  },
+  "engines": {
+    "node": ">=20.19.5"
+  }
+}

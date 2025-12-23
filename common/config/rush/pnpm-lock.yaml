@@ -327,6 +327,28 @@ importers:
         specifier: ~0.20.0
         version: 0.20.0
 
+  ../../eslint-config-node:
+    dependencies:
+      eslint-plugin-n:
+        specifier: ~17.23.1
+        version: 17.23.1(eslint@9.39.2)(typescript@5.9.3)
+      globals:
+        specifier: ~16.5.0
+        version: 16.5.0
+    devDependencies:
+      '@trshcmpctr/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@trshcmpctr/markdownlint-config':
+        specifier: workspace:*
+        version: link:../markdownlint-config
+      eslint:
+        specifier: ~9.39.1
+        version: 9.39.2
+      markdownlint-cli2:
+        specifier: ~0.20.0
+        version: 0.20.0
+
   ../../eslint-config-react:
     dependencies:
       eslint:
