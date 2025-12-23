@@ -72,7 +72,7 @@
         Run after `update-minor`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.1.2 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.2.0 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
@@ -81,7 +81,7 @@
         --target latest \
         --reject '@types/node,cypress' \
         && \
-        node common/scripts/install-run.js npm-check-updates@19.1.2 \
+        node common/scripts/install-run.js npm-check-updates@19.2.0 \
         npm-check-updates \
         --packageFile scaffold/lib/templates/package.json.hbs \
         --upgrade \
@@ -96,7 +96,7 @@
         Run after `rush update --full`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.1.2 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@19.2.0 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
@@ -104,7 +104,7 @@
         --dep 'prod','dev','optional','packageManager','peer' \
         --target minor \
         && \
-        node common/scripts/install-run.js npm-check-updates@19.1.2 \
+        node common/scripts/install-run.js npm-check-updates@19.2.0 \
         npm-check-updates \
         --packageFile scaffold/lib/templates/package.json.hbs \
         --upgrade \
