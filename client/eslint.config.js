@@ -6,24 +6,9 @@ import globals from 'globals';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
 import eslintConfigJest from '@trshcmpctr/eslint-config-jest';
+import eslintConfigNode from '@trshcmpctr/eslint-config-node';
 import eslintConfigReact from '@trshcmpctr/eslint-config-react';
 import eslintConfigTypescript from '@trshcmpctr/eslint-config-typescript';
-
-/**
- * import/no-unresolved cannot parse commonjs subpath exports
- * but can still report whether ignored modules are located:
- * See [rules/no-unresolved.md#ignore](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#ignore)
- */
-const patternsToIgnoreResolve = [
-  'eslint/config',
-];
-
-/**
- * import/namespace can't parse module subpath exports
- */
-const patternsToIgnoreImport = [
-  'webpack-manifest-plugin',
-];
 
 const esmConfigFiles = [
   './eslint.config.js',
@@ -41,7 +26,10 @@ export default defineConfig([
     ],
   },
   {
-    extends: [node.configs['flat/recommended-script']],
+    extends: [
+      node.configs['flat/recommended-script'],
+      eslintConfig,
+    ],
     files: ['**/*.cjs'],
     languageOptions: {
       globals: globals.node,
@@ -54,40 +42,43 @@ export default defineConfig([
     },
   },
   {
-    extends: [node.configs['flat/recommended-module']],
+    extends: [
+      eslintConfigNode,
+      eslintConfig,
+    ],
     files: esmConfigFiles,
-    languageOptions: {
-      globals: globals.nodeBuiltin,
-    },
     name: 'Recommended ESM',
     rules: {
-      // Redundant with import/no-unresolved and not as robust
-      'n/no-missing-import': 'off',
+      // Default node resolution requires extensions for relative imports
+      'import/extensions': ['error', 'ignorePackages'],
+      'import/no-unresolved': ['error', {
+        /**
+         * import/no-unresolved cannot parse commonjs subpath exports
+         * but can still report whether ignored modules are located:
+         * See [rules/no-unresolved.md#ignore](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#ignore)
+         */
+        ignore: [
+          'eslint/config',
+        ],
+      }],
     },
     settings: {
+      /**
+       * import/namespace can't parse module subpath exports
+       */
       'import/ignore': [
-        ...patternsToIgnoreImport,
+        'webpack-manifest-plugin',
       ],
     },
   },
   {
     extends: [eslintConfig],
+    // Already applied above
+    ignores: [
+      ...esmConfigFiles,
+      '**/*.cjs',
+    ],
     name: 'Recommended All',
-    rules: {
-      'import/no-unresolved': ['error', {
-        ignore: [
-          ...patternsToIgnoreResolve,
-        ],
-      }],
-    },
-    languageOptions: {
-      /**
-       * Node 20.19.5 supports 100% of ES2023 features,
-       * only some of 2024, and very little of 2025.
-       * See <https://node.green/#ES2023>
-       */
-      ecmaVersion: 2023,
-    }
   },
   {
     extends: [eslintConfigTypescript],

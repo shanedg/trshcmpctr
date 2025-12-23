@@ -64,6 +64,9 @@ importers:
       '@trshcmpctr/eslint-config-jest':
         specifier: workspace:*
         version: link:../eslint-config-jest
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
       '@trshcmpctr/eslint-config-react':
         specifier: workspace:*
         version: link:../eslint-config-react

@@ -60,6 +60,7 @@
     "@testing-library/react": "~16.3.0",
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-jest": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/eslint-config-react": "workspace:*",
     "@trshcmpctr/eslint-config-typescript": "workspace:*",
     "@trshcmpctr/jest-stdout-reporter": "workspace:*",
