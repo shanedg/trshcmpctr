@@ -1,0 +1,51 @@
+{
+  "name": "@trshcmpctr/components",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared React components",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "components"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "browser": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "babel --delete-dir-on-start --extensions .ts,.tsx --out-dir lib/ --verbose src/ && tsc",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "test": "",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "core-js": "~3.47.0",
+    "react": "~19.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "~7.28.3",
+    "@babel/core": "~7.28.5",
+    "@babel/preset-env": "~7.28.5",
+    "@babel/preset-react": "~7.28.5",
+    "@babel/preset-typescript": "~7.28.5",
+    "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
+    "@trshcmpctr/eslint-config-react": "workspace:*",
+    "@trshcmpctr/eslint-config-typescript": "workspace:*",
+    "@trshcmpctr/markdownlint-config": "workspace:*",
+    "@trshcmpctr/typescript": "workspace:*",
+    "@types/react": "~19.2.5",
+    "eslint": "~9.39.1",
+    "globals": "~16.5.0",
+    "markdownlint-cli2": "~0.20.0",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=20.19.5"
+  }
+}

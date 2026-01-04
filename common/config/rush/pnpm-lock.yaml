@@ -34,9 +34,6 @@ importers:
       '@babel/core':
         specifier: ~7.28.5
         version: 7.28.5
-      '@babel/plugin-syntax-dynamic-import':
-        specifier: ~7.8.3
-        version: 7.8.3(@babel/core@7.28.5)
       '@babel/plugin-transform-modules-commonjs':
         specifier: ~7.27.1
         version: 7.27.1(@babel/core@7.28.5)
@@ -103,9 +100,6 @@ importers:
       babel-loader:
         specifier: ~10.0.0
         version: 10.0.0(@babel/core@7.28.5)(webpack@5.104.1)
-      babel-plugin-syntax-dynamic-import:
-        specifier: ~6.18.0
-        version: 6.18.0
       css-loader:
         specifier: ~7.1.1
         version: 7.1.2(webpack@5.104.1)
@@ -172,6 +166,64 @@ importers:
       webpack-manifest-plugin:
         specifier: ~6.0.1
         version: 6.0.1(webpack@5.104.1)
+
+  ../../components:
+    dependencies:
+      core-js:
+        specifier: ~3.47.0
+        version: 3.47.0
+      react:
+        specifier: ~19.2.0
+        version: 19.2.3
+    devDependencies:
+      '@babel/cli':
+        specifier: ~7.28.3
+        version: 7.28.3(@babel/core@7.28.5)
+      '@babel/core':
+        specifier: ~7.28.5
+        version: 7.28.5
+      '@babel/preset-env':
+        specifier: ~7.28.5
+        version: 7.28.5(@babel/core@7.28.5)
+      '@babel/preset-react':
+        specifier: ~7.28.5
+        version: 7.28.5(@babel/core@7.28.5)
+      '@babel/preset-typescript':
+        specifier: ~7.28.5
+        version: 7.28.5(@babel/core@7.28.5)
+      '@trshcmpctr/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
+      '@trshcmpctr/eslint-config-react':
+        specifier: workspace:*
+        version: link:../eslint-config-react
+      '@trshcmpctr/eslint-config-typescript':
+        specifier: workspace:*
+        version: link:../eslint-config-typescript
+      '@trshcmpctr/markdownlint-config':
+        specifier: workspace:*
+        version: link:../markdownlint-config
+      '@trshcmpctr/typescript':
+        specifier: workspace:*
+        version: link:../typescript
+      '@types/react':
+        specifier: ~19.2.5
+        version: 19.2.7
+      eslint:
+        specifier: ~9.39.1
+        version: 9.39.2
+      globals:
+        specifier: ~16.5.0
+        version: 16.5.0
+      markdownlint-cli2:
+        specifier: ~0.20.0
+        version: 0.20.0
+      typescript:
+        specifier: ~5.9.3
+        version: 5.9.3
 
   ../../deploy:
     dependencies:
@@ -658,6 +710,13 @@ packages:
     resolution: {integrity: sha512-C0NBLsIqzDIae8HFw9YIrIBsbc0xTiOtt7fAukGPnqQ/+zZNaq+4jhuccltK0QuWHBnNm/a6kLIRA6GFiM10eg==}
     engines: {node: '>=18.0.0'}
 
+  '@babel/cli@7.28.3':
+    resolution: {integrity: sha512-n1RU5vuCX0CsaqaXm9I0KUCNKNQMy5epmzl/xdSSm70bSqhg9GWhgeosypyQLc0bK24+Xpk1WGzZlI9pJtkZdg==}
+    engines: {node: '>=6.9.0'}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
     engines: {node: '>=6.9.0'}
@@ -820,11 +879,6 @@ packages:
   '@babel/plugin-syntax-class-static-block@7.14.5':
     resolution: {integrity: sha512-b+YyPmr6ldyNnM6sqYeMWE+bgJcJpO6yS4QD7ymxgH34GBPNDM/THBh8iunyvKIZztiwLH4CJZ0RxTk9emgpjw==}
     engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-syntax-dynamic-import@7.8.3':
-    resolution: {integrity: sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -1606,6 +1660,9 @@ packages:
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
+
+  '@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3':
+    resolution: {integrity: sha512-s88O1aVtXftvp5bCPB7WnmXc5IwOZZ7YPuwNPt+GtOOXpPvad1LfbmjYv+qII7zP6RU2QGnqve27dnLycEnyEQ==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2598,9 +2655,6 @@ packages:
     resolution: {integrity: sha512-ISqQ2frbiNU9vIJkzg7dlPpznPZ4jOiUQ1uSmB0fEHeowtN3COYRsXr/xexn64NpU13P06jc/L5TgiJXOgrbEg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
-
-  babel-plugin-syntax-dynamic-import@6.18.0:
-    resolution: {integrity: sha512-MioUE+LfjCEz65Wf7Z/Rm4XCP5k2c+TbMd2Z2JKc7U9uwjBhAfNPE48KC4GTGKhppMeYVepwDBNO/nGY6NYHBA==}
 
   babel-preset-current-node-syntax@1.2.0:
     resolution: {integrity: sha512-E/VlAEzRrsLEb2+dv8yp3bo4scof3l9nR4lrld+Iy5NyVqgVYUJnDAmunkhPMisRI32Qc4iRiz425d8vM++2fg==}
@@ -3724,6 +3778,9 @@ packages:
     resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
     engines: {node: '>=10'}
 
+  fs-readdir-recursive@1.1.0:
+    resolution: {integrity: sha512-GNanXlVr2pf02+sPN40XN8HG+ePaNcvM0q5mZBd668Obwb0yD5GiUbZOFgwn8kGMY6I3mdyDJzieUy3PTYyTRA==}
+
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -4718,6 +4775,10 @@ packages:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
 
+  make-dir@2.1.0:
+    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
+    engines: {node: '>=6'}
+
   make-dir@4.0.0:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
@@ -5254,6 +5315,10 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
+  pify@4.0.1:
+    resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
+    engines: {node: '>=6'}
+
   pino-abstract-transport@2.0.0:
     resolution: {integrity: sha512-F63x5tizV6WCh4R6RHyi2Ml+M70DNRXt/+HANowMflpgGFMAym/VKm6G7ZOQRjqN7XbGxK1Lg9t6ZrtzOaivMw==}
 
@@ -5642,6 +5707,10 @@ packages:
   selfsigned@2.4.1:
     resolution: {integrity: sha512-th5B4L2U+eGLq1TVh7zNRGBapioSORUeymIydxgFpwww9d2qyKvtuPU2jJuHvYAwwqi2Y596QBL3eEqcPEYL8Q==}
     engines: {node: '>=10'}
+
+  semver@5.7.2:
+    resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
+    hasBin: true
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -7063,6 +7132,20 @@ snapshots:
 
   '@aws/lambda-invoke-store@0.2.2': {}
 
+  '@babel/cli@7.28.3(@babel/core@7.28.5)':
+    dependencies:
+      '@babel/core': 7.28.5
+      '@jridgewell/trace-mapping': 0.3.31
+      commander: 6.2.1
+      convert-source-map: 2.0.0
+      fs-readdir-recursive: 1.1.0
+      glob: 7.2.3
+      make-dir: 2.1.0
+      slash: 2.0.0
+    optionalDependencies:
+      '@nicolo-ribaudo/chokidar-2': 2.1.8-no-fsevents.3
+      chokidar: 3.6.0
+
   '@babel/code-frame@7.27.1':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -7276,11 +7359,6 @@ snapshots:
       '@babel/helper-plugin-utils': 7.27.1
 
   '@babel/plugin-syntax-class-static-block@7.14.5(@babel/core@7.28.5)':
-    dependencies:
-      '@babel/core': 7.28.5
-      '@babel/helper-plugin-utils': 7.27.1
-
-  '@babel/plugin-syntax-dynamic-import@7.8.3(@babel/core@7.28.5)':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/helper-plugin-utils': 7.27.1
@@ -8315,6 +8393,9 @@ snapshots:
       '@emnapi/core': 1.7.1
       '@emnapi/runtime': 1.7.1
       '@tybys/wasm-util': 0.10.1
+    optional: true
+
+  '@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3':
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -9560,8 +9641,6 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.5(@babel/core@7.28.5)
     transitivePeerDependencies:
       - supports-color
-
-  babel-plugin-syntax-dynamic-import@6.18.0: {}
 
   babel-preset-current-node-syntax@1.2.0(@babel/core@7.28.5):
     dependencies:
@@ -10928,6 +11007,8 @@ snapshots:
       jsonfile: 6.2.0
       universalify: 2.0.1
 
+  fs-readdir-recursive@1.1.0: {}
+
   fs.realpath@1.0.0: {}
 
   fsevents@2.3.3:
@@ -12140,6 +12221,11 @@ snapshots:
 
   lz-string@1.5.0: {}
 
+  make-dir@2.1.0:
+    dependencies:
+      pify: 4.0.1
+      semver: 5.7.2
+
   make-dir@4.0.0:
     dependencies:
       semver: 7.7.3
@@ -12771,6 +12857,8 @@ snapshots:
 
   pify@2.3.0: {}
 
+  pify@4.0.1: {}
+
   pino-abstract-transport@2.0.0:
     dependencies:
       split2: 4.2.0
@@ -13199,6 +13287,8 @@ snapshots:
     dependencies:
       '@types/node-forge': 1.3.14
       node-forge: 1.3.3
+
+  semver@5.7.2: {}
 
   semver@6.3.1: {}
 

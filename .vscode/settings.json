@@ -1,6 +1,7 @@
 {
   "eslint.workingDirectories": [
     "client",
+    "components",
     "deploy",
     "discord",
     "eslint-config-jest",

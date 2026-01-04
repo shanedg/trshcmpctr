@@ -360,6 +360,10 @@
       "projectFolder": "typescript"
     },
     {
+      "packageName": "@trshcmpctr/components",
+      "projectFolder": "components"
+    },
+    {
       "packageName": "@trshcmpctr/eslint-config-node",
       "projectFolder": "eslint-config-node"
     },
