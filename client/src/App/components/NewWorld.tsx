@@ -1,20 +1,9 @@
-import { Link } from 'react-router';
-
-import { LogoutLink } from './LogoutLink';
+import { Nav } from './Nav';
 
 export const NewWorld = () => {
   return (
     <>
-      <nav>
-        <ul className="navigation-list">
-          <li>
-            <Link to="/">back</Link>
-          </li>
-          <li>
-            <LogoutLink />
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <article>
         <h2>new</h2>
         <form action="/api/v1/launch" method="post">

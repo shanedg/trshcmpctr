@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { Link, Outlet } from 'react-router';
 
-import { LogoutLink } from './LogoutLink';
+import { Nav } from './Nav';
 import { useLatestRequest } from '../hooks/use-latest-request';
 
 export interface World {
@@ -22,16 +22,7 @@ export const Worlds = () => {
 
   return (
     <WorldContext.Provider value={worlds}>
-      <nav>
-        <ul className="navigation-list">
-          <li>
-            <Link to="/">back</Link>
-          </li>
-          <li>
-            <LogoutLink />
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <article>
         <h2>worlds</h2>
         <table>
