@@ -4,6 +4,7 @@
  * Differences from babel.config.js:
  * Does not need dynamic imports
  * Does not need preset-env + corejs
+ * Does not need to target browsers
  */
 export default {
   only: [
@@ -18,4 +19,8 @@ export default {
       }
     ],
   ],
+  targets: {
+    // Compile against the current node version
+    node: 'current',
+  },
 };
