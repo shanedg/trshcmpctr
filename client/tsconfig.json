@@ -1,28 +1,28 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@trshcmpctr/typescript",
 
   "compilerOptions": {
     // Leave JSX transformation to Babel
     "jsx": "preserve",
 
-    // Latest supported APIs + DOM definitions
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      // Package code runs in the browser
+      "DOM",
+      // Node 20.19.5 supports 100% of ES2023 features
+      // See <https://node.green/#ES2023>
+      "ES2023"
+    ],
 
-    // Node.js' CommonJS implementation
-    "moduleResolution": "node",
-    // TODO: `"moduleResolution": "Node16"`: Node.js' ECMAScript Module Support from TypeScript 4.5 onwards.
-    // > Relative import paths need explicit file extensions in EcmaScript imports when '--moduleResolution' is 'node16' or 'nodenext'.
-    // But!
-    // > An import path cannot end with a '.tsx' extension. ...ts(2691)
-    // Maybe use `extensionAlias` released in webpack@5.74.0:
-    // https://github.com/webpack/webpack/releases/tag/v5.74.0
-    // See https://github.com/webpack/webpack/issues/13252
+    // Package code is resolved by Webpack
+    // "moduleResolution" is "bundler" by default if "module" is "preserve"
+    "module": "preserve",
 
-    // Leave transpilation to Babel
+    // Package is built with Babel
     "noEmit": true,
 
-    // Ensure module is set to at least "ES6/ES2015"
-    "target": "ESNext",
+    // Package is built with Babel but Node 20.19.5 supports 100% of ES2023 features
+    // See <https://node.green/#ES2023>
+    "target": "es2023",
   },
 
   "include": [

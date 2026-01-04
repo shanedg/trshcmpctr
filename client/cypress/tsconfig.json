@@ -1,12 +1,35 @@
 {
-  "extends": "../tsconfig.base.json",
+  // Cypress throws and hangs if using "extends" with a package reference.
+  // Issue https://github.com/cypress-io/cypress/issues/28385
+  // supposedly fixed in Cypress 13.6.2 but reproducible here with:
+  // - Cypress 13.17.0
+  // - Node 20.19.5
+  // - Typescript 5.9.3
+  // "extends": "@trshcmpctr/typescript",
 
   "compilerOptions": {
+    // Treat `import x from 'y'` as `import * as x from 'y'`
+    // when y has no default export
+    "esModuleInterop": true,
+
+    // Apply stricter rules around properties which have a ? prefix
+    "exactOptionalPropertyTypes": true,
+
+    // Enforce file case sensitivity
+    "forceConsistentCasingInFileNames": true,
+
     // Core definitions + DOM definitions
     "lib": [
       "es5",
       "dom"
     ],
+
+    // Ignore inconsistent global definitions, i.e. from Jest and Cypress
+    "skipLibCheck": true,
+
+    // Turn on all strict mode family options for
+    // "stronger guarantees of program correctness"
+    "strict": true,
 
     // Downlevel for Cypress test runner (?)
     "target": "es5",

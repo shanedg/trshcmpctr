@@ -79,6 +79,9 @@ importers:
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
+      '@trshcmpctr/typescript':
+        specifier: workspace:*
+        version: link:../typescript
       '@types/jest':
         specifier: ~30.0.0
         version: 30.0.0

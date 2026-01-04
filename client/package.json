@@ -65,6 +65,7 @@
     "@trshcmpctr/eslint-config-typescript": "workspace:*",
     "@trshcmpctr/jest-stdout-reporter": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
+    "@trshcmpctr/typescript": "workspace:*",
     "@types/jest": "~30.0.0",
     "@types/node": "~20.19.25",
     "@types/prop-types": "~15.7.12",
