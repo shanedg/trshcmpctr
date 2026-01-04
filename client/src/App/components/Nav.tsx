@@ -13,6 +13,9 @@ export const Nav = () => {
           <Link to="/worlds">worlds</Link>
         </li>
         <li>
+          <Link to="/game">game</Link>
+        </li>
+        <li>
           <LogoutLink />
         </li>
       </ul>
