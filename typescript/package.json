@@ -1,0 +1,31 @@
+{
+  "name": "@trshcmpctr/typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared base typescript config",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "typescript"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./lib/tsconfig.json",
+  "main": "./lib/tsconfig.json",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "test": ""
+  },
+  "devDependencies": {
+    "@trshcmpctr/markdownlint-config": "workspace:*",
+    "markdownlint-cli2": "~0.20.0"
+  },
+  "engines": {
+    "node": ">=20.19.5"
+  }
+}
