@@ -60,6 +60,8 @@ export default defineConfig([
           'type',
         ],
         'newlines-between': 'always',
+        // Mirror groups for `import type` statements
+        sortTypesGroup: true,
       }],
       'indent': ['warn', 2],
       // Warn on unused variables unless underscore-prefixed args
