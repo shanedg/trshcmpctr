@@ -1,6 +1,7 @@
 {
   "eslint.workingDirectories": [
     "client",
+    "components",
     "deploy",
     "discord",
     "eslint-config-jest",
@@ -10,7 +11,8 @@
     "eslint-config",
     "jest-stdout-reporter",
     "markdownlint-config",
-    "scaffold"
+    "scaffold",
+    "typescript"
   ],
   "files.associations": {
     "rush.json": "jsonc",

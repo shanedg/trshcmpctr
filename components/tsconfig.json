@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "declaration": true,
+    // Exported components are built by Babel and tsc generates declarations
+    "emitDeclarationOnly": true,
+    // Leave JSX transformation to Babel
+    "jsx": "preserve",
+    "lib": [
+      // Components run in the browser
+      "DOM",
+      // Node 20.19.5 supports 100% of ES2023 features
+      // See <https://node.green/#ES2023>
+      "ES2023"
+    ],
+    "listEmittedFiles": true,
+    "module": "node20",
+    // node16 reflects the module resolution behavior of Node.js v12 and later
+    // and is the recommended setting for libraries and Node.js applications
+    "moduleResolution": "node16",
+    "outDir": "lib"
+  },
+  "extends": "@trshcmpctr/typescript",
+  "include": [
+    "src"
+  ]
+}

@@ -2,21 +2,20 @@ export default {
   env: {
     test: {
       plugins: [
+        // Jest still expects CommonJS
         '@babel/plugin-transform-modules-commonjs',
       ],
     },
   },
 
-  only: [
-    // Only files in src/ are built & transpiled by Babel
-    './src',
-    // jest-setup.ts is the only .ts module in the package root,
-    // needs to be transformed by Babel for Jest to understand it
-    './jest-setup.ts',
-  ],
-
-  plugins: [
-    '@babel/plugin-syntax-dynamic-import',
+  /**
+   * Most files built & transpiled by Babel are just in src/
+   * but other local projects and some config file extensions may also need processing:
+   * i.e. @trshcmpctr/components, jest-setup.ts
+   */
+  ignore: [
+    'common/temp/node_modules/.pnpm',
+    'node_modules',
   ],
 
   presets: [
@@ -38,4 +37,8 @@ export default {
       }
     ],
   ],
+
+  targets: {
+    browsers: 'defaults',
+  },
 };

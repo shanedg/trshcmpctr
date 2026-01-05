@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 
 import { ErrorCard } from './components/ErrorCard';
+import { Game } from './components/Game';
 import { Home } from './components/Home';
 import { NavigationChrome } from './components/NavigationChrome';
 import { NewWorld } from './components/NewWorld';
@@ -27,6 +28,10 @@ export const namedRoutes: NamedRoutes = {
       '/': {
         element: createElement(Home),
         errorElement: createElement(ErrorCard, { error: Error('Problem rendering Home')}),
+      },
+      '/game': {
+        element: createElement(Game),
+        errorElement: createElement(ErrorCard, { error: Error('Problem rendering Game')}),
       },
       '/worlds': {
         children: {

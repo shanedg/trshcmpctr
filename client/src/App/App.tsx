@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 
 import './App.css';
 
+import { Flex } from '@trshcmpctr/components';
+
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -14,21 +16,27 @@ export const App = () => {
   return (
     <StrictMode>
       <ErrorBoundary displayName="AppErrorBoundary">
-        <article
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100vh',
-            justifyContent: 'space-between',
-            padding: '6px 15px 0',
-            width: '100vw',
-          }}
-        >
-          <div>
-            <Header />
-            <RouterProvider router={router} />
-          </div>
-          <Footer />
+        <article>
+          <Flex
+            flexDirection="column"
+            justifyContent="space-between"
+            style={{
+              height: '100vh',
+              padding: '6px 15px 0',
+              width: '100vw',
+            }}
+          >
+            <Flex
+              flexDirection="column"
+              style={{
+                flexGrow: 1,
+              }}
+            >
+              <Header />
+              <RouterProvider router={router} />
+            </Flex>
+            <Footer />
+          </Flex>
         </article>
       </ErrorBoundary>
     </StrictMode>

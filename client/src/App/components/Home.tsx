@@ -1,9 +1,8 @@
 import { type APIGuildMember } from 'discord-api-types/v10';
-import { Link } from 'react-router';
 
 import { ErrorCard } from './ErrorCard';
 import { LoadingContent } from './LoadingContent';
-import { LogoutLink } from './LogoutLink';
+import { Nav } from './Nav';
 import { Unauthorized } from './Unauthorized';
 import { Welcome } from './Welcome';
 import { useLatestRequest } from '../hooks/use-latest-request';
@@ -28,19 +27,7 @@ export const Home = () => {
   if (guildUser) {
     return (
       <>
-        <nav>
-          <ul className="navigation-list">
-            <li>
-              <Link to="/new">new</Link>
-            </li>
-            <li>
-              <Link to="/worlds">worlds</Link>
-            </li>
-            <li>
-              <LogoutLink />
-            </li>
-          </ul>
-        </nav>
+        <Nav />
         <article>
           <h2>home</h2>
           <Welcome message={getWelcomeMessage(guildUser)} />

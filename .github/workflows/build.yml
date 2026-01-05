@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
     - uses: actions/checkout@v4
 
@@ -19,6 +20,7 @@ jobs:
           */node_modules
           */dist
           client/lib
+          components/lib
         key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
         # cached dependencies aren't used until following jobs
@@ -51,4 +53,5 @@ jobs:
           */node_modules
           */dist
           client/lib
+          components/lib
         key: ${{ steps.restore-build-cache.outputs.cache-primary-key }}
