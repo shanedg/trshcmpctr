@@ -4,6 +4,14 @@ export default {
     './src',
   ],
 
+  plugins: [
+    ['babel-plugin-react-compiler',
+      {
+        panicThreshold: 'all_errors',
+      }
+    ],
+  ],
+
   presets: [
     [
       '@babel/preset-env', {
