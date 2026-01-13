@@ -12,9 +12,6 @@ importers:
 
   ../../client:
     dependencies:
-      '@layoutit/voxcss':
-        specifier: ~0.1.8
-        version: 0.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@trshcmpctr/components':
         specifier: workspace:*
         version: link:../components
@@ -1664,23 +1661,6 @@ packages:
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
-
-  '@layoutit/voxcss@0.1.8':
-    resolution: {integrity: sha512-kYxK1GHS0UpNqcacP+LDU+wcYTJyYXH+ord9qW8vJsWvPcXA6TpDMz2Byhks4QIQU8f5uikWfvL2q/8fzCvtRg==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-      svelte: ^4.0.0
-      vue: ^3.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -8413,11 +8393,6 @@ snapshots:
       '@jsonjoy.com/buffers': 1.2.1(tslib@2.8.1)
       '@jsonjoy.com/codegen': 1.0.0(tslib@2.8.1)
       tslib: 2.8.1
-
-  '@layoutit/voxcss@0.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    optionalDependencies:
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 

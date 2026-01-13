@@ -4,7 +4,7 @@ import { useKeyPresses } from './use-key-presses';
 
 interface AvailableGameContext extends ReturnType<typeof useKeyPresses> {
   isPaused: boolean;
-  time: number;
+  // time: number;
 }
 
 const GameContext = createContext<AvailableGameContext | null>(null);

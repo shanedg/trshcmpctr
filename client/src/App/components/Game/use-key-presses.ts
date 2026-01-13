@@ -6,12 +6,20 @@ interface UseKeyPressesProps {
    * grouped into rows, i.e. keyRows[row][key]
    */
   keyRows: string[][];
+  /**
+   * FIXME:
+   */
+  onKeyDown: (keyName: string) => void;
+  /**
+   * FIXME:
+   */
+  onKeyUp: (keyName: string) => void;
 }
 
 /**
  * Hook for tracking keyboard key presses
  */
-export const useKeyPresses = ({ keyRows }: UseKeyPressesProps) => {
+export const useKeyPresses = ({ keyRows, onKeyDown, onKeyUp }: UseKeyPressesProps) => {
   const [keyPresses, setKeyPresses] = useState<Map<string, boolean>>(new Map());
 
   /**
@@ -26,7 +34,8 @@ export const useKeyPresses = ({ keyRows }: UseKeyPressesProps) => {
       next.set(e.key, true);
       return next;
     });
-  }, [keyRows]);
+    onKeyDown(e.key);
+  }, [keyRows, onKeyDown]);
 
   /**
    * Called whenever a keyboard key is released
@@ -40,7 +49,8 @@ export const useKeyPresses = ({ keyRows }: UseKeyPressesProps) => {
       next.set(e.key, false);
       return next;
     });
-  }, [keyRows]);
+    onKeyUp(e.key);
+  }, [keyRows, onKeyUp]);
 
   useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
