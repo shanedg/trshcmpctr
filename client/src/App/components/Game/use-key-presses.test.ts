@@ -11,6 +11,8 @@ describe('useKeyPresses', () => {
         keyRows: [
           ['a', 's', 'd', 'f'],
         ],
+        onKeyDown: jest.fn(),
+        onKeyUp: jest.fn(),
       },
     });
     expect(result.current.keyPresses.size).toEqual(0);
@@ -25,6 +27,8 @@ describe('useKeyPresses', () => {
         keyRows: [
           ['a', 's', 'd', 'f'],
         ],
+        onKeyDown: jest.fn(),
+        onKeyUp: jest.fn(),
       },
     });
     await user.keyboard('asdf');
@@ -38,6 +42,8 @@ describe('useKeyPresses', () => {
         keyRows: [
           ['a', 's', 'd', 'f'],
         ],
+        onKeyDown: jest.fn(),
+        onKeyUp: jest.fn(),
       },
     });
     await user.keyboard('qwer');

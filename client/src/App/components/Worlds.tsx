@@ -17,8 +17,9 @@ const WorldContext = createContext<Worlds | null>(null);
 export const useWorldContext = () => useContext(WorldContext);
 
 export const Worlds = () => {
-  const useWrapped = useLatestRequest<Worlds>('/api/v1/worlds');
-  const { data: worlds } = useWrapped();
+  const { data: worlds } = useLatestRequest<Worlds>({
+    url: '/api/v1/worlds',
+  });
 
   return (
     <WorldContext.Provider value={worlds}>

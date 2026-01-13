@@ -21,7 +21,7 @@ interface KeysProps {
  * Highlight gameplay keys when pressed
  */
 export const KeyPad = ({
-  isEmptyFirst = true,
+  isEmptyFirst = false,
   keyRows,
 }: KeysProps) => {
   const { keyPresses } = useGameContext();
@@ -29,6 +29,11 @@ export const KeyPad = ({
     <Flex
       flexDirection="column"
       gap="5px"
+      style={{
+        position: 'absolute',
+        right: '20px',
+        top: '20px',
+      }}
     >
       {keyRows.map((row, rowIndex) => (
         <Flex

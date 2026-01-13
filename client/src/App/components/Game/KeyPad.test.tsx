@@ -20,10 +20,10 @@ describe('KeyPad', () => {
         value={{
           isPaused: true,
           keyPresses: new Map(),
-          time: 0,
         }}
       >
         <KeyPad
+          isEmptyFirst={true}
           keyRows={[['a']]}
         />
       </GameContextProvider>
@@ -41,7 +41,6 @@ describe('KeyPad', () => {
         value={{
           isPaused: true,
           keyPresses,
-          time: 0,
         }}
       >
         <KeyPad
@@ -58,7 +57,6 @@ describe('KeyPad', () => {
         value={{
           isPaused: true,
           keyPresses: new Map(),
-          time: 0,
         }}
       >
         <KeyPad

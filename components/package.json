@@ -40,6 +40,7 @@
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@trshcmpctr/typescript": "workspace:*",
     "@types/react": "~19.2.5",
+    "babel-plugin-react-compiler": "~1.0.0",
     "eslint": "~9.39.1",
     "globals": "~16.5.0",
     "markdownlint-cli2": "~0.20.0",

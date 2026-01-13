@@ -12,9 +12,6 @@ importers:
 
   ../../client:
     dependencies:
-      '@layoutit/voxcss':
-        specifier: ~0.1.8
-        version: 0.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@trshcmpctr/components':
         specifier: workspace:*
         version: link:../components
@@ -109,6 +106,9 @@ importers:
       babel-loader:
         specifier: ~10.0.0
         version: 10.0.0(@babel/core@7.28.5)(webpack@5.104.1)
+      babel-plugin-react-compiler:
+        specifier: ~1.0.0
+        version: 1.0.0
       css-loader:
         specifier: ~7.1.1
         version: 7.1.2(webpack@5.104.1)
@@ -221,6 +221,9 @@ importers:
       '@types/react':
         specifier: ~19.2.5
         version: 19.2.7
+      babel-plugin-react-compiler:
+        specifier: ~1.0.0
+        version: 1.0.0
       eslint:
         specifier: ~9.39.1
         version: 9.39.2
@@ -1659,23 +1662,6 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  '@layoutit/voxcss@0.1.8':
-    resolution: {integrity: sha512-kYxK1GHS0UpNqcacP+LDU+wcYTJyYXH+ord9qW8vJsWvPcXA6TpDMz2Byhks4QIQU8f5uikWfvL2q/8fzCvtRg==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-      svelte: ^4.0.0
-      vue: ^3.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
@@ -2687,6 +2673,9 @@ packages:
     resolution: {integrity: sha512-ISqQ2frbiNU9vIJkzg7dlPpznPZ4jOiUQ1uSmB0fEHeowtN3COYRsXr/xexn64NpU13P06jc/L5TgiJXOgrbEg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
+
+  babel-plugin-react-compiler@1.0.0:
+    resolution: {integrity: sha512-Ixm8tFfoKKIPYdCCKYTsqv+Fd4IJ0DQqMyEimo+pxUOMUR9cVPlwTrFt9Avu+3cb6Zp3mAzl+t1MrG2fxxKsxw==}
 
   babel-preset-current-node-syntax@1.2.0:
     resolution: {integrity: sha512-E/VlAEzRrsLEb2+dv8yp3bo4scof3l9nR4lrld+Iy5NyVqgVYUJnDAmunkhPMisRI32Qc4iRiz425d8vM++2fg==}
@@ -8405,11 +8394,6 @@ snapshots:
       '@jsonjoy.com/codegen': 1.0.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@layoutit/voxcss@0.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    optionalDependencies:
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
   '@leichtgewicht/ip-codec@2.0.5': {}
 
   '@mapbox/node-pre-gyp@2.0.3':
@@ -9682,6 +9666,10 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.5(@babel/core@7.28.5)
     transitivePeerDependencies:
       - supports-color
+
+  babel-plugin-react-compiler@1.0.0:
+    dependencies:
+      '@babel/types': 7.28.5
 
   babel-preset-current-node-syntax@1.2.0(@babel/core@7.28.5):
     dependencies:
