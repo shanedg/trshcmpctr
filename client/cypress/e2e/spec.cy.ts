@@ -32,4 +32,11 @@ describe('app', () => {
 
     cy.get('h3').should('have.text', 'abc');
   });
+
+  it('navigates to game', () => {
+    cy.visit('/');
+    cy.get('a[href="/game"]').click();
+
+    cy.get('h2').should('have.text', 'game');
+  });
 });

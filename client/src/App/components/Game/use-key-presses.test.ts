@@ -13,9 +13,9 @@ describe('useKeyPresses', () => {
         ],
       },
     });
-    expect(result.current.keyPresses.size).toEqual(0);
+    expect(result.current.keyPressesRef.current.size).toEqual(0);
     await user.keyboard('asdf');
-    expect(result.current.keyPresses.size).toEqual(4);
+    expect(result.current.keyPressesRef.current.size).toEqual(4);
   });
 
   it('responds to keys in props', async () => {
@@ -28,7 +28,7 @@ describe('useKeyPresses', () => {
       },
     });
     await user.keyboard('asdf');
-    expect(result.current.keyPresses.size).toEqual(4);
+    expect(result.current.keyPressesRef.current.size).toEqual(4);
   });
 
   it('does not respond to keys not in props', async () => {
@@ -41,8 +41,8 @@ describe('useKeyPresses', () => {
       },
     });
     await user.keyboard('qwer');
-    expect(result.current.keyPresses.size).toEqual(0);
+    expect(result.current.keyPressesRef.current.size).toEqual(0);
     await user.keyboard('aszxcv');
-    expect(result.current.keyPresses.size).toEqual(2);
+    expect(result.current.keyPressesRef.current.size).toEqual(2);
   });
 });

@@ -1,6 +1,5 @@
 import { Flex } from '@trshcmpctr/components';
 
-import { useGameContext } from './game-context';
 import { Key } from './Key';
 
 interface KeysProps {
@@ -10,6 +9,10 @@ interface KeysProps {
    * @default true
    */
   isEmptyFirst?: boolean;
+  /**
+   * FIXME:
+   */
+  keyPresses: Map<string, boolean>;
   /**
    * Keyboard keys the component should highlight,
    * grouped into rows, i.e. keyRows[row][key]
@@ -21,14 +24,19 @@ interface KeysProps {
  * Highlight gameplay keys when pressed
  */
 export const KeyPad = ({
-  isEmptyFirst = true,
+  isEmptyFirst = false,
+  keyPresses,
   keyRows,
 }: KeysProps) => {
-  const { keyPresses } = useGameContext();
   return (
     <Flex
       flexDirection="column"
       gap="5px"
+      style={{
+        position: 'absolute',
+        right: '20px',
+        top: '20px',
+      }}
     >
       {keyRows.map((row, rowIndex) => (
         <Flex
