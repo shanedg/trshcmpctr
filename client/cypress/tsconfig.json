@@ -18,12 +18,6 @@
     // Enforce file case sensitivity
     "forceConsistentCasingInFileNames": true,
 
-    // Core definitions + DOM definitions
-    "lib": [
-      "es5",
-      "dom"
-    ],
-
     // Preserve ESM imports and CommonJS requires as-is.
     // Best reflects capabilities of bundlers.
     "module": "preserve",
