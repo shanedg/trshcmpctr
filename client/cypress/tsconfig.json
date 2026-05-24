@@ -31,9 +31,6 @@
     // "stronger guarantees of program correctness"
     "strict": true,
 
-    // Downlevel for Cypress test runner (?)
-    "target": "es5",
-
     // Only include some visible @types in compilation
     "types": [
       "node",
