@@ -24,6 +24,10 @@
       "dom"
     ],
 
+    // Preserve ESM imports and CommonJS requires as-is.
+    // Best reflects capabilities of bundlers.
+    "module": "preserve",
+
     // Ignore inconsistent global definitions, i.e. from Jest and Cypress
     "skipLibCheck": true,
 
