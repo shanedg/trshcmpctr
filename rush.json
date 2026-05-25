@@ -58,10 +58,8 @@
      *
      * The default value is false to avoid legacy compatibility issues.
      * It is strongly recommended to set strictPeerDependencies=true.
-     *
-     * TODO: @layoutit/voxcss has a peer dep on react@^18
      */
-    "strictPeerDependencies": false,
+    "strictPeerDependencies": true,
 
     /**
      * Configures the strategy used to select versions during installation.
