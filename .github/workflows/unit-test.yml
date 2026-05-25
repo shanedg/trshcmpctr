@@ -5,14 +5,14 @@ on:
 
 jobs:
   unit-test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6.0.2
 
     - name: Restore Build Cache
       id: restore-build-cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5.0.5
       with:
         path: |
           common/temp
@@ -21,7 +21,7 @@ jobs:
           */dist
           client/lib
           components/lib
-        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', '.github/workflows/ci-salt.txt') }}
+        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
 
     - name: Configure Discord Secrets

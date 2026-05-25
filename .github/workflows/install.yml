@@ -5,20 +5,20 @@ on:
 
 jobs:
   install:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6.0.2
 
     - name: Restore Cache
       id: restore-cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5.0.5
       with:
         path: |
           common/temp
           */.rush/temp
           */node_modules
-        key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', '.github/workflows/ci-salt.txt') }}
+        key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
         # cached dependencies aren't used until following jobs
         lookup-only: true
@@ -32,7 +32,7 @@ jobs:
 
     - name: Save Cache
       id: save-cache
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v5.0.5
       if: steps.restore-cache.outputs.cache-hit != 'true'
       with:
         path: |
