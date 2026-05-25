@@ -21,7 +21,7 @@ jobs:
           */dist
           client/lib
           components/lib
-        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
+        key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
 
     - name: Configure Discord Secrets
