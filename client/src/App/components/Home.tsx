@@ -21,8 +21,9 @@ const getWelcomeMessage = (guildUser: APIGuildMember) => {
  * The home page
  */
 export const Home = () => {
-  const useAuthorizedGuildMemberData = useLatestRequest<APIGuildMember>('/api/v1/authorized');
-  const { data: guildUser, error } = useAuthorizedGuildMemberData();
+  const { data: guildUser, error } = useLatestRequest<APIGuildMember>({
+    url: '/api/v1/authorized',
+  });
 
   if (guildUser) {
     return (

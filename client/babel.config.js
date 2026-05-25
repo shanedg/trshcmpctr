@@ -18,6 +18,14 @@ export default {
     'node_modules',
   ],
 
+  plugins: [
+    ['babel-plugin-react-compiler',
+      {
+        panicThreshold: 'all_errors',
+      }
+    ],
+  ],
+
   presets: [
     [
       '@babel/preset-env', {

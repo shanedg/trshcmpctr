@@ -2,7 +2,6 @@ jest.mock('./use-key-presses');
 
 import { render, screen } from '@testing-library/react';
 
-import { GameContextProvider } from './game-context';
 import { KeyPad } from './KeyPad';
 import { useKeyPresses } from './use-key-presses';
 
@@ -16,17 +15,11 @@ describe('KeyPad', () => {
 
   it('does not render keys that have not been pressed', () => {
     render(
-      <GameContextProvider
-        value={{
-          isPaused: true,
-          keyPresses: new Map(),
-          time: 0,
-        }}
-      >
-        <KeyPad
-          keyRows={[['a']]}
-        />
-      </GameContextProvider>
+      <KeyPad
+        isEmptyFirst={true}
+        keyPresses={new Map()}
+        keyRows={[['a']]}
+      />
     );
     expect(screen.queryByText('a')).toBeFalsy();
   });
@@ -37,35 +30,21 @@ describe('KeyPad', () => {
     // 'false' means it's not currently pressed.
     keyPresses.set('a', false);
     render(
-      <GameContextProvider
-        value={{
-          isPaused: true,
-          keyPresses,
-          time: 0,
-        }}
-      >
-        <KeyPad
-          keyRows={[['a']]}
-        />
-      </GameContextProvider>
+      <KeyPad
+        keyPresses={keyPresses}
+        keyRows={[['a']]}
+      />
     );
     expect(screen.getByText('a')).not.toBeFalsy();
   });
 
   it('render un-pressed keys when isEmptyFirst=false', () => {
     render(
-      <GameContextProvider
-        value={{
-          isPaused: true,
-          keyPresses: new Map(),
-          time: 0,
-        }}
-      >
-        <KeyPad
-          isEmptyFirst={false}
-          keyRows={[['a']]}
-        />
-      </GameContextProvider>
+      <KeyPad
+        isEmptyFirst={false}
+        keyPresses={new Map()}
+        keyRows={[['a']]}
+      />
     );
     expect(screen.getByText('a')).not.toBeFalsy();
   });

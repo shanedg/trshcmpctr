@@ -24,8 +24,11 @@ describe('useRequest', () => {
   it('wraps successful requests', async () => {
     (axios as jest.Mocked<typeof axios>).request.mockResolvedValue({ data: 'data!' });
 
-    const useSuccessfulRequest = useLatestRequest<string>('/api/v1/success');
-    const { result } = renderHook(useSuccessfulRequest);
+    const { result } = renderHook(useLatestRequest, {
+      initialProps: {
+        url: '/api/v1/success',
+      },
+    });
     await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(false);
@@ -36,10 +39,14 @@ describe('useRequest', () => {
   it('wraps requests with configurable options', async () => {
     (axios as jest.Mocked<typeof axios>).request.mockResolvedValue({ data: 'data!' });
 
-    const useCustomizableRequest = useLatestRequest<string>('/api/v1/customizable', {
-      baseURL: 'https://www.trshcmpctr.com',
+    renderHook(useLatestRequest, {
+      initialProps: {
+        config: {
+          baseURL: 'https://www.trshcmpctr.com',
+        },
+        url: '/api/v1/customizable',
+      },
     });
-    renderHook(useCustomizableRequest);
     await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(axios.request).toHaveBeenCalledTimes(1);
@@ -53,8 +60,11 @@ describe('useRequest', () => {
       Error('request-error')
     );
 
-    const useFailedRequest = useLatestRequest<string>('/api/v1/failed');
-    const { result } = renderHook(useFailedRequest);
+    const { result } = renderHook(useLatestRequest, {
+      initialProps: {
+        url: '/api/v1/failed',
+      },
+    });
     await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(false);
@@ -71,8 +81,11 @@ describe('useRequest', () => {
     );
     (axios as jest.Mocked<typeof axios>).isCancel.mockReturnValue(true);
 
-    const useCanceledRequest = useLatestRequest<string>('/api/v1/canceled');
-    const { result } = renderHook(useCanceledRequest);
+    const { result } = renderHook(useLatestRequest, {
+      initialProps: {
+        url: '/api/v1/canceled',
+      },
+    });
     await act(async () => { await jest.runAllTimersAsync(); });
 
     // The host component isn't done loading when a stale request is canceled
@@ -93,8 +106,11 @@ describe('useRequest', () => {
       })
     );
 
-    const usePendingRequest = useLatestRequest<string>('/api/v1/pending');
-    const { result } = renderHook(usePendingRequest);
+    const { result } = renderHook(useLatestRequest, {
+      initialProps: {
+        url: '/api/v1/pending',
+      },
+    });
     await act(async () => { await jest.advanceTimersByTimeAsync(mockedRequestTimeout - 1); });
 
     expect(result.current.isLoading).toBe(true);
@@ -114,8 +130,11 @@ describe('useRequest', () => {
       new Promise(jest.fn())
     );
 
-    const usePendingRequest = useLatestRequest<string>('/api/v1/pending');
-    const { result, unmount } = renderHook(usePendingRequest);
+    const { result, unmount } = renderHook(useLatestRequest, {
+      initialProps: {
+        url: '/api/v1/pending',
+      },
+    });
     await act(async () => { await jest.runAllTimersAsync(); });
 
     expect(result.current.isLoading).toBe(true);

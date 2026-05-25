@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface UseKeyPressesProps {
   /**
@@ -12,49 +12,41 @@ interface UseKeyPressesProps {
  * Hook for tracking keyboard key presses
  */
 export const useKeyPresses = ({ keyRows }: UseKeyPressesProps) => {
-  const [keyPresses, setKeyPresses] = useState<Map<string, boolean>>(new Map());
-
-  /**
-   * Called whenever a keyboard key is pressed down
-   */
-  const keydownHandler = useCallback((e: KeyboardEvent) => {
-    if (!keyRows.flat().includes(e.key)) {
-      return;
-    }
-    setKeyPresses(previous => {
-      const next = new Map(previous);
-      next.set(e.key, true);
-      return next;
-    });
-  }, [keyRows]);
-
-  /**
-   * Called whenever a keyboard key is released
-   */
-  const keyupHandler = useCallback((e: KeyboardEvent) => {
-    if (!keyRows.flat().includes(e.key)) {
-      return;
-    }
-    setKeyPresses(previous => {
-      const next = new Map(previous);
-      next.set(e.key, false);
-      return next;
-    });
-  }, [keyRows]);
+  const keyPressesRef = useRef<Map<string, boolean>>(new Map());
 
   useEffect(() => {
+    /**
+     * Called whenever a keyboard key is pressed down
+     */
+    const keydownHandler = (e: KeyboardEvent) => {
+      if (!keyRows.flat().includes(e.key)) {
+        return;
+      }
+      keyPressesRef.current.set(e.key, true);
+    };
+
+    /**
+     * Called whenever a keyboard key is released
+     */
+    const keyupHandler = (e: KeyboardEvent) => {
+      if (!keyRows.flat().includes(e.key)) {
+        return;
+      }
+      keyPressesRef.current.set(e.key, false);
+    };
+
     document.addEventListener('keydown', keydownHandler);
     document.addEventListener('keyup', keyupHandler);
     return () => {
       document.removeEventListener('keydown', keydownHandler);
       document.removeEventListener('keyup', keyupHandler);
     };
-  }, [keydownHandler, keyupHandler]);
+  }, [keyRows]);
 
   return {
     /**
      * Map of keys to pressed state
      */
-    keyPresses,
+    keyPressesRef,
   };
 };

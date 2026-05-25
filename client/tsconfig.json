@@ -5,14 +5,6 @@
     // Leave JSX transformation to Babel
     "jsx": "preserve",
 
-    "lib": [
-      // Package code runs in the browser
-      "DOM",
-      // Node 20.19.5 supports 100% of ES2023 features
-      // See <https://node.green/#ES2023>
-      "ES2023"
-    ],
-
     // Package code is resolved by Webpack
     // "moduleResolution" is "bundler" by default if "module" is "preserve"
     "module": "preserve",

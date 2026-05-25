@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { App } from './App/App';
@@ -14,4 +14,7 @@ if (!container) {
 }
 
 const root = createRoot(container);
-root.render(createElement(App));
+const StrictApp = createElement(StrictMode, {
+  children: createElement(App),
+});
+root.render(StrictApp);

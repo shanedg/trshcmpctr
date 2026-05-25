@@ -18,11 +18,9 @@
     // Enforce file case sensitivity
     "forceConsistentCasingInFileNames": true,
 
-    // Core definitions + DOM definitions
-    "lib": [
-      "es5",
-      "dom"
-    ],
+    // Preserve ESM imports and CommonJS requires as-is.
+    // Best reflects capabilities of bundlers.
+    "module": "preserve",
 
     // Ignore inconsistent global definitions, i.e. from Jest and Cypress
     "skipLibCheck": true,
@@ -30,9 +28,6 @@
     // Turn on all strict mode family options for
     // "stronger guarantees of program correctness"
     "strict": true,
-
-    // Downlevel for Cypress test runner (?)
-    "target": "es5",
 
     // Only include some visible @types in compilation
     "types": [
