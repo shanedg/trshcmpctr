@@ -1,6 +1,7 @@
-import type { RefObject } from 'react';
+import { drawLine } from './draw-line';
+import { project3DPointOnto2DScreen, type Point2D, type Point3D } from './draw-point';
 
-import type { Point2D, Point3D } from './draw-point';
+import type { RefObject } from 'react';
 
 interface Rotation {
   angleXY: number;
@@ -18,7 +19,6 @@ interface UseDrawScene {
 }
 
 export const useDrawScene = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- FIXME:
   cameraRef,
   canvasEnd,
   canvasStart,
@@ -46,20 +46,33 @@ export const useDrawScene = ({
 
   const drawSceneObjects = (sceneObjects: SceneObject3D[]) => {
     const ctx = ctxRef.current;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- FIXME:
+    const camera = cameraRef.current;
     if (!ctx) { return; }
-    sceneObjects.forEach(o => {
-      o.edges.forEach((e, _i, edges) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- FIXME: project edge p1 from 3d to 2d
-        const p1 = e;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars -- FIXME: project edge p2 from 3d to 2d
-        const p2 = edges[(_i + 1) % edges.length];
+    sceneObjects.forEach(sceneObject => {
+      sceneObject.edges.forEach((edge, _edgeIndex, edges) => {
+        const p1 = edge;
+        const projectedP1 = project3DPointOnto2DScreen(p1);
+        if (!projectedP1) { return; };
+        const p2 = edges[(_edgeIndex + 1) % edges.length];
+        const projectedP2 = project3DPointOnto2DScreen(p2);
+        if (!projectedP2) { return; };
         // FIXME: check if both p1 and p2 are on or near positive camera 2d plane
-        ctx.strokeStyle = 'lime';
-        ctx.beginPath();
+        // ctx.strokeStyle = 'lime';
+        // ctx.beginPath();
         // FIXME: move to p1
         // FIXME: line to p2
         // FIXME: stroke
-        ctx.closePath();
+        // ctx.closePath();
+        drawLine({
+          ctx,
+          height: 100,
+          // p1: projectedP1,
+          // p2: projectedP2,
+          p1,
+          p2,
+          width: 100,
+        });
       });
     });
   };

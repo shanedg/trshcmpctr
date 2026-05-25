@@ -57,7 +57,6 @@ export const CanvasSquareScene = ({
     keyPressesRef,
     positionRef: cameraRef,
   });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- FIXME:
   const { drawSceneFrame, drawSceneObjects } = useDrawScene({
     cameraRef,
     canvasStart: { x: (width - height) / 2, y: 0 },
@@ -107,8 +106,66 @@ export const CanvasSquareScene = ({
       // });
 
       drawSceneFrame({ frameInset: 10 });
-      // drawSceneObjects([
-      // ]);
+      drawSceneObjects([
+        {
+          origin: cameraRef.current,
+          rotation: {
+            angleXY: 0,
+            angleXZ: 0,
+            angleYZ: 0,
+          },
+          edges: [
+            // Far, top left
+            {
+              x: 0,
+              y: 1,
+              z: 1
+            },
+            // Far, top right
+            {
+              x: 1,
+              y: 1,
+              z: 1
+            },
+            // Far, bottom right
+            {
+              x: 1,
+              y: 0,
+              z: 1
+            },
+            // Far, bottom left
+            {
+              x: 0,
+              y: 0,
+              z: 1
+            },
+            // Near, top left
+            {
+              x: 0,
+              y: 1,
+              z: 0
+            },
+            // Near, top right
+            {
+              x: 1,
+              y: 1,
+              z: 0
+            },
+            // Near, bottom right
+            {
+              x: 1,
+              y: 0,
+              z: 0
+            },
+            // Near, bottom left
+            {
+              x: 0,
+              y: 0,
+              z: 0
+            },
+          ]
+        }
+      ]);
 
       if (isDebug) {
         const actualFps = frameManager.framesPerSecondRef.current?.toFixed();
@@ -125,7 +182,7 @@ export const CanvasSquareScene = ({
       stop();
       frameManager.removeTask(frameTask);
     };
-  }, [drawSceneFrame, frameManager, height, isDebug, updatePosition, width]);
+  }, [drawSceneFrame, drawSceneObjects, frameManager, height, isDebug, updatePosition, width]);
 
   return (
     <Flex
