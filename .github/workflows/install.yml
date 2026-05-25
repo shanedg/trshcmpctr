@@ -12,7 +12,7 @@ jobs:
 
     - name: Restore Cache
       id: restore-cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5.0.5
       with:
         path: |
           common/temp
@@ -32,7 +32,7 @@ jobs:
 
     - name: Save Cache
       id: save-cache
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v5.0.5
       if: steps.restore-cache.outputs.cache-hit != 'true'
       with:
         path: |

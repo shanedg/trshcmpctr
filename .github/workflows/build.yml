@@ -12,7 +12,7 @@ jobs:
 
     - name: Restore Build Cache
       id: restore-build-cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5.0.5
       with:
         path: |
           common/temp
@@ -28,7 +28,7 @@ jobs:
 
     - name: Restore Dependencies From Cache
       id: restore-cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5.0.5
       if: steps.restore-build-cache.outputs.cache-hit != 'true'
       with:
         path: |
@@ -44,7 +44,7 @@ jobs:
 
     - name: Save Build Cache
       id: save-cache
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v5.0.5
       if: steps.restore-build-cache.outputs.cache-hit != 'true'
       with:
         path: |
