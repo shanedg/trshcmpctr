@@ -51,21 +51,21 @@
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@types/express": "~5.0.0",
-    "ava": "~6.4.1",
+    "ava": "~8.0.1",
     "cypress": "13.17.0",
     "eslint": "~9.39.1",
     "eslint-plugin-ava": "~15.1.0",
-    "eslint-plugin-cypress": "~5.4.0",
+    "eslint-plugin-cypress": "~6.4.1",
     "eslint-plugin-eslint-comments": "~3.2.0",
     "eslint-plugin-jest": "~29.15.2",
-    "eslint-plugin-n": "~17.24.0",
-    "globals": "~16.5.0",
+    "eslint-plugin-n": "~18.0.1",
+    "globals": "~17.6.0",
     "markdownlint-cli2": "~0.22.1",
     "nodemon": "~3.1.0",
     "pino-pretty": "~13.1.2",
-    "sinon": "~21.1.2",
-    "start-server-and-test": "~2.1.2",
-    "typescript": "~5.9.3"
+    "sinon": "~22.0.0",
+    "start-server-and-test": "~3.0.5",
+    "typescript": "~6.0.3"
   },
   "engines": {
     "node": ">=20.19.5"

@@ -11,8 +11,8 @@ export default defineConfig([
     ],
     languageOptions: {
       /**
-       * Eslint will only parse import attributes starting in 2025.
-       * <https://nodejs.org/api/esm.html#import-attributes>
+       * Node 24.16.8 supports virtually all features ES2025 and below,
+       * See <https://node.green/#ES2023>
        */
       ecmaVersion: 2025,
     },

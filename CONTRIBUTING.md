@@ -85,6 +85,11 @@ git add -A
 git commit -m 'build: rush update-minor'
 ```
 
+Packages excluded via the [--reject] option:
+
+* `webpack` is excluded because 5.105.x breaks `@trshcmpctr/discord` e2e tests.
+See [webpack-5-105-breaks-discord-e2e.md](./webpack-5-105-breaks-discord-e2e.md).
+
 #### 3. Major Upgrades
 
 Use a custom rush command[^1] (see [command-line.json]) that calls
@@ -103,6 +108,9 @@ Packages excluded via the [--reject] option:
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
 * `cypress` excluded because version bumps also require updates outside package.json
+* `@eslint/js`, `@types/node`, `cypress`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
+* `webpack` is excluded because 5.105.x breaks `@trshcmpctr/discord` e2e tests.
+See [webpack-5-105-breaks-discord-e2e.md](./webpack-5-105-breaks-discord-e2e.md).
 
 ### Updating pnpm
 

@@ -23,8 +23,8 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-n": "~17.24.0",
-    "globals": "~16.5.0"
+    "eslint-plugin-n": "~18.0.1",
+    "globals": "~17.6.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
