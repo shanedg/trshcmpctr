@@ -8,13 +8,15 @@ in the pre-commit Git hook.
 From this directory, run the following:
 
 ```sh
-npx npm-check-updates@22.2.1 --upgrade --target latest
+npx npm-check-updates@22.2.1 --upgrade --target minor
+npx npm-check-updates@22.2.1 --upgrade --target latest --reject eslint
 ```
 
 > Keep the version of [npm-check-updates] used here in sync with
 commands in [common/config/rush/command-line.json]
 
-This command upgrades all dependencies to the latest version.
+These commands upgrade all dependencies to the latest version.
+`eslint` is excluded until the entire repo is ready to upgrade.
 
 Then, from anywhere in the repository, run:
 
