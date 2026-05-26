@@ -20,13 +20,7 @@ npx npm-check-updates@22.2.1 --upgrade --target latest
 > Keep the version of [npm-check-updates] used here in sync with
 commands in [common/config/rush/command-line.json]
 
-The first command upgrades all dependencies to the latest minor version.
-The second then upgrades all dependencies except for `@types/node` to
-the latest (major) version.
-
-> `@types/node` is excluded because the major version of this package
-corresponds with the expected major version of Node and and should only change
-when Node is upgraded in this repository.
+This command upgrades all dependencies to the latest version.
 
 Then, from anywhere in the repository, run:
 
