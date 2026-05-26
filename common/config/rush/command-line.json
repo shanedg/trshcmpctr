@@ -103,6 +103,7 @@
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
         --target minor \
+        --reject 'webpack' \
         && \
         node common/scripts/install-run.js npm-check-updates@22.2.1 \
         npm-check-updates \
@@ -110,7 +111,8 @@
         --upgrade \
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
-        --target minor"
+        --target minor \
+        --reject 'webpack'"
     }
 
     // {

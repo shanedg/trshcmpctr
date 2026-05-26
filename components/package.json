@@ -24,15 +24,15 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "core-js": "~3.47.0",
+    "core-js": "~3.49.0",
     "react": "~19.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "~7.28.3",
-    "@babel/core": "~7.28.5",
-    "@babel/preset-env": "~7.28.5",
-    "@babel/preset-react": "~7.28.5",
-    "@babel/preset-typescript": "~7.28.5",
+    "@babel/cli": "~7.29.7",
+    "@babel/core": "~7.29.7",
+    "@babel/preset-env": "~7.29.7",
+    "@babel/preset-react": "~7.29.7",
+    "@babel/preset-typescript": "~7.29.7",
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/eslint-config-react": "workspace:*",
@@ -43,7 +43,7 @@
     "babel-plugin-react-compiler": "~1.0.0",
     "eslint": "~9.39.1",
     "globals": "~16.5.0",
-    "markdownlint-cli2": "~0.20.0",
+    "markdownlint-cli2": "~0.22.1",
     "typescript": "~5.9.3"
   },
   "engines": {
