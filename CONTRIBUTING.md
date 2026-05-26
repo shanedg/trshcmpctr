@@ -116,7 +116,7 @@ differences in dependency calculation and commit the changes to
 ```sh
 rush update --recheck
 git add rush.json common/config/rush/pnpm-lock.yaml
-git commit -m 'build(deps): update pnpm from x to y'
+git commit -m 'build: update pnpm from x to y'
 ```
 
 ### Updating Rush
@@ -130,7 +130,7 @@ scripts modified in [common/scripts].
 ```sh
 rush update
 git add rush.json common/scripts
-git commit -m 'build(deps): update rush from x to y'
+git commit -m 'build: update rush from x to y'
 ```
 
 ---
