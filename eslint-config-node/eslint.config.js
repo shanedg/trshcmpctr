@@ -7,9 +7,9 @@ import eslintConfigNode from './lib/eslint-config-node.js';
 export default defineConfig([
   {
     extends: [
+      eslintConfig,
       // It lints itself :)
       eslintConfigNode,
-      eslintConfig,
     ],
     rules: {
       // Default node resolution requires extensions for relative imports

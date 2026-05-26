@@ -6,7 +6,7 @@ Example ci install failure: <https://github.com/shanedg/trshcmpctr/actions/runs/
 // pnpm@10.26.1 -> 11.3.0
 rush update --recheck
 // cut
-Running "pnpm install" in /Users/shanegarrity/dev/trsh-1/common/temp
+Running "pnpm install" in /Users/shanedg/dev/trshcmpctr/common/temp
 
 Scope: all 14 workspace projects
 ✓ Lockfile passes supply-chain policies (1481 entries in 7.9s)
@@ -19,7 +19,7 @@ Progress: resolved 1481, reused 0, downloaded 1463, added 1459, done
 Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.
 
 The command failed:
- /Users/shanegarrity/dev/trsh-1/common/temp/pnpm-local/node_modules/.bin/pnpm install --store /Users/shanegarrity/dev/trsh-1/common/temp/pnpm-store --config.cacheDir=/Users/shanegarrity/dev/trsh-1/common/temp/pnpm-store --config.stateDir=/Users/shanegarrity/dev/trsh-1/common/temp/pnpm-store --no-prefer-frozen-lockfile --strict-peer-dependencies --config.auto-install-peers=false --config.resolutionMode=highest --config.ignoreCompatibilityDb --recursive --link-workspace-packages false --reporter default
+ /Users/shanedg/dev/trshcmpctr/common/temp/pnpm-local/node_modules/.bin/pnpm install --store /Users/shanedg/dev/trshcmpctr/common/temp/pnpm-store --config.cacheDir=/Users/shanedg/dev/trshcmpctr/common/temp/pnpm-store --config.stateDir=/Users/shanedg/dev/trshcmpctr/common/temp/pnpm-store --no-prefer-frozen-lockfile --strict-peer-dependencies --config.auto-install-peers=false --config.resolutionMode=highest --config.ignoreCompatibilityDb --recursive --link-workspace-packages false --reporter default
 ERROR: Error: Process exited with code 1
 Giving up after 1 attempts
 

@@ -11,11 +11,10 @@ export default defineConfig([
     ],
     languageOptions: {
       /**
-       * Node 20.19.5 supports 100% of ES2023 features,
-       * only some of 2024, and very little of 2025.
+       * Node 24.16.8 supports virtually all features ES2025 and below,
        * See <https://node.green/#ES2023>
        */
-      ecmaVersion: 2023,
+      ecmaVersion: 2025,
       globals: globals.nodeBuiltin,
     },
     name: 'Recommended Node ESM Only',

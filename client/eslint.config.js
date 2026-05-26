@@ -43,8 +43,8 @@ export default defineConfig([
   },
   {
     extends: [
-      eslintConfigNode,
       eslintConfig,
+      eslintConfigNode,
     ],
     files: esmConfigFiles,
     name: 'Recommended ESM',
