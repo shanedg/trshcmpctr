@@ -18,11 +18,6 @@
     // Enforce file case sensitivity
     "forceConsistentCasingInFileNames": true,
 
-    // Suppress "TS5101: Option 'downlevelIteration' is deprecated and will stop functioning in TypeScript 7.0."
-    // Official support for Typescript 6 added in cypress@15.14.
-    // See <https://docs.cypress.io/app/references/changelog#15-14-0>.
-    "ignoreDeprecations": "6.0",
-
     // Preserve ESM imports and CommonJS requires as-is.
     // Best reflects capabilities of bundlers.
     "module": "preserve",
