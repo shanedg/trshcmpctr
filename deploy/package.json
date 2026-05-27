@@ -24,8 +24,8 @@
     "upload": "node lib/aws-s3-upload-artifacts.js"
   },
   "dependencies": {
-    "@aws-sdk/client-ec2": "~3.1053.0",
-    "@aws-sdk/client-s3": "~3.1053.0"
+    "@aws-sdk/client-ec2": "~3.1054.0",
+    "@aws-sdk/client-s3": "~3.1054.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
