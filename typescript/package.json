@@ -26,6 +26,6 @@
     "markdownlint-cli2": "~0.22.1"
   },
   "engines": {
-    "node": ">=20.19.5"
+    "node": ">=22.18.0"
   }
 }
