@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "{{name}}",
-  "engines": {
-    "node": ">=20.19.5"
-  },
   "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/{{path}}#readme",
   "repository": {
     "type": "git",
@@ -13,12 +10,12 @@
     "directory": "{{path}}"
   },
   "license": "UNLICENSED",
-  "main": "./lib/index.js",
+  "type": "module",
   "exports": "./lib/index.js",
+  "main": "./lib/index.js",
   "files": [
     "lib"
   ],
-  "type": "module",
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
@@ -31,5 +28,8 @@
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.22.1"
+  },
+  "engines": {
+    "node": ">=20.19.5"
   }
 }
