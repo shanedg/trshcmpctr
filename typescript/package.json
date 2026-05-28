@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "test": ""
   },
   "devDependencies": {

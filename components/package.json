@@ -19,7 +19,7 @@
   "scripts": {
     "build": "babel --delete-dir-on-start --extensions .ts,.tsx --out-dir lib/ --verbose src/ && tsc",
     "lint": "eslint --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "test": "",
     "type-check": "tsc --noEmit"
   },

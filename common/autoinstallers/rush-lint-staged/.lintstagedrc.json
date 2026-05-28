@@ -1,5 +1,5 @@
 {
   "*.{cjs,js,jsx,mjs,ts,tsx}": "eslint --flag v10_config_lookup_from_file --max-warnings 0 --no-warn-ignored",
   "package.json": "sort-package-json",
-  "*.md": "markdownlint-cli2 --config markdownlint-config/.markdownlint-cli2.jsonc --no-globs --fix"
+  "*.md": "markdownlint-cli2 --config markdownlint-config/src/.markdownlint-cli2.jsonc --no-globs --fix"
 }

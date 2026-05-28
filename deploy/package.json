@@ -18,7 +18,7 @@
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "start": "node src/index.js",
     "test": "",
     "upload": "node src/aws-s3-upload-artifacts.js"

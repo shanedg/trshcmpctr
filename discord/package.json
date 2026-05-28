@@ -23,7 +23,7 @@
     "debug": "DISCORD_LOG_LEVEL=debug node --trace-warnings --inspect-brk src/server.js",
     "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --inspect src/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
     "lint": "eslint --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "start": "NODE_ENV=production node src/server.js",
     "start:test": "NODE_ENV=production node src/server.js http://localhost:53134/auth",
     "test": "ava",
