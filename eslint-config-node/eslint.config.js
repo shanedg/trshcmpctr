@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
 
-import eslintConfigNode from './lib/eslint-config-node.js';
+import eslintConfigNode from './src/eslint-config-node.js';
 
 export default defineConfig([
   {

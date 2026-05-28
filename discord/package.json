@@ -12,20 +12,20 @@
   "license": "UNLICENSED",
   "type": "module",
   "files": [
-    "lib",
-    "!lib/**/*.test.*",
-    "!lib/**/*.ava-test.*"
+    "src",
+    "!src/**/*.test.*",
+    "!src/**/*.ava-test.*"
   ],
   "scripts": {
     "build": "",
     "cy:open": "cypress open --config-file=cypress/cypress.config.js --e2e --browser=chrome",
     "cy:run": "cypress run --config-file=cypress/cypress.config.js",
-    "debug": "DISCORD_LOG_LEVEL=debug node --trace-warnings --inspect-brk lib/server.js",
-    "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --inspect lib/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
+    "debug": "DISCORD_LOG_LEVEL=debug node --trace-warnings --inspect-brk src/server.js",
+    "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --inspect src/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
     "lint": "eslint --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
-    "start": "NODE_ENV=production node lib/server.js",
-    "start:test": "NODE_ENV=production node lib/server.js http://localhost:53134/auth",
+    "start": "NODE_ENV=production node src/server.js",
+    "start:test": "NODE_ENV=production node src/server.js http://localhost:53134/auth",
     "test": "ava",
     "test:cypress": "start-server-and-test start:test http://localhost:53134 cy:run",
     "test:debug": "ava debug --break"

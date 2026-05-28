@@ -1,4 +1,4 @@
-lib/config.json
+src/config.json
 
 # https://www.npmjs.com/package/session-file-store#options
 sessions

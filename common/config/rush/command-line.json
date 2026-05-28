@@ -42,7 +42,7 @@
       "name": "scaffold",
       "summary": "Generate a new project from a template",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js plop@4.0.1 plop --plopfile scaffold/lib/index.js"
+      "shellCommand": "node common/scripts/install-run.js plop@4.0.1 plop --plopfile scaffold/src/index.js"
     },
     {
       "name": "test",
@@ -83,7 +83,7 @@
         && \
         node common/scripts/install-run.js npm-check-updates@22.2.1 \
         npm-check-updates \
-        --packageFile scaffold/lib/templates/package.json.hbs \
+        --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \
@@ -107,7 +107,7 @@
         && \
         node common/scripts/install-run.js npm-check-updates@22.2.1 \
         npm-check-updates \
-        --packageFile scaffold/lib/templates/package.json.hbs \
+        --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
         --minimal \
         --dep 'prod','dev','optional','packageManager','peer' \

@@ -2,11 +2,11 @@
 
 ## Configure
 
-Create a new file named `lib/config.json`.
-You can use `lib/config.example.json` as a template.
+Create a new file named `src/config.json`.
+You can use `src/config.example.json` as a template.
 
 ```sh
-cp lib/config.example.json lib/config.json
+cp src/config.example.json src/config.json
 ```
 
 Populate `clientId` and `clientSecret` with the values from the Discord app's OAuth2 menu.

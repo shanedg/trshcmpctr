@@ -128,7 +128,7 @@ fi
 # Run @trshcmpctr/discord as a systemd service
 # Debugging:
 # sudo systemctl status trshcmpctr-discord
-cp /home/ec2-user/dist/discord/lib/trshcmpctr-discord.service /etc/systemd/system/trshcmpctr-discord.service
+cp /home/ec2-user/dist/discord/src/trshcmpctr-discord.service /etc/systemd/system/trshcmpctr-discord.service
 systemctl daemon-reload
 service trshcmpctr-discord start
 

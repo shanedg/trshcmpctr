@@ -11,10 +11,10 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/tsconfig.json",
-  "main": "./lib/tsconfig.json",
+  "exports": "./src/tsconfig.json",
+  "main": "./src/tsconfig.json",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",

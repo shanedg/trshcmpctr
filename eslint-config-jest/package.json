@@ -11,10 +11,10 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/eslint-config-jest.js",
-  "main": "./lib/eslint-config-jest.js",
+  "exports": "./src/eslint-config-jest.js",
+  "main": "./src/eslint-config-jest.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",

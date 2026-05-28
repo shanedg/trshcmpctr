@@ -11,10 +11,10 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/jest-stdout-reporter.js",
-  "main": "./lib/jest-stdout-reporter.js",
+  "exports": "./src/jest-stdout-reporter.js",
+  "main": "./src/jest-stdout-reporter.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",

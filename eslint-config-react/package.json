@@ -11,10 +11,10 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/eslint-config-react.js",
-  "main": "./lib/eslint-config-react.js",
+  "exports": "./src/eslint-config-react.js",
+  "main": "./src/eslint-config-react.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",

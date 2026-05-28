@@ -11,10 +11,10 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/eslint-config-typescript.js",
-  "main": "./lib/eslint-config-typescript.js",
+  "exports": "./src/eslint-config-typescript.js",
+  "main": "./src/eslint-config-typescript.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",
