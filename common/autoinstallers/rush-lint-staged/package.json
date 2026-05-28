@@ -2,6 +2,7 @@
   "name": "rush-lint-staged",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "eslint": "~9.39.2",
     "lint-staged": "~17.0.5",
