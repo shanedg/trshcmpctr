@@ -21,7 +21,7 @@ describe('KeyPad', () => {
         keyRows={[['a']]}
       />
     );
-    expect(screen.queryByText('a')).toBeFalsy();
+    expect(screen.queryByText('a')).not.toBeInTheDocument();
   });
 
   it('renders keys that have been pressed', () => {
@@ -35,7 +35,7 @@ describe('KeyPad', () => {
         keyRows={[['a']]}
       />
     );
-    expect(screen.getByText('a')).not.toBeFalsy();
+    expect(screen.getByText('a')).toBeInTheDocument();
   });
 
   it('render un-pressed keys when isEmptyFirst=false', () => {
@@ -46,6 +46,6 @@ describe('KeyPad', () => {
         keyRows={[['a']]}
       />
     );
-    expect(screen.getByText('a')).not.toBeFalsy();
+    expect(screen.getByText('a')).toBeInTheDocument();
   });
 });
