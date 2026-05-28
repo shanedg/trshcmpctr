@@ -4,7 +4,7 @@
 
 set -eou pipefail
 
-client_config_file='lib/config.json'
+client_config_file='src/config.json'
 
 if [ -f "$client_config_file" ]; then
   echo "$client_config_file already exists."

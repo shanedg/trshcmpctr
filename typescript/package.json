@@ -11,14 +11,14 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/tsconfig.json",
-  "main": "./lib/tsconfig.json",
+  "exports": "./src/tsconfig.json",
+  "main": "./src/tsconfig.json",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "test": ""
   },
   "devDependencies": {

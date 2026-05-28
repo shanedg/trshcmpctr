@@ -11,14 +11,14 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./.markdownlint-cli2.jsonc",
-  "main": "./.markdownlint-cli2.jsonc",
+  "exports": "./src/.markdownlint-cli2.jsonc",
+  "main": "./src/.markdownlint-cli2.jsonc",
   "files": [
-    "./.markdownlint-cli2.jsonc"
+    "./src/.markdownlint-cli2.jsonc"
   ],
   "scripts": {
     "build": "",
-    "lint:md": "markdownlint-cli2 --config .markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config src/.markdownlint-cli2.jsonc",
     "test": ""
   },
   "devDependencies": {

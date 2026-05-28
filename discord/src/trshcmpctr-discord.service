@@ -1,6 +1,6 @@
 # Run @trshcmpctr/discord as a systemd service
 # Copied to /etc/systemd/system/ by @trshcmpctr/deploy
-# See deploy/lib/ec2-user-data.sh
+# See deploy/src/ec2-user-data.sh
 
 [Unit]
 Description=@trshcmpctr/discord

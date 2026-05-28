@@ -11,15 +11,15 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./lib/eslint-config-jest.js",
-  "main": "./lib/eslint-config-jest.js",
+  "exports": "./src/eslint-config-jest.js",
+  "main": "./src/eslint-config-jest.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "build": "",
     "lint": "eslint --max-warnings=0 .",
-    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/.markdownlint-cli2.jsonc",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
     "test": ""
   },
   "dependencies": {

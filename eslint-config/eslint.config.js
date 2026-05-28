@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import node from 'eslint-plugin-n';
 import globals from 'globals';
 
-import eslintConfig from './lib/eslint-config.js';
+import eslintConfig from './src/eslint-config.js';
 
 const { configs: nodeConfigs } = node;
 
