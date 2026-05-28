@@ -10,16 +10,6 @@ Notes specifically for repository maintainers
 rush *.log artifacts to github build artifacts for debugging
 * auth fails on first couple renders, refresh resolves
 * docs: updating/upgrading node
-* lint js/md on precommit?
-* esm-ify more packages
-* publish
-* generate changelogs
-* @trshcmpctr/eslint-config-jest:
-  * <https://github.com/dangreenisrael/eslint-plugin-jest-formatting>
-  * <https://github.com/istanbuljs/eslint-plugin-istanbul>
-  * <https://www.npmjs.com/package/eslint-plugin-jest-dom>
-* @trshcmpctr/eslint-config-typescript
-  * <https://typescript-eslint.io/docs/linting/troubleshooting/#the-indent--typescript-eslintindent-rules>
 
 ## Mysteries
 

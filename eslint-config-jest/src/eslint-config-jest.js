@@ -1,5 +1,6 @@
 import { defineConfig } from 'eslint/config';
 import eslintJest from 'eslint-plugin-jest';
+import eslintJestDOM from 'eslint-plugin-jest-dom';
 import globals from 'globals';
 
 /**
@@ -7,7 +8,10 @@ import globals from 'globals';
  */
 export default defineConfig([
   {
-    extends: [eslintJest.configs['flat/recommended']],
+    extends: [
+      eslintJest.configs['flat/recommended'],
+      eslintJestDOM.configs['flat/recommended'],
+    ],
     files: [
       '**/*.test.js',
       '**/*.test.jsx',
