@@ -25,8 +25,8 @@ export default defineConfig([
     files: ['**/*.js'],
     languageOptions: {
       /**
-       * Node 24.16.8 supports virtually all features ES2025 and below,
-       * See <https://node.green/#ES2023>
+       * Node 24.16.8 supports virtually all features ES2025 and below:
+       * <https://node.green/#ES2025>
        */
       ecmaVersion: 2025,
       globals: globals.nodeBuiltin,
