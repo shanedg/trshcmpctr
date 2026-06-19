@@ -20,6 +20,10 @@ jobs:
     steps:
     - uses: actions/checkout@v6.0.2
 
+    - uses: actions/setup-node@v6.4.0
+      with:
+        node-version: 24.16.0
+
     - name: Restore Build Cache
       id: restore-build-cache
       uses: actions/cache/restore@v5.0.5
