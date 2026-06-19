@@ -1,9 +1,13 @@
 /**
  * This configuration file provides settings specific to the PNPM package manager.
  * More documentation is available on the Rush website: https://rushjs.io
+ *
+ * Points schema directly at rush repo because public developer link is not the latest:
+ * - <https://github.com/microsoft/rushstack/issues/5683>
+ * - <https://github.com/microsoft/rushstack/issues/5839>
  */
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/pnpm-config.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/rushstack/refs/heads/main/libraries/rush-lib/src/schemas/pnpm-config.schema.json",
 
   /**
    * If true, then `rush install` and `rush update` will use the PNPM workspaces feature
