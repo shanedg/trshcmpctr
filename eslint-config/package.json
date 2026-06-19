@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "eslint-plugin-n": "~18.0.1",
+    "eslint-plugin-n": "~18.1.0",
     "globals": "~17.6.0",
     "markdownlint-cli2": "~0.22.1"
   },

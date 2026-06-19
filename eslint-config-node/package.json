@@ -23,7 +23,7 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-n": "~18.0.1",
+    "eslint-plugin-n": "~18.1.0",
     "globals": "~17.6.0"
   },
   "devDependencies": {
