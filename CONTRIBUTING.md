@@ -94,11 +94,13 @@ git commit -m 'build: rush update-major'
 
 Packages excluded via the [--reject] option:
 
+* All known `@babel/*` packages excluded because of missing transitive @babel/core@v7 peer deps when upgrading direct deps to v8.
+* `@eslint/js`, `@types/node`, `cypress`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
 * `cypress` excluded because version bumps also require updates outside package.json
-* `@eslint/js`, `@types/node`, `cypress`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
+* `react-router` is excluded because of [breaking changes](https://reactrouter.com/start/changelog#v800).
 * `webpack` is excluded because 5.105.x breaks `@trshcmpctr/discord` e2e tests.
 See [webpack-5-105-breaks-discord-e2e.md](./webpack-5-105-breaks-discord-e2e.md).
 
