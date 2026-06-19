@@ -28,15 +28,22 @@ interface FlexAwareProps extends StyleProps<HTMLDivElement> {
  * Use Flexbox rules to control layout of children
  */
 export const Flex = ({
+  alignItems,
   children,
+  display = 'flex',
+  flexDirection,
+  gap,
+  justifyContent,
   style,
-  ...flexProps
 }: PropsWithChildren<Partial<FlexAwareProps>>) => {
   return (
     <div
       style={{
-        display: 'flex',
-        ...flexProps,
+        display,
+        ...(alignItems && { alignItems }),
+        ...(flexDirection && { flexDirection }),
+        ...(gap && { gap }),
+        ...(justifyContent && { justifyContent }),
         ...style,
       }}
     >
