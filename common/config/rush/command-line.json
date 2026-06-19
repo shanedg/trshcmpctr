@@ -72,7 +72,7 @@
         Run after `update-minor`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.1 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
@@ -81,7 +81,7 @@
         --target latest \
         --reject '@eslint/js,@types/node,cypress,eslint,eslint-plugin-ava,webpack' \
         && \
-        node common/scripts/install-run.js npm-check-updates@22.2.1 \
+        node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
@@ -96,7 +96,7 @@
         Run after `rush update --full`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.1 \
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
@@ -105,7 +105,7 @@
         --target minor \
         --reject 'webpack' \
         && \
-        node common/scripts/install-run.js npm-check-updates@22.2.1 \
+        node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
