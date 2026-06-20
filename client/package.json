@@ -42,12 +42,12 @@
   },
   "dependencies": {
     "@trshcmpctr/components": "workspace:*",
-    "axios": "~1.16.1",
+    "axios": "~1.18.0",
     "core-js": "~3.49.0",
     "prop-types": "~15.8.1",
     "react": "~19.2.0",
     "react-dom": "~19.2.0",
-    "react-router": "~7.15.1"
+    "react-router": "~7.18.0"
   },
   "devDependencies": {
     "@babel/core": "~7.29.7",
@@ -68,7 +68,7 @@
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@trshcmpctr/typescript": "workspace:*",
     "@types/jest": "~30.0.0",
-    "@types/node": "~24.12.4",
+    "@types/node": "~24.13.2",
     "@types/prop-types": "~15.7.12",
     "@types/react": "~19.2.5",
     "@types/react-dom": "~19.2.3",
@@ -76,11 +76,11 @@
     "babel-loader": "~10.1.1",
     "babel-plugin-react-compiler": "~1.0.0",
     "css-loader": "~7.1.1",
-    "cypress": "15.16.0",
+    "cypress": "15.17.0",
     "discord-api-types": "~0.38.33",
     "eslint": "~9.39.1",
     "eslint-plugin-cypress": "~6.4.1",
-    "eslint-plugin-n": "~18.0.1",
+    "eslint-plugin-n": "~18.1.0",
     "eslint-plugin-testing-library": "~7.16.2",
     "globals": "~17.6.0",
     "html-webpack-plugin": "~5.6.0",

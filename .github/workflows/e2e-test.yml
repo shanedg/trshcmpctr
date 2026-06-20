@@ -8,7 +8,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-    - uses: actions/checkout@v6.0.2
+    - uses: actions/checkout@v7.0.0
+
+    - uses: actions/setup-node@v6.4.0
+      with:
+        node-version: 24.16.0
 
     - name: Restore Build Cache
       id: restore-build-cache
@@ -35,7 +39,7 @@ jobs:
         DISCORD_SESSION_SECRET: ${{ secrets.DISCORD_SESSION_SECRET }}
 
     - name: Install Cypress Binary
-      run: node common/scripts/install-run.js cypress@15.16.0 cypress install
+      run: node common/scripts/install-run.js cypress@15.17.0 cypress install
 
     - name: E2E Tests
       run: node common/scripts/install-run-rush.js test:cypress --verbose

@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "eslint": "~9.39.2",
-    "lint-staged": "~17.0.5",
+    "eslint": "~9.39.4",
+    "lint-staged": "~17.0.7",
     "markdownlint-cli2": "~0.22.1",
-    "sort-package-json": "3.6.1"
+    "sort-package-json": "4.0.0"
   }
 }

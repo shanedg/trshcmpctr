@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.175.1",
+  "rushVersion": "5.176.0",
 
   /**
    * The next field selects which package manager should be installed and determines its version.
@@ -28,7 +28,7 @@
    *
    * Set options in common/config/rush/pnpm-config.json.
    */
-  "pnpmVersion": "10.33.4",
+  "pnpmVersion": "11.8.0",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.

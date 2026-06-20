@@ -14,7 +14,7 @@ enforced rules.
 From this directory, run the following:
 
 ```sh
-npx npm-check-updates@22.2.1 --upgrade --target latest
+npx npm-check-updates@22.2.3 --upgrade --cooldown '1440m' --target latest
 ```
 
 > Keep the version of [npm-check-updates] used here in sync with
