@@ -5,20 +5,13 @@ in the pre-commit Git hook.
 
 ## Keeping Autoinstaller Dependencies Up to Date
 
-From this directory, run the following:
+From anywhere in the repository, run the following to upgrade all dependencies to the latest version:
 
 ```sh
-npx npm-check-updates@22.2.3 --upgrade --cooldown '1440m' --target minor
-npx npm-check-updates@22.2.3 --upgrade --cooldown '1440m' --target latest --reject eslint
+rush update-rush-lint-staged
 ```
 
-> Keep the version of [npm-check-updates] used here in sync with
-commands in [common/config/rush/command-line.json]
-
-These commands upgrade all dependencies to the latest version.
-`eslint` is excluded until the entire repo is ready to upgrade.
-
-Then, from anywhere in the repository, run:
+Then reinstall autoinstaller dependencies:
 
 ```sh
 rush update-autoinstaller --name rush-lint-staged
@@ -32,6 +25,4 @@ git commit -m 'build(rush-lint-staged): update autoinstaller'
 ```
 
 [autoinstaller]: https://rushjs.io/pages/maintainer/autoinstallers/
-[common/config/rush/command-line.json]: ../../config/rush/command-line.json
 [lint-staged]: https://www.npmjs.com/package/lint-staged
-[npm-check-updates]: https://www.npmjs.com/package/npm-check-updates

@@ -117,6 +117,40 @@
         --target minor \
         --cooldown '1440m' \
         --reject 'webpack'"
+    },
+    {
+      "name": "update-rush-commitlint",
+      "summary": "Upgrade rush-commitlint autoinstaller dependencies to latest versions. \
+      You must run `rush update-autoinstaller --name rush-commitlint` after.",
+      "commandKind": "global",
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
+        npm-check-updates \
+        --packageFile \
+        common/autoinstallers/rush-commitlint/package.json \
+        --upgrade \
+        --target latest \
+        --cooldown '1440m'"
+    },
+    {
+      "name": "update-rush-lint-staged",
+      "summary": "Upgrade rush-lint-staged autoinstaller dependencies to latest versions. \
+      You must run `rush update-autoinstaller --name rush-lint-staged` after.",
+      "commandKind": "global",
+      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
+        npm-check-updates \
+        --packageFile \
+        common/autoinstallers/rush-lint-staged/package.json \
+        --upgrade \
+        --target minor \
+        --cooldown '1440m' \
+        && \
+        npm-check-updates \
+        --packageFile \
+        common/autoinstallers/rush-lint-staged/package.json \
+        --upgrade \
+        --target latest \
+        --cooldown '1440m' \
+        --reject eslint"
     }
 
     // {
