@@ -95,7 +95,12 @@ git commit -m 'build: rush update-major'
 Packages excluded via the [--reject] option:
 
 * All known `@babel/*` packages excluded because of missing transitive @babel/core@v7 peer deps when upgrading direct deps to v8.
-* `@eslint/js`, `@types/node`, `cypress`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
+* `@eslint/js`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
+  These packages' peer dependencies block upgrading:
+  * [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/issues/3227) - close!
+  * [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom/issues/417) - release pipeline broken, maybe abandoned?
+  * [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1075) - recent development, no release yet
+  * [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react/issues/3977) - close! same maintainer + blockers as eslint-plugin-import
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
