@@ -22,6 +22,7 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
+          ~/.cache/Cypress
         key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
         # cached dependencies aren't used until following jobs
@@ -30,9 +31,6 @@ jobs:
     - name: Install
       if: steps.restore-cache.outputs.cache-hit != 'true'
       run: node common/scripts/install-run-rush.js install
-      env:
-        # Only install Cypress binary when needed in e2e-test.yml
-        CYPRESS_INSTALL_BINARY: 0
 
     - name: Save Cache
       id: save-cache
@@ -43,4 +41,5 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
+          ~/.cache/Cypress
         key: ${{ steps.restore-cache.outputs.cache-primary-key }}
