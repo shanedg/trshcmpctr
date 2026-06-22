@@ -8,6 +8,7 @@ Notes specifically for repository maintainers
 * new deployment target that's just a local network raspberry pi
 * upload cypress screenshots, videos, and/or
 rush *.log artifacts to github build artifacts for debugging
+* cypress binary manually installed during e2e
 * auth fails on first couple renders, refresh resolves
 * docs: updating/upgrading node
 
