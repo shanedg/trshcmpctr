@@ -8,6 +8,7 @@ Notes specifically for repository maintainers
 * new deployment target that's just a local network raspberry pi
 * upload cypress screenshots, videos, and/or
 rush *.log artifacts to github build artifacts for debugging
+* cypress binary manually installed during e2e
 * auth fails on first couple renders, refresh resolves
 * docs: updating/upgrading node
 
@@ -39,6 +40,19 @@ Autoinstallers are managed separately from repo projects, see:
 
 * [rush-commitlint]: lint commit messages before committing
 * [rush-lint-staged]: lint staged files before committing
+
+```sh
+# rush-commitlint
+rush update-rush-commitlint
+rush update-autoinstaller --name rush-commitlint
+git add common/autoinstallers/rush-commitlint
+git commit -m 'build(rush-commitlint): update autoinstaller'
+# rush-lint-staged
+rush update-rush-lint-staged
+rush update-autoinstaller --name rush-lint-staged
+git add common/autoinstallers/rush-lint-staged
+git commit -m 'build(rush-lint-staged): update autoinstaller'
+```
 
 ### Projects
 

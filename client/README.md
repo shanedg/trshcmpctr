@@ -4,16 +4,10 @@ A Single Page Application (SPA) bundled with Webpack.
 
 ## Build
 
-Build the project in development mode.
-
-```bash
-npm run build
-```
-
 Build the project with production optimizations applied.
 
 ```bash
-npm run build:production
+npm run build
 ```
 
 ## Start
