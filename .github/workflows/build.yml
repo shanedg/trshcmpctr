@@ -22,6 +22,7 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
+          ~/.cache/Cypress
           */dist
           client/lib
           components/lib
@@ -39,6 +40,7 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
+          ~/.cache/Cypress
         key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
 
@@ -55,6 +57,7 @@ jobs:
           common/temp
           */.rush/temp
           */node_modules
+          ~/.cache/Cypress
           */dist
           client/lib
           components/lib

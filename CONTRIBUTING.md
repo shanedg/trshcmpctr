@@ -6,9 +6,6 @@ Notes specifically for repository maintainers
 
 * (client)consider replacing babel with swc
 * new deployment target that's just a local network raspberry pi
-* upload cypress screenshots, videos, and/or
-rush *.log artifacts to github build artifacts for debugging
-* cypress binary manually installed during e2e
 * auth fails on first couple renders, refresh resolves
 * docs: updating/upgrading node
 
@@ -113,7 +110,6 @@ Packages excluded via the [--reject] option:
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
-* `cypress` excluded because version bumps also require updates outside package.json
 * `react-router` is excluded because of [breaking changes](https://reactrouter.com/start/changelog#v800).
 
 ### Updating pnpm
