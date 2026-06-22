@@ -41,6 +41,19 @@ Autoinstallers are managed separately from repo projects, see:
 * [rush-commitlint]: lint commit messages before committing
 * [rush-lint-staged]: lint staged files before committing
 
+```sh
+# rush-commitlint
+rush update-rush-commitlint
+rush update-autoinstaller --name rush-commitlint
+git add common/autoinstallers/rush-commitlint
+git commit -m 'build(rush-commitlint): update autoinstaller'
+# rush-lint-staged
+rush update-rush-lint-staged
+rush update-autoinstaller --name rush-lint-staged
+git add common/autoinstallers/rush-lint-staged
+git commit -m 'build(rush-lint-staged): update autoinstaller'
+```
+
 ### Projects
 
 Periodically bump project dependencies for new features and fixes,
