@@ -21,8 +21,7 @@
     "lib/paths.js"
   ],
   "scripts": {
-    "build": "webpack",
-    "build:production": "webpack --env production",
+    "build": "webpack --env production",
     "build:watch-webpack": "nodemon --exec 'webpack' --watch webpack.config.js --watch babel.config.js --watch babel.config.lib.js",
     "clean": "rm -rf dist",
     "cy:open": "cypress open --config-file=cypress/cypress.config.ts --e2e --browser=chrome",
