@@ -4,20 +4,9 @@ Notes specifically for repository maintainers
 
 ## TODOs
 
-* (client)consider replacing babel with swc
-* new deployment target that's just a local network raspberry pi
-* auth fails on first couple renders, refresh resolves
-* docs: updating/upgrading node
-
-## Mysteries
-
-* ava test watch in discord always reruns on /session changes;
-package.json options to ignore patterns when watching don't work
-* 'import()' expressions are not supported yet ???
-eslint-disable-next-line node/no-unsupported-features/es-syntax -- node/no-unsupported-features/es-syntax
-This should not be a problem but adjusting the engines field
-and overwriting the rule to set the node version explicitly
-doesn't seem to be working :(
+* (client) consider replacing webpack with rspack
+* (deploy) new deployment target that's just a local network raspberry pi
+* (client, discord) auth fails on first couple renders, refresh resolves
 
 ## Scaffolding a New Project
 
