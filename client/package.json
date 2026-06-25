@@ -67,7 +67,6 @@
     "@trshcmpctr/jest-stdout-reporter": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@trshcmpctr/typescript": "workspace:*",
-    "@types/jest": "~30.0.0",
     "@types/node": "~24.13.2",
     "@types/prop-types": "~15.7.12",
     "@types/react": "~19.2.5",
