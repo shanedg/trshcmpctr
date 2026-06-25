@@ -123,8 +123,6 @@ export default defineConfig([
       '@typescript-eslint/unbound-method': 'off',
       // Note, this rule needs type information
       'jest/unbound-method': 'error',
-      // No injected globals needs manual cleanup.
-      'testing-library/no-manual-cleanup': 'off',
     }
   },
   {

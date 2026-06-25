@@ -8,6 +8,13 @@ import '@testing-library/jest-dom/jest-globals';
 
 import { TextEncoder, TextDecoder } from 'node:util';
 
+import { afterEach } from '@jest/globals';
+import { cleanup } from '@testing-library/react';
+
+// Trigger cleanup manually because Jest globals aren't injected in this project:
+// https://testing-library.com/docs/react-testing-library/api#cleanup
+afterEach(cleanup);
+
 // TextEncoder is not bundled with jsdom since v16
 // https://stackoverflow.com/questions/68468203/why-am-i-getting-textencoder-is-not-defined-in-jest
 // but needed for react-router@7

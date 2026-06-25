@@ -1,11 +1,9 @@
-import { afterEach, describe, expect, it } from '@jest/globals';
-import { cleanup, render, screen } from '@testing-library/react';
+import { describe, expect, it } from '@jest/globals';
+import { render, screen } from '@testing-library/react';
 
 import { ErrorCard } from './ErrorCard';
 
 describe('ErrorCard', () => {
-  afterEach(cleanup);
-
   it('renders a generic error message if no error is provided', () => {
     render(<ErrorCard />);
 

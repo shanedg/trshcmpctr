@@ -1,7 +1,7 @@
 jest.mock('./use-key-presses');
 
-import { afterEach, beforeEach, expect, describe, jest, it } from '@jest/globals';
-import { cleanup, render, screen } from '@testing-library/react';
+import { beforeEach, expect, describe, jest, it } from '@jest/globals';
+import { render, screen } from '@testing-library/react';
 
 import { KeyPad } from './KeyPad';
 import { useKeyPresses } from './use-key-presses';
@@ -13,8 +13,6 @@ describe('KeyPad', () => {
       keyPresses: jest.fn()
     });
   });
-
-  afterEach(cleanup);
 
   it('does not render keys that have not been pressed', () => {
     render(
