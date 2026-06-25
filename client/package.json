@@ -32,10 +32,10 @@
     "serve:watch-webpack": "nodemon --exec 'webpack serve' --watch webpack.config.js --watch babel.config.js --watch babel.config.lib.js",
     "start": "webpack serve --open",
     "start:production": "webpack serve --open --env production",
-    "test": "jest --reporters=@trshcmpctr/jest-stdout-reporter --silent",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --reporters=@trshcmpctr/jest-stdout-reporter --silent",
     "test:cypress": "start-server-and-test serve http://localhost:8080 cy:run",
-    "test:debug": "NODE_OPTIONS=--inspect jest --runInBand --no-cache",
-    "test:watch": "jest --watch",
+    "test:debug": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules --inspect\" jest --runInBand --no-cache",
+    "test:watch": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --watch",
     "type-check": "tsc",
     "watch": "webpack --watch"
   },
@@ -50,7 +50,6 @@
   },
   "devDependencies": {
     "@babel/core": "~7.29.7",
-    "@babel/plugin-transform-modules-commonjs": "~7.29.7",
     "@babel/preset-env": "~7.29.7",
     "@babel/preset-react": "~7.29.7",
     "@babel/preset-typescript": "~7.29.7",
