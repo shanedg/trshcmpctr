@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { act, renderHook } from '@testing-library/react';
 
 import { useHasTimePassed } from './use-has-time-passed';
@@ -48,7 +49,7 @@ describe('useHasTimePassed', () => {
 
     expect(result.current).toBe(false);
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
-  
+
     // fake timers need to be restored after spying
     // spying on timers appears to wipe out faked implementations
     clearTimeoutSpy.mockRestore();

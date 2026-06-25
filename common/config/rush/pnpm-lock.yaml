@@ -49,6 +49,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ~7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))
+      '@jest/globals':
+        specifier: ~30.4.1
+        version: 30.4.1
       '@testing-library/dom':
         specifier: ~10.4.0
         version: 10.4.1

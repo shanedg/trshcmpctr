@@ -1,3 +1,5 @@
+import { describe, expect, it } from '@jest/globals';
+
 import { getPaths } from './paths';
 
 describe('getPaths', () => {
