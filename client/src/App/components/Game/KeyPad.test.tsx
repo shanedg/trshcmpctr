@@ -1,5 +1,6 @@
 jest.mock('./use-key-presses');
 
+import { beforeEach, expect, describe, jest, it } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 
 import { KeyPad } from './KeyPad';

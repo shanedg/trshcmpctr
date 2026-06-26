@@ -1,3 +1,5 @@
+import { describe, expect, it } from '@jest/globals';
+
 import { transformRoutesForBrowserRouter } from './get-routes';
 
 describe('transformRoutes', () => {

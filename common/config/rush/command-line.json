@@ -48,7 +48,8 @@
       "name": "test",
       "summary": "Test all projects",
       "commandKind": "bulk",
-      "enableParallelism": true
+      "enableParallelism": true,
+      "allowWarningsInSuccessfulBuild": true
     },
     {
       "name": "test:cypress",
@@ -79,7 +80,7 @@
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
         --cooldown '1440m' \
-        --reject '@babel/cli,@babel/core,@babel/plugin-transform-modules-commonjs,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava,react-router' \
+        --reject '@babel/cli,@babel/core,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava,react-router' \
         && \
         node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
@@ -89,7 +90,7 @@
         --dep 'prod','dev','optional','packageManager','peer' \
         --target latest \
         --cooldown '1440m' \
-        --reject '@babel/cli,@babel/core,@babel/plugin-transform-modules-commonjs,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava,react-router'"
+        --reject '@babel/cli,@babel/core,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava,react-router'"
     },
     {
       "name": "update-minor",

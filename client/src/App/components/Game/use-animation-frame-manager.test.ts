@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { renderHook } from '@testing-library/react';
 
 import { useAnimationFrameManager } from './use-animation-frame-manager';

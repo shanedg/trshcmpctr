@@ -1,5 +1,6 @@
 export default {
   collectCoverage: true,
+  injectGlobals: false,
   moduleNameMapper: {
     // See https://jestjs.io/docs/webpack#handling-static-assets
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.cjs',

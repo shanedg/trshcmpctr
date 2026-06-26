@@ -1,13 +1,4 @@
 export default {
-  env: {
-    test: {
-      plugins: [
-        // Jest still expects CommonJS
-        '@babel/plugin-transform-modules-commonjs',
-      ],
-    },
-  },
-
   /**
    * Most files built & transpiled by Babel are just in src/
    * but other local projects and some config file extensions may also need processing:
