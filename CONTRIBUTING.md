@@ -99,7 +99,6 @@ Packages excluded via the [--reject] option:
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
-* `react-router` is excluded because of [breaking changes](https://reactrouter.com/start/changelog#v800).
 
 ### Updating pnpm
 

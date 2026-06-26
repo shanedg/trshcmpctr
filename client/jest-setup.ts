@@ -17,5 +17,5 @@ afterEach(cleanup);
 
 // TextEncoder is not bundled with jsdom since v16
 // https://stackoverflow.com/questions/68468203/why-am-i-getting-textencoder-is-not-defined-in-jest
-// but needed for react-router@7
+// but needed for react-router@>=7
 Object.assign(globalThis, { TextDecoder, TextEncoder });
