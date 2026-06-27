@@ -1,0 +1,9 @@
+{
+  "name": "rush-check-updates",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "npm-check-updates": "~22.2.7"
+  }
+}

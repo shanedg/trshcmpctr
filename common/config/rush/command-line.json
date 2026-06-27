@@ -72,8 +72,8 @@
         Run after `update-minor`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
-        npm-check-updates \
+      "autoinstallerName": "rush-check-updates",
+      "shellCommand": "npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
         --minimal \
@@ -82,7 +82,6 @@
         --cooldown '1440m' \
         --reject '@babel/cli,@babel/core,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava' \
         && \
-        node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
@@ -98,8 +97,8 @@
         Run after `rush update --full`. \
         You must run `rush update` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
-        npm-check-updates \
+      "autoinstallerName": "rush-check-updates",
+      "shellCommand": "npm-check-updates \
         --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
         --upgrade \
         --minimal \
@@ -107,7 +106,6 @@
         --target minor \
         --cooldown '1440m' \
         && \
-        node common/scripts/install-run.js npm-check-updates@22.2.3 \
         npm-check-updates \
         --packageFile scaffold/src/templates/package.json.hbs \
         --upgrade \
@@ -117,12 +115,25 @@
         --cooldown '1440m'"
     },
     {
+      "name": "update-rush-check-updates",
+      "summary": "Upgrade rush-check-updates autoinstaller dependencies to latest versions. \
+      You must run `rush update-autoinstaller --name rush-check-updates` after.",
+      "commandKind": "global",
+      "autoinstallerName": "rush-check-updates",
+      "shellCommand": "npm-check-updates \
+        --packageFile \
+        common/autoinstallers/rush-check-updates/package.json \
+        --upgrade \
+        --target latest \
+        --cooldown '1440m'"
+    },
+    {
       "name": "update-rush-commitlint",
       "summary": "Upgrade rush-commitlint autoinstaller dependencies to latest versions. \
       You must run `rush update-autoinstaller --name rush-commitlint` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
-        npm-check-updates \
+      "autoinstallerName": "rush-check-updates",
+      "shellCommand": "npm-check-updates \
         --packageFile \
         common/autoinstallers/rush-commitlint/package.json \
         --upgrade \
@@ -134,8 +145,8 @@
       "summary": "Upgrade rush-lint-staged autoinstaller dependencies to latest versions. \
       You must run `rush update-autoinstaller --name rush-lint-staged` after.",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js npm-check-updates@22.2.3 \
-        npm-check-updates \
+      "autoinstallerName": "rush-check-updates",
+      "shellCommand": "npm-check-updates \
         --packageFile \
         common/autoinstallers/rush-lint-staged/package.json \
         --upgrade \
