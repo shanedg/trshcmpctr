@@ -1,0 +1,22 @@
+{
+  "cooldown": "1440m",
+  "dep": [
+    "dev",
+    "optional",
+    "peer",
+    "prod"
+  ],
+  "format": [
+    "cooldown",
+    "dep",
+    "diff",
+    "group",
+    "installedVersion",
+    "ownerChanged",
+    "repo",
+    "time"
+  ],
+  "minimal": true,
+  "target": "minor",
+  "upgrade": true
+}

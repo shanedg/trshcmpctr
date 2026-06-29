@@ -24,10 +24,16 @@ rush scaffold
 
 Autoinstallers are managed separately from repo projects, see:
 
+* [rush-check-updates]: manage the version of [npm-check-updates]
 * [rush-commitlint]: lint commit messages before committing
 * [rush-lint-staged]: lint staged files before committing
 
 ```sh
+# rush-check-updates
+rush update-rush-check-updates
+rush update-autoinstaller --name rush-check-updates
+git add common/autoinstallers/rush-check-updates
+git commit -m 'build(rush-check-updates): update autoinstaller'
 # rush-commitlint
 rush update-rush-commitlint
 rush update-autoinstaller --name rush-commitlint
@@ -144,6 +150,7 @@ git commit -m 'build: update rush from x to y'
 [pnpm-lock.yaml]: ./common/config/rush/pnpm-lock.yaml
 [pnpm]: https://www.npmjs.com/package/pnpm
 [Rush changelog]: https://github.com/microsoft/rushstack/blob/main/apps/rush/CHANGELOG.md
+[rush-check-updates]: ./common/autoinstallers/rush-check-updates/README.md
 [rush-commitlint]: ./common/autoinstallers/rush-commitlint/README.md
 [rush-lint-staged]: ./common/autoinstallers/rush-lint-staged/README.md
 [rush.json]: ./rush.json

@@ -1,0 +1,33 @@
+{
+  "cooldown": "1440m",
+  "dep": [
+    "dev",
+    "optional",
+    "peer",
+    "prod"
+  ],
+  "format": [
+    "cooldown",
+    "dep",
+    "diff",
+    "group",
+    "installedVersion",
+    "ownerChanged",
+    "repo",
+    "time"
+  ],
+  "minimal": true,
+  "reject": [
+    "@babel/cli",
+    "@babel/core",
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+    "@eslint/js",
+    "@types/node",
+    "eslint",
+    "eslint-plugin-ava"
+  ],
+  "target": "latest",
+  "upgrade": true
+}
