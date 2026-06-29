@@ -68,9 +68,7 @@
     },
     {
       "name": "update-major",
-      "summary": "Upgrade dependencies in all projects to the latest version not already satisfied by the semver range. \
-        Run after `update-minor`. \
-        You must run `rush update` after.",
+      "summary": "Upgrade dependencies in all projects to the latest version not already satisfied by the semver range. Run after `update-minor`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
       "shellCommand": "npm-check-updates \
@@ -93,9 +91,7 @@
     },
     {
       "name": "update-minor",
-      "summary": "Upgrade dependencies in all projects to the latest minor version not already satisfied by semver range. \
-        Run after `rush update --full`. \
-        You must run `rush update` after.",
+      "summary": "Upgrade dependencies in all projects to the latest minor version not already satisfied by semver range. Run after `rush update --full`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
       "shellCommand": "npm-check-updates \
@@ -116,8 +112,7 @@
     },
     {
       "name": "update-rush-check-updates",
-      "summary": "Upgrade rush-check-updates autoinstaller dependencies to latest versions. \
-      You must run `rush update-autoinstaller --name rush-check-updates` after.",
+      "summary": "Upgrade rush-check-updates autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-check-updates` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
       "shellCommand": "npm-check-updates \
@@ -129,8 +124,7 @@
     },
     {
       "name": "update-rush-commitlint",
-      "summary": "Upgrade rush-commitlint autoinstaller dependencies to latest versions. \
-      You must run `rush update-autoinstaller --name rush-commitlint` after.",
+      "summary": "Upgrade rush-commitlint autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-commitlint` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
       "shellCommand": "npm-check-updates \
@@ -142,8 +136,7 @@
     },
     {
       "name": "update-rush-lint-staged",
-      "summary": "Upgrade rush-lint-staged autoinstaller dependencies to latest versions. \
-      You must run `rush update-autoinstaller --name rush-lint-staged` after.",
+      "summary": "Upgrade rush-lint-staged autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-lint-staged` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
       "shellCommand": "npm-check-updates \
