@@ -71,88 +71,35 @@
       "summary": "Upgrade dependencies in all projects to the latest version not already satisfied by the semver range. Run after `update-minor`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates \
-        --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
-        --upgrade \
-        --minimal \
-        --dep 'prod','dev','optional','packageManager','peer' \
-        --target latest \
-        --cooldown '1440m' \
-        --reject '@babel/cli,@babel/core,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava' \
-        && \
-        npm-check-updates \
-        --packageFile scaffold/src/templates/package.json.hbs \
-        --upgrade \
-        --minimal \
-        --dep 'prod','dev','optional','packageManager','peer' \
-        --target latest \
-        --cooldown '1440m' \
-        --reject '@babel/cli,@babel/core,@babel/preset-env,@babel/preset-react,@babel/preset-typescript,@eslint/js,@types/node,eslint,eslint-plugin-ava'"
+      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json && npm-check-updates --packageFile scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json"
     },
     {
       "name": "update-minor",
       "summary": "Upgrade dependencies in all projects to the latest minor version not already satisfied by semver range. Run after `rush update --full`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates \
-        --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json \
-        --upgrade \
-        --minimal \
-        --dep 'prod','dev','optional','packageManager','peer' \
-        --target minor \
-        --cooldown '1440m' \
-        && \
-        npm-check-updates \
-        --packageFile scaffold/src/templates/package.json.hbs \
-        --upgrade \
-        --minimal \
-        --dep 'prod','dev','optional','packageManager','peer' \
-        --target minor \
-        --cooldown '1440m'"
+      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json && npm-check-updates --packageFile scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json"
     },
     {
       "name": "update-rush-check-updates",
       "summary": "Upgrade rush-check-updates autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-check-updates` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates \
-        --packageFile \
-        common/autoinstallers/rush-check-updates/package.json \
-        --upgrade \
-        --target latest \
-        --cooldown '1440m'"
+      "shellCommand": "npm-check-updates --packageFile common/autoinstallers/rush-check-updates/package.json"
     },
     {
       "name": "update-rush-commitlint",
       "summary": "Upgrade rush-commitlint autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-commitlint` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates \
-        --packageFile \
-        common/autoinstallers/rush-commitlint/package.json \
-        --upgrade \
-        --target latest \
-        --cooldown '1440m'"
+      "shellCommand": "npm-check-updates --packageFile common/autoinstallers/rush-commitlint/package.json"
     },
     {
       "name": "update-rush-lint-staged",
       "summary": "Upgrade rush-lint-staged autoinstaller dependencies to latest versions. You must run `rush update-autoinstaller --name rush-lint-staged` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates \
-        --packageFile \
-        common/autoinstallers/rush-lint-staged/package.json \
-        --upgrade \
-        --target minor \
-        --cooldown '1440m' \
-        && \
-        npm-check-updates \
-        --packageFile \
-        common/autoinstallers/rush-lint-staged/package.json \
-        --upgrade \
-        --target latest \
-        --cooldown '1440m' \
-        --reject eslint"
+      "shellCommand": "npm-check-updates --packageFile common/autoinstallers/rush-lint-staged/package.json --target minor && npm-check-updates --packageFile common/autoinstallers/rush-lint-staged/package.json --reject eslint"
     }
 
     // {
