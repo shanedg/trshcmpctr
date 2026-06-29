@@ -4,6 +4,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "npm-check-updates": "~22.2.7"
+    "npm-check-updates": "~22.2.8"
   }
 }
