@@ -28,7 +28,7 @@
    *
    * Set options in common/config/rush/pnpm-config.json.
    */
-  "pnpmVersion": "11.8.0",
+  "pnpmVersion": "11.9.0",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
