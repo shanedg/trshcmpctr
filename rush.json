@@ -135,55 +135,55 @@
   "projects": [
     {
       "packageName": "@trshcmpctr/typescript",
-      "projectFolder": "typescript"
+      "projectFolder": "projects/typescript"
     },
     {
       "packageName": "@trshcmpctr/components",
-      "projectFolder": "components"
+      "projectFolder": "projects/components"
     },
     {
       "packageName": "@trshcmpctr/eslint-config-node",
-      "projectFolder": "eslint-config-node"
+      "projectFolder": "projects/eslint-config-node"
     },
     {
       "packageName": "@trshcmpctr/deploy",
-      "projectFolder": "deploy"
+      "projectFolder": "projects/deploy"
     },
     {
       "packageName": "@trshcmpctr/discord",
-      "projectFolder": "discord"
+      "projectFolder": "projects/discord"
     },
     {
       "packageName": "@trshcmpctr/client",
-      "projectFolder": "client"
+      "projectFolder": "projects/client"
     },
     {
       "packageName": "@trshcmpctr/jest-stdout-reporter",
-      "projectFolder": "jest-stdout-reporter"
+      "projectFolder": "projects/jest-stdout-reporter"
     },
     {
       "packageName": "@trshcmpctr/eslint-config",
-      "projectFolder": "eslint-config"
+      "projectFolder": "projects/eslint-config"
     },
     {
       "packageName": "@trshcmpctr/eslint-config-jest",
-      "projectFolder": "eslint-config-jest"
+      "projectFolder": "projects/eslint-config-jest"
     },
     {
       "packageName": "@trshcmpctr/eslint-config-typescript",
-      "projectFolder": "eslint-config-typescript"
+      "projectFolder": "projects/eslint-config-typescript"
     },
     {
       "packageName": "@trshcmpctr/eslint-config-react",
-      "projectFolder": "eslint-config-react"
+      "projectFolder": "projects/eslint-config-react"
     },
     {
       "packageName": "@trshcmpctr/markdownlint-config",
-      "projectFolder": "markdownlint-config"
+      "projectFolder": "projects/markdownlint-config"
     },
     {
       "packageName": "@trshcmpctr/scaffold",
-      "projectFolder": "scaffold"
+      "projectFolder": "projects/scaffold"
     }
   ]
 }
