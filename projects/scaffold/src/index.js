@@ -28,7 +28,7 @@ export default function (plop) {
       {
         type: 'input',
         name: 'path',
-        message: 'project path please',
+        message: 'project path please (omit "/projects")',
       },
     ],
 
@@ -45,7 +45,7 @@ export default function (plop) {
       // Update rush.json projects
       {
         type: 'append',
-        path: join(relativePathToRepoRoot, 'rush.json'),
+        path: join(relativePathToRepoRoot, '..', 'rush.json'),
         // This regular expression matches the start of the projects list.
         // The template is appended immediately after this line.
         pattern: /"projects": \[/,
@@ -53,14 +53,6 @@ export default function (plop) {
       "packageName": "@{{scope}}/{{name}}",
       "projectFolder": "{{path}}"
     },`
-      },
-
-      // Update vscode eslint plugin working directories
-      {
-        type: 'append',
-        path: join(relativePathToRepoRoot, '.vscode', 'settings.json'),
-        pattern: /"eslint.workingDirectories": \[/,
-        template: '    "{{path}}",',
       },
     ]
   });

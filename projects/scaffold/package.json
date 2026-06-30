@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Quickly generate new package boilerplate.",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/scaffold#readme",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/scaffold#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "scaffold"
+    "directory": "projects/scaffold"
   },
   "license": "UNLICENSED",
   "type": "module",

@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "discord",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/discord#readme",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/discord#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "discord"
+    "directory": "projects/discord"
   },
   "license": "UNLICENSED",
   "type": "module",

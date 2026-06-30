@@ -141,7 +141,7 @@ git commit -m 'build: update rush from x to y'
 (with Homebrew: `brew install jq`)
 
 [--reject]: https://www.npmjs.com/package/npm-check-updates#reject
-[@trshcmpctr/scaffold]: ./scaffold
+[@trshcmpctr/scaffold]: ./projects/scaffold
 [command-line.json]: ./common/config/rush/command-line.json
 [common/scripts]: ./common/scripts
 [npm-check-updates]: https://www.npmjs.com/package/npm-check-updates

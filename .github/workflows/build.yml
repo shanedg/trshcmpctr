@@ -20,12 +20,12 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
-          */dist
-          client/lib
-          components/lib
+          projects/*/dist
+          projects/client/lib
+          projects/components/lib
         key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
         # cached dependencies aren't used until following jobs
@@ -38,8 +38,8 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
         key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
@@ -55,10 +55,10 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
-          */dist
-          client/lib
-          components/lib
+          projects/*/dist
+          projects/client/lib
+          projects/components/lib
         key: ${{ steps.restore-build-cache.outputs.cache-primary-key }}

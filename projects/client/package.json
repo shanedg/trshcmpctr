@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Frontend React app",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/client#readme",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/client#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "client"
+    "directory": "projects/client"
   },
   "license": "UNLICENSED",
   "type": "module",

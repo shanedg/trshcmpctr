@@ -1,18 +1,18 @@
 {
-  "name": "@trshcmpctr/eslint-config-node",
+  "name": "@trshcmpctr/eslint-config-typescript",
   "version": "1.0.0",
   "private": true,
-  "description": "eslint-config-node",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-node#readme",
+  "description": "ESLint config for TypeScript in JavaScript projects.",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/eslint-config-typescript#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "eslint-config-node"
+    "directory": "projects/eslint-config-typescript"
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-node.js",
-  "main": "./src/eslint-config-node.js",
+  "exports": "./src/eslint-config-typescript.js",
+  "main": "./src/eslint-config-typescript.js",
   "files": [
     "src"
   ],
@@ -23,16 +23,15 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-n": "~18.2.1",
-    "globals": "~17.7.0"
+    "eslint": "~9.39.1",
+    "eslint-plugin-import": "~2.32.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "~8.62.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.22.1"
-  },
-  "engines": {
-    "node": ">=24.16.0"
   }
 }

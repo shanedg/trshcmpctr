@@ -42,7 +42,7 @@
       "name": "scaffold",
       "summary": "Generate a new project from a template",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js plop@4.0.1 plop --plopfile scaffold/src/index.js"
+      "shellCommand": "node common/scripts/install-run.js plop@4.0.1 plop --plopfile projects/scaffold/src/index.js"
     },
     {
       "name": "test",
@@ -71,14 +71,14 @@
       "summary": "Upgrade dependencies in all projects to the latest version not already satisfied by the semver range. Run after `update-minor`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json && npm-check-updates --packageFile scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json"
+      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json && npm-check-updates --packageFile projects/scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-major.json"
     },
     {
       "name": "update-minor",
       "summary": "Upgrade dependencies in all projects to the latest minor version not already satisfied by semver range. Run after `rush update --full`. You must run `rush update` after.",
       "commandKind": "global",
       "autoinstallerName": "rush-check-updates",
-      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json && npm-check-updates --packageFile scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json"
+      "shellCommand": "npm-check-updates --packageFile {$(rush list --json | jq --raw-output '.projects | map(.path) | join(\",\")')}/package.json --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json && npm-check-updates --packageFile projects/scaffold/src/templates/package.json.hbs --configFilePath common/autoinstallers/rush-check-updates/ --configFileName .ncurc.update-minor.json"
     },
     {
       "name": "update-rush-check-updates",

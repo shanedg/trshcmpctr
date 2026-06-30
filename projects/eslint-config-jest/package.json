@@ -1,18 +1,18 @@
 {
-  "name": "@trshcmpctr/eslint-config-typescript",
+  "name": "@trshcmpctr/eslint-config-jest",
   "version": "1.0.0",
   "private": true,
-  "description": "ESLint config for TypeScript in JavaScript projects.",
-  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/eslint-config-typescript#readme",
+  "description": "ESLint config for Jest tests in JavaScript projects.",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/eslint-config-jest#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanedg/trshcmpctr.git",
-    "directory": "eslint-config-typescript"
+    "directory": "projects/eslint-config-jest"
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-typescript.js",
-  "main": "./src/eslint-config-typescript.js",
+  "exports": "./src/eslint-config-jest.js",
+  "main": "./src/eslint-config-jest.js",
   "files": [
     "src"
   ],
@@ -23,13 +23,13 @@
     "test": ""
   },
   "dependencies": {
+    "@trshcmpctr/eslint-config": "workspace:*",
     "eslint": "~9.39.1",
-    "eslint-plugin-import": "~2.32.0",
-    "typescript": "~6.0.3",
-    "typescript-eslint": "~8.62.0"
+    "eslint-plugin-jest": "~29.15.2",
+    "eslint-plugin-jest-dom": "~5.5.0",
+    "globals": "~17.7.0"
   },
   "devDependencies": {
-    "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "markdownlint-cli2": "~0.22.1"
