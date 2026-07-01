@@ -20,8 +20,8 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
         key: ${{ runner.os }}-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         # Only need a cache hit or miss,
@@ -39,7 +39,7 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
         key: ${{ steps.restore-cache.outputs.cache-primary-key }}

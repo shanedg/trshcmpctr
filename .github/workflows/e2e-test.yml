@@ -20,17 +20,17 @@ jobs:
       with:
         path: |
           common/temp
-          */.rush/temp
-          */node_modules
+          projects/*/.rush/temp
+          projects/*/node_modules
           ~/.cache/Cypress
-          */dist
-          client/lib
-          components/lib
+          projects/*/dist
+          projects/client/lib
+          projects/components/lib
         key: ${{ runner.os }}-build-${{ hashFiles('common/config/rush/repo-state.json', 'common/config/rush/pnpm-config.json', 'rush.json', '.github/workflows/ci-salt.txt') }}
         fail-on-cache-miss: true
 
     - name: Configure Discord Secrets
-      run: (cd discord && ./client_config_ci.sh)
+      run: (cd projects/discord && ./client_config_ci.sh)
       env:
         # Repository-level secrets
         DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}

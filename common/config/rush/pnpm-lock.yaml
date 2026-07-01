@@ -10,7 +10,7 @@ importers:
 
   .: {}
 
-  ../../client:
+  ../../projects/client:
     dependencies:
       '@trshcmpctr/components':
         specifier: workspace:*
@@ -173,7 +173,7 @@ importers:
         specifier: ~6.0.1
         version: 6.0.1(webpack@5.108.1)
 
-  ../../components:
+  ../../projects/components:
     dependencies:
       core-js:
         specifier: ~3.49.0
@@ -234,7 +234,7 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
 
-  ../../deploy:
+  ../../projects/deploy:
     dependencies:
       '@aws-sdk/client-ec2':
         specifier: ~3.1075.0
@@ -259,7 +259,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../discord:
+  ../../projects/discord:
     dependencies:
       '@trshcmpctr/client':
         specifier: workspace:*
@@ -344,7 +344,7 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
 
-  ../../eslint-config:
+  ../../projects/eslint-config:
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
         specifier: ~4.7.1
@@ -372,7 +372,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../eslint-config-jest:
+  ../../projects/eslint-config-jest:
     dependencies:
       '@trshcmpctr/eslint-config':
         specifier: workspace:*
@@ -400,7 +400,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../eslint-config-node:
+  ../../projects/eslint-config-node:
     dependencies:
       eslint-plugin-n:
         specifier: ~18.2.1
@@ -422,7 +422,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../eslint-config-react:
+  ../../projects/eslint-config-react:
     dependencies:
       eslint:
         specifier: ~9.39.1
@@ -453,7 +453,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../eslint-config-typescript:
+  ../../projects/eslint-config-typescript:
     dependencies:
       eslint:
         specifier: ~9.39.1
@@ -481,7 +481,7 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../jest-stdout-reporter:
+  ../../projects/jest-stdout-reporter:
     dependencies:
       '@jest/reporters':
         specifier: ~30.4.1
@@ -503,13 +503,13 @@ importers:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../markdownlint-config:
+  ../../projects/markdownlint-config:
     devDependencies:
       markdownlint-cli2:
         specifier: ~0.22.1
         version: 0.22.1
 
-  ../../scaffold:
+  ../../projects/scaffold:
     devDependencies:
       '@trshcmpctr/eslint-config':
         specifier: workspace:*
@@ -530,7 +530,7 @@ importers:
         specifier: ~4.0.1
         version: 4.0.5(@types/node@24.13.2)
 
-  ../../typescript:
+  ../../projects/typescript:
     devDependencies:
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
@@ -9279,7 +9279,7 @@ snapshots:
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
-      '@types/express-serve-static-core': 4.19.8
+      '@types/express-serve-static-core': 5.1.1
       '@types/node': 24.13.2
 
   '@types/connect@3.4.38':

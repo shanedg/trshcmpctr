@@ -1,18 +1,18 @@
 {
   "eslint.workingDirectories": [
-    "client",
-    "components",
-    "deploy",
-    "discord",
-    "eslint-config-jest",
-    "eslint-config-node",
-    "eslint-config-react",
-    "eslint-config-typescript",
-    "eslint-config",
-    "jest-stdout-reporter",
-    "markdownlint-config",
-    "scaffold",
-    "typescript"
+    "projects/client",
+    "projects/components",
+    "projects/deploy",
+    "projects/discord",
+    "projects/eslint-config-jest",
+    "projects/eslint-config-node",
+    "projects/eslint-config-react",
+    "projects/eslint-config-typescript",
+    "projects/eslint-config",
+    "projects/jest-stdout-reporter",
+    "projects/markdownlint-config",
+    "projects/scaffold",
+    "projects/typescript"
   ],
   "files.associations": {
     "rush.json": "jsonc",
