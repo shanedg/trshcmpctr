@@ -134,16 +134,12 @@
    */
   "projects": [
     {
-      "packageName": "@trshcmpctr/typescript",
-      "projectFolder": "projects/typescript"
+      "packageName": "@trshcmpctr/client",
+      "projectFolder": "projects/client"
     },
     {
       "packageName": "@trshcmpctr/components",
       "projectFolder": "projects/components"
-    },
-    {
-      "packageName": "@trshcmpctr/eslint-config-node",
-      "projectFolder": "projects/eslint-config-node"
     },
     {
       "packageName": "@trshcmpctr/deploy",
@@ -154,14 +150,6 @@
       "projectFolder": "projects/discord"
     },
     {
-      "packageName": "@trshcmpctr/client",
-      "projectFolder": "projects/client"
-    },
-    {
-      "packageName": "@trshcmpctr/jest-stdout-reporter",
-      "projectFolder": "projects/jest-stdout-reporter"
-    },
-    {
       "packageName": "@trshcmpctr/eslint-config",
       "projectFolder": "projects/eslint-config"
     },
@@ -170,12 +158,20 @@
       "projectFolder": "projects/eslint-config-jest"
     },
     {
-      "packageName": "@trshcmpctr/eslint-config-typescript",
-      "projectFolder": "projects/eslint-config-typescript"
+      "packageName": "@trshcmpctr/eslint-config-node",
+      "projectFolder": "projects/eslint-config-node"
     },
     {
       "packageName": "@trshcmpctr/eslint-config-react",
       "projectFolder": "projects/eslint-config-react"
+    },
+    {
+      "packageName": "@trshcmpctr/eslint-config-typescript",
+      "projectFolder": "projects/eslint-config-typescript"
+    },
+    {
+      "packageName": "@trshcmpctr/jest-stdout-reporter",
+      "projectFolder": "projects/jest-stdout-reporter"
     },
     {
       "packageName": "@trshcmpctr/markdownlint-config",
@@ -184,6 +180,10 @@
     {
       "packageName": "@trshcmpctr/scaffold",
       "projectFolder": "projects/scaffold"
+    },
+    {
+      "packageName": "@trshcmpctr/typescript",
+      "projectFolder": "projects/typescript"
     }
   ]
 }
