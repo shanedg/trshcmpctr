@@ -4,6 +4,8 @@ import globals from 'globals';
 
 const { configs: nodeConfigs } = node;
 
+const supportedNodeVersionRange = '>=24.16.0';
+
 export default defineConfig([
   {
     extends: [
@@ -21,12 +23,16 @@ export default defineConfig([
     rules: {
       // Redundant with import/no-unresolved and not as robust
       'n/no-missing-import': 'off',
+      'n/no-unsupported-features/es-syntax': ['error', {
+        version: supportedNodeVersionRange
+      }],
       'n/no-unsupported-features/node-builtins': ['error', {
         ignores: [
           // Support experimental fetch until stable in Node >=21:
           // https://nodejs.org/docs/latest-v20.x/api/globals.html#fetch
           'fetch',
         ],
+        version: supportedNodeVersionRange,
       }],
     },
   },

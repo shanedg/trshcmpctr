@@ -33,8 +33,5 @@
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.22.1"
-  },
-  "engines": {
-    "node": ">=24.16.0"
   }
 }
