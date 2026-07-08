@@ -1,0 +1,30 @@
+{
+  "name": "@trshcmpctr/markdownlint-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shareable config for markdownlint (markdownlint-cli2).",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/markdownlint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "projects/markdownlint-config"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./src/.markdownlint-cli2.jsonc",
+  "main": "./src/.markdownlint-cli2.jsonc",
+  "files": [
+    "./src/.markdownlint-cli2.jsonc"
+  ],
+  "scripts": {
+    "build": "",
+    "lint:md": "markdownlint-cli2 --config src/.markdownlint-cli2.jsonc",
+    "test": ""
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "~0.22.1"
+  },
+  "peerDependencies": {
+    "markdownlint-cli2": "~0.22.1"
+  }
+}

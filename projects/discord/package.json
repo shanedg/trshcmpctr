@@ -1,0 +1,70 @@
+{
+  "name": "@trshcmpctr/discord",
+  "version": "1.0.0",
+  "private": true,
+  "description": "discord",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/discord#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "projects/discord"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "files": [
+    "src",
+    "!src/**/*.test.*",
+    "!src/**/*.ava-test.*"
+  ],
+  "scripts": {
+    "build": "",
+    "cy:open": "cypress open --config-file=cypress/cypress.config.js --e2e --browser=chrome",
+    "cy:run": "cypress run --config-file=cypress/cypress.config.js",
+    "debug": "DISCORD_LOG_LEVEL=debug node --trace-warnings --inspect-brk src/server.js",
+    "dev": "DISCORD_LOG_LEVEL=debug nodemon --ignore sessions --ignore db.json --inspect src/server.js | pino-pretty --ignore 'req.headers,req.remoteAddress,req.remotePort'",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
+    "start": "NODE_ENV=production node src/server.js",
+    "start:test": "NODE_ENV=production node src/server.js http://localhost:53134/auth",
+    "test": "ava",
+    "test:cypress": "start-server-and-test start:test http://localhost:53134 cy:run",
+    "test:debug": "ava debug --break"
+  },
+  "ava": {
+    "cache": false,
+    "files": [
+      "**/*.test.*"
+    ]
+  },
+  "dependencies": {
+    "@trshcmpctr/client": "workspace:*",
+    "express": "~5.2.1",
+    "express-session": "~1.19.0",
+    "hbs": "~4.2.0",
+    "lowdb": "~7.0.1",
+    "pino-http": "~11.0.0",
+    "session-file-store": "~1.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.29.7",
+    "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
+    "@trshcmpctr/markdownlint-config": "workspace:*",
+    "@types/express": "~5.0.0",
+    "ava": "~8.0.1",
+    "cypress": "15.18.0",
+    "eslint": "~9.39.1",
+    "eslint-plugin-ava": "~15.1.0",
+    "eslint-plugin-cypress": "~6.4.1",
+    "eslint-plugin-eslint-comments": "~3.2.0",
+    "eslint-plugin-jest": "~29.15.2",
+    "eslint-plugin-n": "~18.2.1",
+    "globals": "~17.7.0",
+    "markdownlint-cli2": "~0.22.1",
+    "nodemon": "~3.1.0",
+    "pino-pretty": "~13.1.2",
+    "sinon": "~22.0.0",
+    "start-server-and-test": "~3.0.5",
+    "typescript": "~6.0.3"
+  }
+}
