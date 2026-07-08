@@ -13,6 +13,7 @@ export default defineConfig([
       'node_modules',
     ],
   },
+  eslintConfig,
   {
     extends: [
       eslintConfigNode,
@@ -37,7 +38,6 @@ export default defineConfig([
   },
   eslintConfigTypescript,
   eslintConfigReact,
-  eslintConfig,
   {
     files: [
       '**/*.ts',

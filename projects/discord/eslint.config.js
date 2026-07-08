@@ -8,17 +8,9 @@ import eslintConfigNode from '@trshcmpctr/eslint-config-node';
 export default defineConfig([
   {
     extends: [
-      eslintConfigNode,
       eslintConfig,
+      eslintConfigNode,
     ],
-    languageOptions: {
-      /**
-       * Import attributes are supported in 20.10.0
-       * but eslint will only parse them starting in 2025.
-       * <https://nodejs.org/api/esm.html#import-attributes>
-       */
-      ecmaVersion: 2025,
-    },
     rules: {
       // Default node resolution requires extensions for relative imports
       'import/extensions': ['error', 'ignorePackages'],

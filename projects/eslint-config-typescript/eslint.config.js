@@ -6,8 +6,8 @@ import eslintConfigNode from '@trshcmpctr/eslint-config-node';
 export default defineConfig([
   {
     extends: [
-      eslintConfigNode,
       eslintConfig,
+      eslintConfigNode,
     ],
     rules: {
       // Default node resolution requires extensions for relative imports

@@ -6,16 +6,9 @@ import eslintConfigNode from '@trshcmpctr/eslint-config-node';
 export default defineConfig([
   {
     extends: [
-      eslintConfigNode,
       eslintConfig,
+      eslintConfigNode,
     ],
-    languageOptions: {
-      /**
-       * Node 24.16.8 supports virtually all features ES2025 and below:
-       * <https://node.green/#ES2025>
-       */
-      ecmaVersion: 2025,
-    },
     rules: {
       // Node default resolution requires extensions for relative imports
       'import/extensions': ['error', 'ignorePackages'],
