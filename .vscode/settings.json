@@ -3,8 +3,8 @@
     "projects/*"
   ],
   "files.associations": {
-    "rush.json": "jsonc",
     "command-line.json": "jsonc",
-    "common-versions.json": "jsonc"
+    "common-versions.json": "jsonc",
+    "rush.json": "jsonc"
   }
 }
