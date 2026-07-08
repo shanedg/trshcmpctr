@@ -24,14 +24,14 @@
     "upload": "node src/aws-s3-upload-artifacts.js"
   },
   "dependencies": {
-    "@aws-sdk/client-ec2": "~3.1075.0",
-    "@aws-sdk/client-s3": "~3.1075.0"
+    "@aws-sdk/client-ec2": "~3.1081.0",
+    "@aws-sdk/client-s3": "~3.1081.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
-    "markdownlint-cli2": "~0.22.1"
+    "markdownlint-cli2": "~0.23.0"
   }
 }
