@@ -135,6 +135,45 @@ git add rush.json common/scripts
 git commit -m 'build: update rush from x to y'
 ```
 
+### Updating Node
+
+Periodically upgrade the versions of Node.js supported and used in this repo.
+Use only the _Active_ or _Maintenance_ [Long Term Support (LTS)](https://nodejs.org/en/about/previous-releases#release-schedule) releases.
+
+* The ranges declared by `nodeSupportedVersionRange` in [rush.json] enforce supported versions before running any repo operations.
+* The version kept in [mise.toml](./mise.toml) pins the node version is used for local development.
+* The version range declared in [@sqs/eslint-config-node](./projects/eslint-config-node/src/eslint-config-node.js) informs which features eslint flags as unsupported.
+* Each Github [workflow](./.github/workflows/) job pins the node version via `setup-node` action:
+
+```yaml
+- uses: actions/setup-node@v6.4.0
+  with:
+    node-version: 24.16.0
+```
+
+### Updating Github Actions
+
+#### Runner Image
+
+Periodically upgrade the version of the image used by the actions runner.
+
+```yaml
+jobs:
+  install:
+    runs-on: ubuntu-24.04
+```
+
+#### Job Steps
+
+Periodically upgrade the versions of any actions used in workflow jobs.
+Steps that use third-party actions should pin the versions to use.
+Review the changelog/releases for each action and bump as appropriate.
+
+```yaml
+steps:
+  - uses: actions/checkout@v7.0.0
+```
+
 ---
 
 [^1]: `update-minor` and `update-major` depend on [jq](https://stedolan.github.io/jq/)
