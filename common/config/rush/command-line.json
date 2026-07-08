@@ -42,7 +42,7 @@
       "name": "scaffold",
       "summary": "Generate a new project from a template",
       "commandKind": "global",
-      "shellCommand": "node common/scripts/install-run.js plop@4.0.1 plop --plopfile projects/scaffold/src/index.js"
+      "shellCommand": "node projects/scaffold/src/index.js"
     },
     {
       "name": "test",

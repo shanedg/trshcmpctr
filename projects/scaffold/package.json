@@ -20,17 +20,17 @@
     "build": "",
     "lint": "eslint --max-warnings=0 .",
     "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
+    "start": "node src/index.js",
     "test": ""
+  },
+  "dependencies": {
+    "plop": "~4.0.1"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
-    "markdownlint-cli2": "~0.22.1",
-    "plop": "~4.0.1"
-  },
-  "peerDependencies": {
-    "plop": "~4.0.1"
+    "markdownlint-cli2": "~0.22.1"
   }
 }
