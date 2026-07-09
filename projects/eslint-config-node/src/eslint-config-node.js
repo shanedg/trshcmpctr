@@ -4,7 +4,7 @@ import globals from 'globals';
 
 const { configs: nodeConfigs } = node;
 
-const supportedNodeVersionRange = '>=24.16.0';
+const supportedNodeVersionRange = '>=24.18.0';
 
 export default defineConfig([
   {
