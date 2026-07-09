@@ -46,7 +46,7 @@
     "prop-types": "~15.8.1",
     "react": "~19.2.0",
     "react-dom": "~19.2.0",
-    "react-router": "~8.0.1"
+    "react-router": "~8.1.0"
   },
   "devDependencies": {
     "@babel/core": "~7.29.7",
@@ -74,7 +74,7 @@
     "babel-loader": "~10.1.1",
     "babel-plugin-react-compiler": "~1.0.0",
     "css-loader": "~7.1.1",
-    "cypress": "15.18.0",
+    "cypress": "15.18.1",
     "discord-api-types": "~0.38.33",
     "eslint": "~9.39.1",
     "eslint-plugin-cypress": "~6.4.1",
@@ -85,15 +85,15 @@
     "jest": "~30.4.2",
     "jest-environment-jsdom": "~30.4.1",
     "jest-serializer-path": "~0.1.15",
-    "markdownlint-cli2": "~0.22.1",
+    "markdownlint-cli2": "~0.23.0",
     "nodemon": "~3.1.0",
     "start-server-and-test": "~3.0.5",
     "style-loader": "~4.0.0",
     "terser-webpack-plugin": "~5.6.0",
     "typescript": "~6.0.3",
     "webpack": "~5.108.1",
-    "webpack-cli": "~7.1.0",
-    "webpack-dev-server": "~5.2.2",
+    "webpack-cli": "~7.2.1",
+    "webpack-dev-server": "~6.0.0",
     "webpack-manifest-plugin": "~6.0.1"
   }
 }

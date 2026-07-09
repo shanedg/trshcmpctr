@@ -4,8 +4,6 @@ import globals from 'globals';
 
 const { configs: nodeConfigs } = node;
 
-const supportedNodeVersionRange = '>=24.16.0';
-
 export default defineConfig([
   {
     extends: [
@@ -13,7 +11,7 @@ export default defineConfig([
     ],
     languageOptions: {
       /**
-       * Node 24.16.8 supports virtually all features ES2025 and below:
+       * Node.js >=24.11.1 supports virtually all features ES2025 and below:
        * <https://node.green/#ES2025>
        */
       ecmaVersion: 2025,
@@ -23,17 +21,16 @@ export default defineConfig([
     rules: {
       // Redundant with import/no-unresolved and not as robust
       'n/no-missing-import': 'off',
-      'n/no-unsupported-features/es-syntax': ['error', {
-        version: supportedNodeVersionRange
-      }],
-      'n/no-unsupported-features/node-builtins': ['error', {
-        ignores: [
-          // Support experimental fetch until stable in Node >=21:
-          // https://nodejs.org/docs/latest-v20.x/api/globals.html#fetch
-          'fetch',
-        ],
-        version: supportedNodeVersionRange,
-      }],
+    },
+    settings: {
+      node: {
+        /**
+         * Minimum supported Node.js version.
+         * eslint-plugin-n uses this setting to determine which features are supported:
+         * <https://github.com/eslint-community/eslint-plugin-n/blob/v18.2.1/README.md>
+         */
+        version: '>=24.18.0',
+      },
     },
   },
 ]);
