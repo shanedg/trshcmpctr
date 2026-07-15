@@ -1,6 +1,8 @@
 {
   "eslint.workingDirectories": [
-    "projects/*"
+    {
+      "pattern": "projects/*/"
+    }
   ],
   "files.associations": {
     "command-line.json": "jsonc",
