@@ -95,6 +95,7 @@ git commit -m 'build: rush update-major'
 
 Packages excluded via the [--reject] option:
 
+* `typescript` is excluded because not all dependencies ready to upgrade to v7 yet: [typescript-peer-dependency-issues](./typescript-peer-dependency-issues-2026-07-27.md)
 * All known `@babel/*` packages excluded because of missing transitive @babel/core@v7 peer deps when upgrading direct deps to v8.
 * `@eslint/js`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
   These packages' peer dependencies block upgrading:
