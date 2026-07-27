@@ -1,12 +1,11 @@
 # typescript peer dependency issues
 
-blockers are:
+[@typescript-eslint#10940](https://github.com/typescript-eslint/typescript-eslint/issues/10940)
+is blocked until v7 ships and API (coming in 7.1)
 
-- [@typescript-eslint#10940](https://github.com/typescript-eslint/typescript-eslint/issues/10940) (and `@typescript-eslint/*`)
-- `eslint-plugin-jest`
-- `ts-api-utils`
+> includes `@typescript-eslint/*`
 
-potential workaround: [run v7 side by side with v6](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)
+workaround: [run v7 side by side with v6](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)
 
 ## full pnpm peer dependency complaint
 
