@@ -8,6 +8,16 @@ Notes specifically for repository maintainers
 * (deploy) new deployment target that's just a local network raspberry pi
 * (client, discord) auth fails on first couple renders, refresh resolves
 
+## FYI
+
+### typescript 6 and 7 side by side
+
+[running v7 side by side with v6](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)
+is a workaround for some dependencies not yet ready to upgrade to v7: [typescript-peer-dependency-issues](./typescript-peer-dependency-issues-2026-07-27.md)
+
+> especially those that rely on an API
+> because v7 does not yet expose an API (coming in 7.1)
+
 ## Scaffolding a New Project
 
 Use a custom rush command (see [command-line.json]) that calls [plop] to
@@ -95,13 +105,8 @@ git commit -m 'build: rush update-major'
 
 Packages excluded via the [--reject] option:
 
-* All known `@babel/*` packages excluded because of missing transitive @babel/core@v7 peer deps when upgrading direct deps to v8.
-* `@eslint/js`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10.
-  These packages' peer dependencies block upgrading:
-  * [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/issues/3227) - close!
-  * [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom/issues/417) - release pipeline broken, maybe abandoned?
-  * [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1075) - recent development, no release yet
-  * [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react/issues/3977) - close! same maintainer + blockers as eslint-plugin-import
+* All `@babel/*` packages excluded because jest not ready upgrade to v8: [babel-8-peer-dependency-issues](./babel-8-peer-dependency-issues-2026-07-27.md)
+* `@eslint/js`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10: [eslint-peer-dependency-issues](./eslint-peer-dependency-issues-2026-07-27.md)
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository
