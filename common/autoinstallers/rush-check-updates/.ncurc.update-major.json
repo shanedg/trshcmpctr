@@ -26,7 +26,8 @@
     "@eslint/js",
     "@types/node",
     "eslint",
-    "eslint-plugin-ava"
+    "eslint-plugin-ava",
+    "eslint-plugin-cypress"
   ],
   "target": "latest",
   "upgrade": true

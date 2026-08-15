@@ -106,7 +106,7 @@ git commit -m 'build: rush update-major'
 Packages excluded via the [--reject] option:
 
 * All `@babel/*` packages excluded because jest not ready upgrade to v8: [babel-8-peer-dependency-issues](./babel-8-peer-dependency-issues-2026-07-27.md)
-* `@eslint/js`, `eslint`, and `eslint-plugin-ava` are excluded because not all eslint plugins are ready for v10: [eslint-peer-dependency-issues](./eslint-peer-dependency-issues-2026-07-27.md)
+* `@eslint/js`, `eslint`, and `eslint-plugin-ava`, `eslint-plugin-cypress` are excluded because not all eslint plugins are ready for v10: [eslint-peer-dependency-issues](./eslint-peer-dependency-issues-2026-07-27.md)
 * `@types/node` is excluded because the major version of this package
 corresponds with the expected major version of Node and should only change
 when Node is upgraded in this repository

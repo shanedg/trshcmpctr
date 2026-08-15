@@ -24,7 +24,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "core-js": "~3.49.0",
+    "core-js": "~3.50.0",
     "react": "~19.2.0"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "@typescript/native": "npm:typescript@~7.0.2",
     "babel-plugin-react-compiler": "~1.0.0",
     "eslint": "~9.39.1",
-    "globals": "~17.7.0",
+    "globals": "~17.11.0",
     "markdownlint-cli2": "~0.23.0",
     "typescript": "npm:@typescript/typescript6@~6.0.2"
   }
