@@ -36,7 +36,7 @@
       "summary": "Used by the pre-commit Git hook. Calls lint-staged to lint staged changes.",
       "commandKind": "global",
       "autoinstallerName": "rush-lint-staged",
-      "shellCommand": "lint-staged --config=common/autoinstallers/rush-lint-staged/.lintstagedrc.json --continue-on-error"
+      "shellCommand": "lint-staged --continue-on-error"
     },
     {
       "name": "scaffold",
