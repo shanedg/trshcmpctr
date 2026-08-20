@@ -29,7 +29,7 @@ export default defineConfig([
          * eslint-plugin-n uses this setting to determine which features are supported:
          * <https://github.com/eslint-community/eslint-plugin-n/blob/v18.2.1/README.md>
          */
-        version: '>=24.18.0',
+        version: '>=24.19.0',
       },
     },
   },
