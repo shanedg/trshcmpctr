@@ -23,7 +23,7 @@
     "test": ""
   },
   "dependencies": {
-    "@jest/reporters": "~30.4.1"
+    "@jest/reporters": "~30.5.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",

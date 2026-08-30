@@ -313,6 +313,7 @@
     // "pnpm": { "futurePnpmFeature": true }
   },
   "globalAllowBuilds": {
+    "@parcel/watcher": true,
     "core-js": true,
     "cypress": true,
     "unrs-resolver": true
