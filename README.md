@@ -2,7 +2,7 @@
 
 [![GitHub Actions CI (Main)](https://github.com/shanedg/trshcmpctr/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/shanedg/trshcmpctr/actions/workflows/main.yml)
 
-> all build config, no substance
+> all rig, no gig
 
 This [monorepo] (mono-repository) is managed with [@microsoft/rush]
 
