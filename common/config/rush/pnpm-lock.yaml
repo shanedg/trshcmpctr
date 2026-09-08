@@ -411,6 +411,9 @@ importers:
 
   ../../projects/eslint-config-node:
     dependencies:
+      '@trshcmpctr/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
       eslint-plugin-n:
         specifier: ~18.2.1
         version: 18.2.2(eslint@9.39.5(supports-color@8.1.1))(typescript@7.0.2)
@@ -418,9 +421,6 @@ importers:
         specifier: ~17.7.0
         version: 17.7.0
     devDependencies:
-      '@trshcmpctr/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
       '@trshcmpctr/markdownlint-config':
         specifier: workspace:*
         version: link:../markdownlint-config
@@ -446,9 +446,6 @@ importers:
         specifier: ~7.1.1
         version: 7.1.1(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)
     devDependencies:
-      '@trshcmpctr/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
       '@trshcmpctr/eslint-config-node':
         specifier: workspace:*
         version: link:../eslint-config-node

@@ -11,8 +11,12 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-node.js",
-  "main": "./src/eslint-config-node.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./cjs": "./src/eslint-config-node-cjs.js",
+    "./esm": "./src/eslint-config-node-esm.js"
+  },
+  "main": "./src/index.js",
   "files": [
     "src"
   ],
@@ -23,11 +27,11 @@
     "test": ""
   },
   "dependencies": {
+    "@trshcmpctr/eslint-config": "workspace:*",
     "eslint-plugin-n": "~18.2.1",
     "globals": "~17.7.0"
   },
   "devDependencies": {
-    "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
     "markdownlint-cli2": "~0.23.0"

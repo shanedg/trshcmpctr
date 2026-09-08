@@ -1,12 +1,12 @@
 import { defineConfig } from 'eslint/config';
 import cypressPlugin from 'eslint-plugin-cypress';
-import node from 'eslint-plugin-n';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import globals from 'globals';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
 import eslintConfigJest from '@trshcmpctr/eslint-config-jest';
-import eslintConfigNode from '@trshcmpctr/eslint-config-node';
+import eslintConfigNodeCjs from '@trshcmpctr/eslint-config-node/cjs';
+import eslintConfigNodeEsm from '@trshcmpctr/eslint-config-node/esm';
 import eslintConfigReact from '@trshcmpctr/eslint-config-react';
 import eslintConfigTypescript from '@trshcmpctr/eslint-config-typescript';
 
@@ -26,31 +26,15 @@ export default defineConfig([
     ],
   },
   {
-    extends: [
-      node.configs['flat/recommended-script'],
-      eslintConfig,
-    ],
+    extends: [eslintConfigNodeCjs],
     files: ['**/*.cjs'],
-    languageOptions: {
-      globals: globals.node,
-      sourceType: 'commonjs',
-    },
     name: 'Recommended CJS',
-    rules: {
-      // Redundant with import/no-unresolved and not as robust
-      'n/no-missing-require': 'off',
-    },
   },
   {
-    extends: [
-      eslintConfig,
-      eslintConfigNode,
-    ],
+    extends: [eslintConfigNodeEsm],
     files: esmConfigFiles,
     name: 'Recommended ESM',
     rules: {
-      // Default node resolution requires extensions for relative imports
-      'import/extensions': ['error', 'ignorePackages'],
       'import/no-unresolved': ['error', {
         /**
          * import/no-unresolved cannot parse subpath exports
@@ -58,18 +42,10 @@ export default defineConfig([
          * See [rules/no-unresolved.md#ignore](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#ignore)
          */
         ignore: [
+          '@trshcmpctr/eslint-config-node',
           'eslint/config',
         ],
       }],
-    },
-    settings: {
-      /**
-       * import/namespace can't parse module subpath exports
-       */
-      'import/ignore': [
-        'eslint-plugin-testing-library',
-        'webpack-manifest-plugin',
-      ],
     },
   },
   {

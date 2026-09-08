@@ -1,19 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
-import eslintConfig from '@trshcmpctr/eslint-config';
-
-import eslintConfigNode from './src/eslint-config-node.js';
+import eslintConfigNodeEsm from './src/eslint-config-node-esm.js';
 
 export default defineConfig([
   {
-    extends: [
-      eslintConfig,
-      // It lints itself :)
-      eslintConfigNode,
-    ],
+    extends: [eslintConfigNodeEsm],
     rules: {
-      // Default node resolution requires extensions for relative imports
-      'import/extensions': ['error', 'ignorePackages'],
       'import/no-unresolved': ['error', {
         /**
          * import/no-unresolved cannot parse subpath exports

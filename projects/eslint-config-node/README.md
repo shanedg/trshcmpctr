@@ -26,7 +26,7 @@ export default defineConfig([
 import { defineConfig } from 'eslint/config';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
-import nodeConfig from '@trshcmpctr/eslint-config-node';
+import eslintConfigNodeLegacy from '@trshcmpctr/eslint-config-node';
 
 const esmConfigFiles = [
   'webpack.config.js',
@@ -35,7 +35,7 @@ const esmConfigFiles = [
 
 export default defineConfig([
   {
-    extends: [nodeConfig],
+    extends: [eslintConfigNodeLegacy],
     files: esmConfigFiles,
   },
   eslintConfig,

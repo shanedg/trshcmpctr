@@ -3,13 +3,13 @@ import avaConfig from 'eslint-plugin-ava';
 import cypressConfig from 'eslint-plugin-cypress';
 
 import eslintConfig from '@trshcmpctr/eslint-config';
-import eslintConfigNode from '@trshcmpctr/eslint-config-node';
+import eslintConfigNodeLegacy from '@trshcmpctr/eslint-config-node';
 
 export default defineConfig([
   {
     extends: [
       eslintConfig,
-      eslintConfigNode,
+      eslintConfigNodeLegacy,
     ],
     rules: {
       // Default node resolution requires extensions for relative imports
