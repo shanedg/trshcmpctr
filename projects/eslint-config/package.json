@@ -11,7 +11,9 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config.js",
+  "exports": {
+    ".": "./src/eslint-config.js"
+  },
   "main": "./src/eslint-config.js",
   "files": [
     "src"
@@ -26,7 +28,8 @@
     "@eslint-community/eslint-plugin-eslint-comments": "~4.7.1",
     "@eslint/js": "~9.39.1",
     "eslint": "~9.39.1",
-    "eslint-plugin-import": "~2.32.0"
+    "eslint-plugin-import": "~2.32.0",
+    "eslint-plugin-package-json": "~1.8.0"
   },
   "devDependencies": {
     "@trshcmpctr/markdownlint-config": "workspace:*",

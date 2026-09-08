@@ -2,12 +2,25 @@ import js from '@eslint/js';
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import { defineConfig } from 'eslint/config';
 import imports from 'eslint-plugin-import';
+import { configs } from 'eslint-plugin-package-json';
 
 /**
  * Base ESLint config for JavaScript projects
  * Rules should make sense in any environment
  */
 export default defineConfig([
+  {
+    extends: [
+      configs.recommended,
+      configs.stylistic,
+    ],
+    files: ['package.json'],
+    rules: {
+      // Rush requires build and test scripts be present
+      // Empty commands indicate no-ops
+      'package-json/valid-scripts': 'off',
+    },
+  },
   // To see what rules are in the recommended set: https://eslint.org/docs/rules/
   js.configs.recommended,
   // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/
