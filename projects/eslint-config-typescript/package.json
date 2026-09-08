@@ -11,7 +11,9 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-typescript.js",
+  "exports": {
+    ".": "./src/eslint-config-typescript.js"
+  },
   "main": "./src/eslint-config-typescript.js",
   "files": [
     "src"

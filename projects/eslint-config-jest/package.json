@@ -11,7 +11,9 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-jest.js",
+  "exports": {
+    ".": "./src/eslint-config-jest.js"
+  },
   "main": "./src/eslint-config-jest.js",
   "files": [
     "src"

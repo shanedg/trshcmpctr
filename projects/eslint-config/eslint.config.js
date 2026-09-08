@@ -22,7 +22,6 @@ export default defineConfig([
       // It lints itself :)
       eslintConfig,
     ],
-    files: ['**/*.js'],
     languageOptions: {
       /**
        * Node.js >=24.11.1 supports virtually all features ES2025 and below:

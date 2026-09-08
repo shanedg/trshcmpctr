@@ -11,7 +11,9 @@
   },
   "license": "UNLICENSED",
   "type": "module",
-  "exports": "./src/eslint-config-react.js",
+  "exports": {
+    ".": "./src/eslint-config-react.js"
+  },
   "main": "./src/eslint-config-react.js",
   "files": [
     "src"

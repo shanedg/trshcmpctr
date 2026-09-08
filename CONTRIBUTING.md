@@ -4,6 +4,9 @@ Notes specifically for repository maintainers
 
 ## TODOs
 
+* add eslint-config for package.json in:
+  * markdownlint-config
+  * typescript
 * (client) consider replacing webpack with rspack
 * (deploy) new deployment target that's just a local network raspberry pi
 * (client, discord) auth fails on first couple renders, refresh resolves
