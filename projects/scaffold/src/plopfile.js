@@ -1,6 +1,7 @@
 import { join } from 'node:path';
 
 const relativePathToProjects = '../../';
+const projectsFolderRelativeToRoot = 'projects/';
 
 /**
  * Plopfile
@@ -51,7 +52,7 @@ export default function (plop) {
         pattern: /"projects": \[/,
         template: `    {
       "packageName": "@{{scope}}/{{name}}",
-      "projectFolder": "{{path}}"
+      "projectFolder": "${projectsFolderRelativeToRoot}{{path}}"
     },`
       },
     ]
