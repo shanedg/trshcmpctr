@@ -1,0 +1,34 @@
+{
+  "name": "@trshcmpctr/notes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "notes",
+  "homepage": "https://github.com/shanedg/trshcmpctr/tree/main/projects/notes#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanedg/trshcmpctr.git",
+    "directory": "projects/notes"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:md": "markdownlint-cli2 --config node_modules/@trshcmpctr/markdownlint-config/src/.markdownlint-cli2.jsonc",
+    "test": ""
+  },
+  "devDependencies": {
+    "@trshcmpctr/eslint-config": "workspace:*",
+    "@trshcmpctr/eslint-config-node": "workspace:*",
+    "@trshcmpctr/markdownlint-config": "workspace:*",
+    "eslint": "~9.39.1",
+    "markdownlint-cli2": "~0.23.0"
+  }
+}

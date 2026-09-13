@@ -138,6 +138,10 @@
    */
   "projects": [
     {
+      "packageName": "@trshcmpctr/notes",
+      "projectFolder": "projects/notes"
+    },
+    {
       "packageName": "@trshcmpctr/client",
       "projectFolder": "projects/client"
     },
