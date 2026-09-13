@@ -524,6 +524,24 @@ importers:
         specifier: ~0.23.0
         version: 0.23.2(supports-color@8.1.1)
 
+  ../../projects/notes:
+    devDependencies:
+      '@trshcmpctr/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@trshcmpctr/eslint-config-node':
+        specifier: workspace:*
+        version: link:../eslint-config-node
+      '@trshcmpctr/markdownlint-config':
+        specifier: workspace:*
+        version: link:../markdownlint-config
+      eslint:
+        specifier: ~9.39.1
+        version: 9.39.5(supports-color@8.1.1)
+      markdownlint-cli2:
+        specifier: ~0.23.0
+        version: 0.23.2(supports-color@8.1.1)
+
   ../../projects/scaffold:
     dependencies:
       plop:
