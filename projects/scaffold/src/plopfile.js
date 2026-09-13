@@ -1,7 +1,8 @@
-import { join } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 
-const relativePathToProjects = '../../';
-const projectsFolderRelativeToRoot = 'projects/';
+const repoRoot = resolve(import.meta.dirname, '../../../');
+const projectsDirectory = join(repoRoot, 'projects');
+const projectsRelativeToRoot = relative(repoRoot, projectsDirectory);
 
 /**
  * Plopfile
@@ -28,15 +29,15 @@ export default function (plop) {
       },
       {
         type: 'input',
-        name: 'path',
-        message: 'project path please (omit "/projects")',
+        name: 'slug',
+        message: 'project slug please',
       },
     ],
 
     actions: [
       {
         type: 'addMany',
-        destination: `${relativePathToProjects}{{path}}/`,
+        destination: `${projectsDirectory}/{{slug}}`,
         base: 'templates',
         templateFiles: '**/*.hbs',
         // By default, globs don't match file names that start with dot, i.e. '.eslintrc.js.hbs'.
@@ -46,13 +47,13 @@ export default function (plop) {
       // Update rush.json projects
       {
         type: 'append',
-        path: join(relativePathToProjects, '..', 'rush.json'),
+        path: join(repoRoot, 'rush.json'),
         // This regular expression matches the start of the projects list.
         // The template is appended immediately after this line.
         pattern: /"projects": \[/,
         template: `    {
       "packageName": "@{{scope}}/{{name}}",
-      "projectFolder": "${projectsFolderRelativeToRoot}{{path}}"
+      "projectFolder": "${projectsRelativeToRoot}/{{slug}}"
     },`
       },
     ]
