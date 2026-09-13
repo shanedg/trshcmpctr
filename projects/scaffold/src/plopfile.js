@@ -42,6 +42,9 @@ export default function (plop) {
         templateFiles: '**/*.hbs',
         // By default, globs don't match file names that start with dot, i.e. '.eslintrc.js.hbs'.
         globOptions: { dot: true },
+        data: {
+          packageDirectory: projectsRelativeToRoot,
+        },
       },
 
       // Update rush.json projects
