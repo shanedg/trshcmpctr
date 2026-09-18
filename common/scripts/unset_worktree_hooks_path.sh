@@ -15,13 +15,13 @@
 
 # Doesn't apply if worktree config is not enabled.
 worktreeConfig=$(git config get extensions.worktreeConfig)
-[[ -z "$worktreeConfig" ]] && exit 0
+[[ -z $worktreeConfig || $worktreeConfig = false ]] && exit 0
 
 # If the git hooks path is already unset,
 # e.g. if the post-install script fails to restore it after a prior install
 # or if it was never set in a new worktree,
 # there's no work to do so bail out.
 hooksPath=$(git config get --worktree core.hooksPath)
-[[ -z "$hooksPath" ]] && exit 0
+[[ -z $hooksPath ]] && exit 0
 
 git config --worktree --unset core.hooksPath

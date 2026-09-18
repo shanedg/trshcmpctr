@@ -15,12 +15,12 @@
 
 # Doesn't apply if worktree config is not enabled.
 worktreeConfig=$(git config get extensions.worktreeConfig)
-[[ -z "$worktreeConfig" ]] && exit 0
+[[ -z $worktreeConfig || $worktreeConfig == false ]] && exit 0
 
 # If the worktree hooks path is ALREADY set, there's no work to do so bail out.
 # Only validates the path is not empty.
 # Worktrees will run hooks installed per-worktree.
 hooksPath=$(git config get --worktree core.hooksPath)
-[[ -n "$hooksPath" ]] && exit 0
+[[ -n $hooksPath ]] && exit 0
 
 git config --worktree core.hooksPath "$(git rev-parse --git-dir)/hooks"
