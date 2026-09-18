@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "core-js": "~3.50.0",
-    "react": "~19.2.0"
+    "react": "~19.3.0"
   },
   "devDependencies": {
     "@babel/cli": "~7.29.7",
@@ -41,7 +41,7 @@
     "@trshcmpctr/eslint-config-typescript": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "@trshcmpctr/typescript": "workspace:*",
-    "@types/react": "~19.2.5",
+    "@types/react": "~19.3.0",
     "@typescript/native": "npm:typescript@~7.0.2",
     "babel-plugin-react-compiler": "~1.0.0",
     "eslint": "~9.39.1",
