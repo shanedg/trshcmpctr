@@ -95,13 +95,15 @@
      * The list of shell commands to run before the Rush installation starts
      */
     "preRushInstall": [
-      // "common/scripts/pre-rush-install.js"
+      "common/scripts/unset_worktree_hooks_path.sh"
     ],
 
     /**
      * The list of shell commands to run after the Rush installation finishes
      */
-    "postRushInstall": [],
+    "postRushInstall": [
+      "common/scripts/restore_worktree_hooks_path.sh"
+    ],
 
     /**
      * The list of shell commands to run before the Rush build command starts
