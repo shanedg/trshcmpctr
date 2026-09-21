@@ -2,7 +2,8 @@ import js from '@eslint/js';
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import { defineConfig } from 'eslint/config';
 import imports from 'eslint-plugin-import';
-import { configs } from 'eslint-plugin-package-json';
+import { configs as packageJson } from 'eslint-plugin-package-json';
+import { configs as regex } from 'eslint-plugin-regexp';
 
 /**
  * Base ESLint config for JavaScript projects
@@ -11,8 +12,8 @@ import { configs } from 'eslint-plugin-package-json';
 export default defineConfig([
   {
     extends: [
-      configs.recommended,
-      configs.stylistic,
+      packageJson.recommended,
+      packageJson.stylistic,
     ],
     files: ['package.json'],
     rules: {
@@ -27,6 +28,7 @@ export default defineConfig([
   comments.recommended,
   // https://www.npmjs.com/package/eslint-plugin-import
   imports.flatConfigs.recommended,
+  regex['flat/recommended'],
   {
     files: [
       '**/*.cjs',
