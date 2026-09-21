@@ -138,10 +138,6 @@
    */
   "projects": [
     {
-      "packageName": "@trshcmpctr/notes",
-      "projectFolder": "projects/notes"
-    },
-    {
       "packageName": "@trshcmpctr/client",
       "projectFolder": "projects/client"
     },
@@ -184,6 +180,10 @@
     {
       "packageName": "@trshcmpctr/markdownlint-config",
       "projectFolder": "projects/markdownlint-config"
+    },
+    {
+      "packageName": "@trshcmpctr/notes",
+      "projectFolder": "projects/notes"
     },
     {
       "packageName": "@trshcmpctr/scaffold",
