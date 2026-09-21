@@ -182,6 +182,10 @@
       "projectFolder": "projects/markdownlint-config"
     },
     {
+      "packageName": "@trshcmpctr/notes",
+      "projectFolder": "projects/notes"
+    },
+    {
       "packageName": "@trshcmpctr/scaffold",
       "projectFolder": "projects/scaffold"
     },
