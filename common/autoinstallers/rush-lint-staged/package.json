@@ -6,7 +6,7 @@
   "dependencies": {
     "eslint": "~9.39.5",
     "lint-staged": "~17.5.1",
-    "markdownlint-cli2": "~0.23.2",
+    "markdownlint-cli2": "~0.23.3",
     "sort-package-json": "4.0.0"
   }
 }
