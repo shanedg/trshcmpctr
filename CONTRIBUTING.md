@@ -168,7 +168,7 @@ Periodically upgrade the version of the image used by the actions runner.
 ```yaml
 jobs:
   install:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 ```
 
 #### Job Steps
