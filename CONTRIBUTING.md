@@ -154,7 +154,7 @@ Use only the _Active_ or _Maintenance_ [Long Term Support (LTS)](https://nodejs.
 * Each Github [workflow](./.github/workflows/) job pins the node version via `setup-node` action:
 
 ```yaml
-- uses: actions/setup-node@v6.4.0
+- uses: actions/setup-node@v7.0.0
   with:
     node-version: 24.21.0
 ```
