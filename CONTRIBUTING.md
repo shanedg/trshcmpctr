@@ -179,7 +179,7 @@ Review the changelog/releases for each action and bump as appropriate.
 
 ```yaml
 steps:
-  - uses: actions/checkout@v7.0.0
+  - uses: actions/checkout@v7.0.1
 ```
 
 ---
