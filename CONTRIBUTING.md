@@ -154,9 +154,9 @@ Use only the _Active_ or _Maintenance_ [Long Term Support (LTS)](https://nodejs.
 * Each Github [workflow](./.github/workflows/) job pins the node version via `setup-node` action:
 
 ```yaml
-- uses: actions/setup-node@v6.4.0
+- uses: actions/setup-node@v7.0.0
   with:
-    node-version: 24.19.0
+    node-version: 24.21.0
 ```
 
 ### Updating Github Actions
@@ -168,7 +168,7 @@ Periodically upgrade the version of the image used by the actions runner.
 ```yaml
 jobs:
   install:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 ```
 
 #### Job Steps
@@ -179,7 +179,7 @@ Review the changelog/releases for each action and bump as appropriate.
 
 ```yaml
 steps:
-  - uses: actions/checkout@v7.0.0
+  - uses: actions/checkout@v7.0.1
 ```
 
 ---
