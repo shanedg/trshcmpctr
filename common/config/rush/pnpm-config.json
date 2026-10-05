@@ -217,8 +217,13 @@
    */
   "globalPeerDependencyRules": {
     // "ignoreMissing": ["@eslint/*"],
-    // "allowedVersions": { "react": "17" },
     // "allowAny": ["@babel/*"]
+    "allowedVersions": {
+      // typescript is aliased to typescript@6
+      // but pnpm strict peer dependency checks
+      // don't understand
+      "typescript": "7"
+    }
   },
 
   /**
