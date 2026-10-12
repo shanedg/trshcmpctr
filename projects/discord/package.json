@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@trshcmpctr/client": "workspace:*",
-    "express": "~5.2.1",
+    "express": "~5.3.0",
     "express-session": "~1.19.0",
     "hbs": "~4.3.0",
     "lowdb": "~7.0.1",
@@ -63,7 +63,7 @@
     "globals": "~17.13.0",
     "markdownlint-cli2": "~0.23.0",
     "nodemon": "~3.1.0",
-    "pino-pretty": "~13.1.2",
+    "pino-pretty": "~13.2.0",
     "sinon": "~22.1.0",
     "start-server-and-test": "~3.0.5",
     "typescript": "npm:@typescript/typescript6@~6.0.2"
