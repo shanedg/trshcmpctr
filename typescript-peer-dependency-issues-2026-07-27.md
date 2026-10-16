@@ -7,6 +7,21 @@ is blocked until v7 ships and API (coming in 7.1)
 
 workaround: [run v7 side by side with v6](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)
 
+## update 2026-10-5: regression via pnpm@12
+
+workaround, add typescript@7 to allowed versions in [pnpm-config.json](./common/config/rush/pnpm-config.json):
+
+```json
+"globalPeerDependencyRules": {
+  "allowedVersions": {
+    // typescript is aliased to typescript@6
+    // but pnpm strict peer dependency checks
+    // don't understand
+    "typescript": "7"
+  }
+},
+```
+
 ## full pnpm peer dependency complaint
 
 ```text
