@@ -149,14 +149,14 @@ Periodically upgrade the versions of Node.js supported and used in this repo.
 Use only the _Active_ or _Maintenance_ [Long Term Support (LTS)](https://nodejs.org/en/about/previous-releases#release-schedule) releases.
 
 * The ranges declared by `nodeSupportedVersionRange` in [rush.json] enforce supported versions before running any repo operations.
-* The version kept in [mise.toml](./mise.toml) pins the node version is used for local development.
+* The version kept in [mise.toml](./mise.toml) pins the node version used.
 * The version range declared in [@sqs/eslint-config-node](./projects/eslint-config-node/src/eslint-config-node.js) informs which features eslint flags as unsupported.
-* Each Github [workflow](./.github/workflows/) job pins the node version via `setup-node` action:
+* Each Github [workflow](./.github/workflows/) job respects `mise.toml` via `setup-node` action:
 
 ```yaml
-- uses: actions/setup-node@v7.0.0
+- uses: actions/setup-node@v7.1.0
   with:
-    node-version: 24.21.0
+    node-version-file: mise.toml
 ```
 
 ### Updating Github Actions
