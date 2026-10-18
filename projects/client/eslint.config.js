@@ -48,29 +48,6 @@ export default defineConfig([
     ],
     files: esmConfigFiles,
     name: 'Recommended ESM',
-    rules: {
-      // Default node resolution requires extensions for relative imports
-      'import/extensions': ['error', 'ignorePackages'],
-      'import/no-unresolved': ['error', {
-        /**
-         * import/no-unresolved cannot parse commonjs subpath exports
-         * but can still report whether ignored modules are located:
-         * See [rules/no-unresolved.md#ignore](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#ignore)
-         */
-        ignore: [
-          'eslint/config',
-        ],
-      }],
-    },
-    settings: {
-      /**
-       * import/namespace can't parse module subpath exports
-       */
-      'import/ignore': [
-        'eslint-plugin-testing-library',
-        'webpack-manifest-plugin',
-      ],
-    },
   },
   {
     extends: [eslintConfig],
@@ -88,10 +65,6 @@ export default defineConfig([
       '**/*.tsx',
     ],
     name: 'Recommended Typescript',
-    rules: {
-      // Redundant with TS checks
-      'import/no-unresolved': 'off',
-    },
   },
   {
     extends: [eslintConfigReact],
@@ -131,9 +104,5 @@ export default defineConfig([
       'cypress/**',
     ],
     name: 'Recommended Cypress',
-    rules: {
-      // Typescript resolution doesn't need extensions
-      'import/extensions': 'off',
-    },
   },
 ]);

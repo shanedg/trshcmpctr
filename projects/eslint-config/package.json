@@ -28,7 +28,6 @@
     "@eslint-community/eslint-plugin-eslint-comments": "~4.8.0",
     "@eslint/js": "~9.39.1",
     "eslint": "~9.39.1",
-    "eslint-plugin-import": "~2.32.0",
     "eslint-plugin-package-json": "~1.10.0",
     "eslint-plugin-regexp": "~3.3.1"
   },
