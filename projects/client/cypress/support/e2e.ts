@@ -13,4 +13,5 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// eslint-disable-next-line n/no-missing-import -- FIXME: can't resolve no-extension ts
 import './commands';

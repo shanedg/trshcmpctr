@@ -36,10 +36,6 @@ export default defineConfig([
       sourceType: 'commonjs',
     },
     name: 'Recommended CJS',
-    rules: {
-      // Redundant with import/no-unresolved and not as robust
-      'n/no-missing-require': 'off',
-    },
   },
   {
     extends: [
