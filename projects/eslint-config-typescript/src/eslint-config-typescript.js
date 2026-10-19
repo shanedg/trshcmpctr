@@ -1,5 +1,4 @@
 import { defineConfig } from 'eslint/config';
-import imports from 'eslint-plugin-import';
 import tseslint from 'typescript-eslint';
 
 /**
@@ -8,7 +7,6 @@ import tseslint from 'typescript-eslint';
 export default defineConfig([
   {
     extends: [
-      imports.flatConfigs.typescript,
       // There is a performance cost for rules applied by recommended-requiring-type-checking.
       // The folks behind `typescript-eslint` suggest it's worth it: https://typescript-eslint.io/getting-started/typed-linting/#performance
       tseslint.configs.strictTypeChecked,

@@ -18,10 +18,6 @@ export default defineConfig([
       globals: globals.nodeBuiltin,
     },
     name: 'Recommended Node ESM Only',
-    rules: {
-      // Redundant with import/no-unresolved and not as robust
-      'n/no-missing-import': 'off',
-    },
     settings: {
       node: {
         /**

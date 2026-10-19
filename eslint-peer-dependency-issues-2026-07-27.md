@@ -2,9 +2,8 @@
 
 blockers:
 
-- [eslint-plugin-import#3227](https://github.com/import-js/eslint-plugin-import/issues/3227) - close!
 - [eslint-plugin-jsx-a11y#1075](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1075) - recent development, no release yet
-- [eslint-plugin-react#3977](https://github.com/jsx-eslint/eslint-plugin-react/issues/3977) - close! same maintainer + blockers as eslint-plugin-import
+- [eslint-plugin-react#3977](https://github.com/jsx-eslint/eslint-plugin-react/issues/3977) - close!
 
 ## after unblocking
 
