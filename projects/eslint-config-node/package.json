@@ -25,7 +25,7 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-n": "~18.4.0",
+    "eslint-plugin-n": "~18.5.0",
     "globals": "~17.13.0"
   },
   "devDependencies": {
