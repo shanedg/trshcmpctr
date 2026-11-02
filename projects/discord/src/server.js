@@ -9,6 +9,7 @@ import pinoHttp from 'pino-http';
 import store from 'session-file-store';
 
 import manifest from '@trshcmpctr/client' with { type: 'json' };
+// eslint-disable-next-line n/no-missing-import -- FIXME: subpath export not resolving
 import { paths } from '@trshcmpctr/client/paths';
 
 import { AuthenticatedAPIRouter } from './authenticated-api/router.js';

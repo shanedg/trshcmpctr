@@ -25,13 +25,13 @@
     "test": ""
   },
   "dependencies": {
-    "eslint-plugin-n": "~18.4.0",
+    "eslint-plugin-n": "~18.5.0",
     "globals": "~17.13.0"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
     "eslint": "~9.39.1",
-    "markdownlint-cli2": "~0.23.0"
+    "markdownlint-cli2": "~0.24.0"
   }
 }

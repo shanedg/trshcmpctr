@@ -28,12 +28,12 @@
     "@typescript/native": "npm:typescript@~7.0.2",
     "eslint": "~9.39.1",
     "typescript": "npm:@typescript/typescript6@~6.0.2",
-    "typescript-eslint": "~8.71.0"
+    "typescript-eslint": "~8.72.1"
   },
   "devDependencies": {
     "@trshcmpctr/eslint-config": "workspace:*",
     "@trshcmpctr/eslint-config-node": "workspace:*",
     "@trshcmpctr/markdownlint-config": "workspace:*",
-    "markdownlint-cli2": "~0.23.0"
+    "markdownlint-cli2": "~0.24.0"
   }
 }
